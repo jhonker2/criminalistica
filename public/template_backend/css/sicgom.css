@@ -1,0 +1,75 @@
+.figure{
+	text-align: center;
+	display: flex;
+  /* alineacion vertical */
+  align-items: center;
+   /* alineacion horizontal */
+  justify-content: center;
+}
+
+.login_wrapper{
+	margin-top: 0px !important;
+}
+
+.logo-escudo{
+	width: 100px;
+}
+
+body.login{
+	background: url('../img/fondo2.jpg');
+}
+
+
+.autocomplet{
+    display: none;
+    background: white;
+    width: 95%;
+    height: 50%;
+    position: absolute;
+    top: 35px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    cursor: default;
+}
+
+.itemList{
+  padding: 10px;
+  cursor: pointer;
+}
+ li.itemList:hover{
+  background: #ddd;
+ }
+
+
+.margin_bott10{
+	margin-bottom: 10px; 
+}
+
+.margin_top70{
+  margin-top: 70px; 
+}
+
+.error{
+  color: #131212;
+  background-color: rgba(214, 32, 32, 0.82) !important;
+}
+
+.text_black{
+  color: antiquewhite;
+}
+
+.lod_home{
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  color: #0075bc;
+}
+
+.retrocer{
+    font-style: oblique;
+    font-family: serif;
+    font-weight: bold;
+    color: black;
+    margin-left: 10px;
+}
