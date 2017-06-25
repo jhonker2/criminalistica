@@ -331,24 +331,31 @@
             <div class="row">
               <div class=" col-md-offset-2 col-md-8">
                 <div class="pricing-table highlight-plan">
-              <div class="plan-name">
-                <h3>Advanced</h3>
+              <div class="plan-name plan-cabecera">
+                <div class="col-md-4 col-xs-4"><img src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca"></div>
+                <div class="col-md-8 col-xs-8"><h3>Chevrolet</h3></div>
               </div>
               <div class="plan-price">
-                <div class="price-value">$99<span>.00</span></div>
-                <div class="interval">per month</div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <img src="{{asset('imagenes/auto.jpg')}}" alt="">
+                  </div>
+                  <div class="col-md-4">
+                    <div class="plan-list">
+                      <ul>
+                        <li><strong>40 GB</strong> Storage</li>
+                        <li><strong>40GB</strong> Transfer</li>
+                        <li><strong>10</strong> Domains</li>
+                        <li><strong>20</strong> Projects</li>
+                        <li><strong>Free</strong> installation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="plan-list">
-                <ul>
-                  <li><strong>40 GB</strong> Storage</li>
-                  <li><strong>40GB</strong> Transfer</li>
-                  <li><strong>10</strong> Domains</li>
-                  <li><strong>20</strong> Projects</li>
-                  <li><strong>Free</strong> installation</li>
-                </ul>
-              </div>
+              
               <div class="plan-signup">
-                <a href="#" class="btn-system btn-small border-btn">Sign Up Now</a>
+                <a href="#" class="btn-system btn-small border-btn">Ver Especificaciones</a>
               </div>
             </div>
               </div>
@@ -511,56 +518,7 @@
 
           <!-- Start Flickr Widget -->
           <div class="col-md-4 col-xs-12">
-            <div class="footer-widget flickr-widget">
-              <h4>Flicker Feed<span class="head-line"></span></h4>
-              <ul class="flickr-list">
-                <li>
-                  <a href="images/flickr-01.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-01.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-02.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-02.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-03.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-03.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-04.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-04.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-05.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-05.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-06.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-06.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-07.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-07.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-08.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-08.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-09.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-09.jpg">
-                  </a>
-                </li>
-              </ul>
-            </div>
+           
           </div>
           <!-- .col-md-3 -->
           <!-- End Flickr Widget -->

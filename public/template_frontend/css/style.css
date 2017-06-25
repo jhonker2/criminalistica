@@ -1698,10 +1698,13 @@ input[type="submit"] {
 	font-weight: 700;
 	color: #666;
 	text-transform: uppercase;
+	font-family: serif;
+	padding-left: 40px;
 }
 
 .pricing-table .plan-price {
 	padding: 25px 0;
+	height: 50%;
 }
 
 .pricing-table .plan-price .price-value {
@@ -1737,6 +1740,10 @@ input[type="submit"] {
 	-o-box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
 	-moz-box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
   	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
+  	border-top: 1px solid #ddd;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
 }
 
 .pricing-table .plan-signup a {
@@ -5770,4 +5777,15 @@ ul.footer-nav li a:hover {
 
 .margin-rigth-5px{
 	margin-right: 5px;
+}
+
+.plan-cabecera{
+	border: 1px solid #333;
+	text-align: left !important;
+	height: 70px;
+
+}
+
+.imagen-marca{
+	width: 80px;
 }
