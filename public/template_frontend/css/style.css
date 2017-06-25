@@ -5789,3 +5789,12 @@ ul.footer-nav li a:hover {
 .imagen-marca{
 	width: 80px;
 }
+
+.text-aling-left{
+	text-align: left;
+}
+
+#galeria_capas{
+	margin-top: 30px;
+	margin-left: 30px;
+}

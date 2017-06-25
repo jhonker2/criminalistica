@@ -343,11 +343,12 @@
                   <div class="col-md-4">
                     <div class="plan-list">
                       <ul>
-                        <li><strong>40 GB</strong> Storage</li>
-                        <li><strong>40GB</strong> Transfer</li>
-                        <li><strong>10</strong> Domains</li>
-                        <li><strong>20</strong> Projects</li>
-                        <li><strong>Free</strong> installation</li>
+                        <li><strong>Ficha Técnica</strong></li>
+                        <li class="text-aling-left"><strong>Cilindraje:</strong> 1.999 cc</li>
+                        <li class="text-aling-left"><strong>Transmisión:</strong> -</li>
+                        <li class="text-aling-left"><strong>Combustible:</strong> Gasolina</li>
+                        <li class="text-aling-left"><strong>Pais origen:</strong> Colombia</li>
+                        <li class="text-aling-left"><strong>Casa ensamblaje:</strong> -</li>
                       </ul>
                     </div>
                   </div>
@@ -360,6 +361,36 @@
             </div>
               </div>
               
+            </div>
+
+            <div class="row" id="galeria_capas">
+              <!--Start Clients Carousel-->
+          <div class="our-clients">
+            <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+
+              <!-- Client 1 -->
+              <div class="client-item item">
+                <a href="#"><img src="{{asset('imagenes/1.jpg')}}" alt="" /></a>
+              </div>
+
+              <!-- Client 2 -->
+              <div class="client-item item">
+                <a href="#"><img src="{{asset('imagenes/2.jpg')}}" alt="" /></a>
+              </div>
+
+              <!-- Client 3 -->
+              <div class="client-item item">
+                <a href="#"><img src="{{asset('imagenes/3.jpg')}}" alt="" /></a>
+              </div>
+
+              <!-- Client 4 -->
+              <div class="client-item item">
+                <a href="#"><img src="{{asset('imagenes/4.jpg')}}" alt="" /></a>
+              </div>
+
+            </div>
+          </div>
+          <!-- End Clients Carousel -->
             </div>
 
           </div>
