@@ -29,6 +29,8 @@
     {!!Html::style('template_frontend/css/animate.css')!!}
   <!-- Color Defult -->
     {!!Html::style('template_frontend/css/colors/red.css')!!}
+     <!-- Font Awesome -->
+    {!!Html::style('template_backend/plugins/font-awesome-4.7.0/css/font-awesome.min.css')!!}
   <!-- Margo JS  -->
     {!!Html::script('template_frontend/js/jquery-2.1.4.min.js')!!}
     {!!Html::script('template_frontend/js/jquery.migrate.js')!!}
@@ -77,8 +79,8 @@
               <!-- End Contact Info -->
             </div>
             <div class="col-md-5">
-                <ul>
-                    <li><a href="">Iniciar Sesión</a></li>
+                <ul class="contact-details iniciarSesion">
+                    <li><a href="javascript:void(0)"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
                 </ul>
             </div>
           </div>
@@ -120,17 +122,7 @@
                 <a class="active" href="index.html">Incio</a>
               </li>
               <li>
-                <a href="about.html">Identificación Vehiculo</a>
-                <ul class="dropdown">
-                  <li><a href="about.html">Marcas</a>
-                  </li>
-                  <li><a href="services.html">Modelos</a>
-                  </li>
-                  <li><a href="right-sidebar.html">Versión</a>
-                  </li>
-                  <li><a href="left-sidebar.html">Año</a>
-                  </li>
-                </ul>
+                <a href="#search_vehiculo">Identificación Vehiculo</a>
               </li>
               <li><a href="">Herramienta</a>
                 <ul>
@@ -305,28 +297,64 @@
     </section>
     <!-- End Home Page Slider -->
 
-   <div>
+   <div id="search_vehiculo">
       <div class="parallax-text-container-1">
         <div class="parallax-text-item">
           <div class="container">
             <div class="row">
               <!-- Start Video Section Content -->
               <div class="section-video-content text-center">
-
-                <!-- Start Animations Text -->
-                <h1>
-
-                    You are using Free Lite version of Margo</br> Purchase Full version to Get all Pages and Features
-                </h1>
+                <div class="row">
+                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                        <option value="">Seleccione una Marca</option>
+                    </select></div>
+                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                        <option value="">Seleccione una Modelo</option>
+                    </select></div>
+                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                        <option value="">Seleccione una Versión</option>
+                    </select></div>
+                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                        <option value="">Seleccione un Año</option>
+                    </select></div>
+                    
+                </div>
               </br>
                 <!-- End Animations Text -->
 
                 <!-- Start Buttons -->
-                <a rel="nofollow" href="https://rebrand.ly/gg-margo-purchase" class="btn-system btn-large"><i class="fa fa-download"></i> Purchase This Now</a>
+                <a rel="nofollow" href="https://rebrand.ly/gg-margo-purchase" class="btn-system btn-large"><i class="fa fa-search"></i> Buscar Vehiculo</a>
 
               </div>
               <!-- End Section Content -->
             </div>
+            <div class="row">
+              <div class=" col-md-offset-2 col-md-8">
+                <div class="pricing-table highlight-plan">
+              <div class="plan-name">
+                <h3>Advanced</h3>
+              </div>
+              <div class="plan-price">
+                <div class="price-value">$99<span>.00</span></div>
+                <div class="interval">per month</div>
+              </div>
+              <div class="plan-list">
+                <ul>
+                  <li><strong>40 GB</strong> Storage</li>
+                  <li><strong>40GB</strong> Transfer</li>
+                  <li><strong>10</strong> Domains</li>
+                  <li><strong>20</strong> Projects</li>
+                  <li><strong>Free</strong> installation</li>
+                </ul>
+              </div>
+              <div class="plan-signup">
+                <a href="#" class="btn-system btn-small border-btn">Sign Up Now</a>
+              </div>
+            </div>
+              </div>
+              
+            </div>
+
           </div>
         </div>
       </div>
@@ -337,7 +365,7 @@
     <div>
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-12">
 
             <!-- Start Recent Posts Carousel -->
             <div class="latest-posts">
@@ -421,39 +449,6 @@
             <!-- End Recent Posts Carousel -->
 
           </div>
-
-          <div class="col-md-4">
-
-            <!-- Classic Heading -->
-            <h4 class="classic-title"><span>Testimonials</span></h4>
-
-            <!-- Start Testimonials Carousel -->
-            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
-              <!-- Testimonial 1 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-              <!-- Testimonial 2 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-              <!-- Testimonial 3 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-            </div>
-            <!-- End Testimonials Carousel -->
-
-          </div>
         </div>
       </div>
     </div>
@@ -466,7 +461,7 @@
 
 
           <!-- Start Subscribe & Social Links Widget -->
-          <div class="col-md-3 col-xs-12">
+          <div class="col-md-4 col-xs-12">
             <div class="footer-widget mail-subscribe-widget">
               <h4>Get in touch<span class="head-line"></span></h4>
               <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
@@ -514,33 +509,8 @@
           <!-- .col-md-3 -->
           <!-- End Subscribe & Social Links Widget -->
 
-
-          <!-- Start Twitter Widget -->
-          <div class="col-md-3 col-xs-12">
-            <div class="footer-widget twitter-widget">
-              <h4>Twitter Feed<span class="head-line"></span></h4>
-              <ul>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2016</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                  <span>26 February 2016</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2016</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Twitter Widget -->
-
-
           <!-- Start Flickr Widget -->
-          <div class="col-md-3 col-xs-12">
+          <div class="col-md-4 col-xs-12">
             <div class="footer-widget flickr-widget">
               <h4>Flicker Feed<span class="head-line"></span></h4>
               <ul class="flickr-list">
@@ -597,7 +567,7 @@
 
 
           <!-- Start Contact Widget -->
-          <div class="col-md-3 col-xs-12">
+          <div class="col-md-4 col-xs-12">
             <div class="footer-widget contact-widget">
               <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>

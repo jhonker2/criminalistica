@@ -73,3 +73,6 @@ body.login{
     color: black;
     margin-left: 10px;
 }
+.no_margin{
+  margin-left: 0px !important;
+}

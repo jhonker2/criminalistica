@@ -3,11 +3,12 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> Inicio</a>
+                  </li>
+                  <li><a><i class="fa fa-car"></i> Vehiculos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="javascript:void(0);" id='home'>Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
+                      <li><a href="javascript:void(0);" id='home'>Registro</a></li>
+                      <li><a href="javascript:void(0);">Administración</a></li>
                     </ul>
                   </li>
                   <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -54,6 +55,18 @@
                       <li><a href="fixed_footer.html">Fixed Footer</a></li>
                     </ul>
                   </li> -->
+                </ul>
+              </div>
+               <div class="menu_section">
+                <h3>Configuraciones</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> Marcas</a>
+                  </li>
+                  <li><a><i class="fa fa-windows"></i> Modelos</a>
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i> Versiones</a>
+                  </li>                  
+                  <li><a><i class="fa fa-user"></i> Usuarios</a></li>
                 </ul>
               </div>
             </div>

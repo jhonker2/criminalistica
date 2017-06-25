@@ -1,98 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 ">
-            <div class="panel panel-default">
-            <input type="hidden" id="cajera" value="{{Auth::user()->email}}">
-                <div class="panel-heading">Cobros</div>
-
-                <div class="panel-body">
-                        <div class="col-md-8 col-md-offset-2">
-                            <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
-                            <input type="text" class="form-control" name="cliente" value="" placeholder="Ingrese cedula , Nombre ,cuenta" id="buscar_cliente"> 
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12" id="clientes">
-                                
-                            </div>
-                            <div id="load" class="lod_home" style="display: none;">
-                              <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-                              <span class="sr-only">Buscando Clientes...</span>
-                            </div>
-                        </div>
-                </div>
+<div id="content">
+  <div class="right_col no_margin" role="main">
+          <!-- top tiles -->
+          <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
+              <div class="count">2500</div>
+              <span class="count_bottom"><i class="green">4% </i> From last Week</span>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="Modal_Pago" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style="text-align: center;">PAGO  <p id="cliente_nombre"></p></h4>
-      </div>
-      <div class="modal-body">
-       <div class="row">
-           <div class="col-md-12">
-                <input type="hidden" name="cod_cliente" id="cod_cliente">
-               <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Numero Cuenta:</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9 margin_bott10">
-                          <input type="text" class="form-control" id="num_cuenta" disabled="true">
-                          <span class="fa fa-address-card-o form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Deuda:</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9 margin_bott10">
-                          <input type="text" class="form-control" id="deuda" disabled="true">
-                          <span class="fa fa-usd form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Monto:</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9 margin_bott10">
-                          <input type="number" id="monto" class="form-control" onKeyPress="return solo_monedas(event)">
-                          <span class="fa fa-usd form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                </div>
-                <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-3">Formas de Pago *:</label>
-                     <div class="col-md-9 col-sm-9 col-xs-9 margin_bott10">
-                      <p>
-                        Efectivo:
-                        <input type="radio" class="flat" name="gender" id="rEfectivo" value="efectivo" checked="" required /> Cheque:
-                        <input type="radio" class="flat" name="gender" id="rCheque" value="cheque" />
-                        Transferencia:
-                        <input type="radio" class="flat" name="gender" id="rTransferencia" value="transferencia" />
-                        Tarjeta:
-                        <input type="radio" class="flat" name="gender" id="rTarjeta" value="tarjeta" />
-                      </p>
-                        </div>
-
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Saldo Pendiente:</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9 margin_bott10">
-                          <input type="number" id="saldo_pendiente" class="form-control" disabled="true">
-                          <span class="fa fa-usd form-control-feedback right" aria-hidden="true"></span>
-                        </div>
-                </div>
-           </div>
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="btn_close" data-dismiss="modal">Close</button>
-        <button type="button" id="btn_guardar" class="btn btn-primary">Guardar Pago</button>
-      </div>
-    </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
+              <div class="count">123.50</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
+              <div class="count green">2,500</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
+              <div class="count">4,567</div>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
+              <div class="count">2,315</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
+              <div class="count">7,325</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+            </div>
+          </div>
   </div>
 </div>
 @endsection
