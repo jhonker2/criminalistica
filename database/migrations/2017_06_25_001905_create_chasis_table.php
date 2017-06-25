@@ -15,12 +15,12 @@ class CreateChasisTable extends Migration
     {
         Schema::create('chasis', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_fotos');
+            $table->integer('id_foto')->unsigned();
             $table->string('tipo_chasis');
             $table->string('numero');
             $table->string('ubicacion');
             $table->string('observacion')->nullable();
-            $table->foreign('id_fotos')->references('id')->on('fotos');
+            $table->foreign('id_foto')->references('id')->on('fotos');
             
             $table->timestamps();
         });

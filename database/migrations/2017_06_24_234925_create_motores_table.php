@@ -15,14 +15,14 @@ class CreateMotoresTable extends Migration
     {
         Schema::create('motores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_fotos');
+            $table->integer('id_foto')->unsigned();
             $table->string('ubicacion');
             $table->string('tipo_grabado');
             $table->string('alineacion');
             $table->string('simetria');
             $table->string('espacidad');
             $table->string('cantidad_digitos');
-            $table->foreign('id_fotos')->references('id')->on('fotos');
+            $table->foreign('id_foto')->references('id')->on('fotos');
             $table->timestamps();
         });
     }
