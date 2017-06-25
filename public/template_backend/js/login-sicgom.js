@@ -22,7 +22,7 @@ $("#btn_login").click(function(){
                if(response.sms=="login"){
               loader_login('off');
               alert("Bienvenido");
-              redirect('/home');
+              redirect('/admin/home');
               }else{
               loader_login('off');
               alert("Usuario Incorrectos");
