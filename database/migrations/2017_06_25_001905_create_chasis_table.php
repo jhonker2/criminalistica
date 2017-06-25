@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMotoresTable extends Migration
+class CreateChasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateMotoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('motores', function (Blueprint $table) {
+        Schema::create('chasis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_fotos');
+            $table->string('tipo_chasis');
+            $table->string('numero');
             $table->string('ubicacion');
-            $table->string('tipo_grabado');
-            $table->string('alineacion');
-            $table->string('simetria');
-            $table->string('espacidad');
-            $table->string('cantidad_digitos');
+            $table->string('observacion')->nullable();
             $table->foreign('id_fotos')->references('id')->on('fotos');
+            
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CreateMotoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('motores');
+        Schema::dropIfExists('chasis');
     }
 }
