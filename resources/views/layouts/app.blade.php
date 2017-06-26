@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>PORTOAGUAS</title>
-
+    
+    {!!Html::style('css/sicgom.css')!!}
     <!-- Bootstrap -->
     {!!Html::style('template_backend/plugins/bootstrap/dist/css/bootstrap.min.css')!!}
     <!-- Font Awesome -->
