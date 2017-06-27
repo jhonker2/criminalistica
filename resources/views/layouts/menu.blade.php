@@ -18,7 +18,7 @@
                     <ul class="nav child_menu">
                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/programa')">Marcas</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')"> Modelos </a></li>
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoEstadoMeta')"> Versiones </a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/versione')"> Versiones </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/usuario')"> Usuarios </a></li>
                       </ul>
                   </li>

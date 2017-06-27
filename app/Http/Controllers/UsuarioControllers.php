@@ -39,10 +39,10 @@ class UsuarioControllers extends Controller
     {
 
         //return $request->all();
-        User::create(['name'          =>$request->input('nombre'),
+        User::create(['nombre'          =>$request->input('nombre'),
                       'email'         =>$request->input('usuario'),
                       'password'      =>bcrypt($request->input('password')),
-                      'tipousuario'   =>$request->input('tipoUsuario'),
+                      'tipo_usuario'   =>$request->input('tipoUsuario'),
                             ]);
         return response()->json(["registro"=>true]);
     }

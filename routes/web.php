@@ -44,3 +44,8 @@ Route::post('/usuario_contrasena/{id}','UsuarioControllers@actualizarContrsenaUs
 Route::get('/app/usuarios', function(){
 	return view('usuarios.GestionUsuarios');
 });
+
+// versiones
+Route::resource('/app/versione','VersionesControllers');
+Route::get('/lista_versione','VersionesControllers@lista');
+//fin versiones

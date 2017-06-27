@@ -7,8 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>PORTOAGUAS</title>
-    
+    <title>Criminalistica</title>
+     <!-- notificacion -->
+    {!!Html::style('css/pnotify.css')!!}
+    <!-- notificacion -->
+    {!!Html::style('css/pnotify.brighttheme.css')!!}
+    <!-- validar imput -->
+    {!!Html::script('js/funciones.js')!!}
     {!!Html::style('css/sicgom.css')!!}
     <!-- Bootstrap -->
     {!!Html::style('template_backend/plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -21,6 +26,8 @@
     {!!Html::style('template_backend/css/sicgom.css')!!}
      <!-- iCheck -->
     {!!Html::style('template_backend/plugins/iCheck/skins/flat/green.css')!!}
+     <!-- csss de swal -->
+    {!!Html::style('css/sweetalert.css')!!}
 
     @yield('css')
   </head>
@@ -31,7 +38,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="/home" class="site_title"><span>PORTOAGUAS EP</span></a>
+              <a href="/home" class="site_title"><span>CRIMINALISTICA </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -221,6 +228,13 @@
     <!-- Custom Theme Scripts -->
     {!!Html::script('template_backend/js/custom.min.js')!!}
     {!!Html::script('template_backend/js/sicgom.js')!!}
+
+    <!-- notificacion -->
+    {!!Html::script('js/pnotify.js')!!}
+    {!!Html::script('js/pnotify.desktop.js')!!}
+    
+    {!!Html::script('js/sweetalert.min.js')!!}
+
     @yield('js')
     
   
