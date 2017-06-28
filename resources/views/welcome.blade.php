@@ -1,4 +1,4 @@
-<!doctype html>
+d<!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
@@ -71,7 +71,7 @@
               <ul class="contact-details">
                 <li><a href="#"><i class="fa fa-map-marker"></i> Portoviejo, Manabí, EC</a>
                 </li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> jhonyguaman49@gail.com</a>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> jhonyguaman49@gmail.com</a>
                 </li>
                 <li><a href="#"><i class="fa fa-phone"></i> +052988853700</a>
                 </li>
