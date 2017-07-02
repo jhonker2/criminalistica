@@ -49,3 +49,8 @@ Route::get('/app/usuarios', function(){
 Route::resource('/app/versione','VersionesControllers');
 Route::get('/lista_versione','VersionesControllers@lista');
 //fin versiones
+
+// Modelos
+Route::resource('/app/modelo','ModeloController');
+Route::get('/lista_modelo','ModeloController@lista');
+//fin Modelos

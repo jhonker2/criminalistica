@@ -57,7 +57,7 @@
 
             <br />
 
-           @include('layouts.menu');
+           @include('layouts.menu')
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">

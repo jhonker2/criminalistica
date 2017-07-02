@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
-use App\versione;
-use App\Modelo;
 
 use Illuminate\Http\Request;
+use App\Marca;
+use App\Modelo;
+use Auth;
+use DB;
 
-class VersionesControllers extends Controller
+class ModeloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +17,16 @@ class VersionesControllers extends Controller
      */
     public function index()
     {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
+        $Marcas = Marca::All();
         $Modelos = Modelo::All();
-         return view('versiones.GestionVersiones',compact('Versiones','Modelos'));
+         return view('modelos.GestionModelos',compact('Modelos','Marcas'));
     }
-
-    public function lista()
+    
+     public function lista()
     {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
-     
-      return view('versiones.TablaVersiones',compact('Versiones'));
+      $Marcas = Marca::All();
+      $Modelos = Modelo::All();
+      return view('modelos.TablaModelos',compact('Modelos','Marcas'));
     }
 
     /**
@@ -35,7 +36,11 @@ class VersionesControllers extends Controller
      */
     public function create()
     {
-        //
+        Modelo::create([
+                      'id_modelo' =>$request->input('modelos'),
+                      'version_descripcion' =>$request->input('versiones')
+                   ]);
+        return response()->json(["registro"=>true]);
     }
 
     /**
@@ -46,9 +51,9 @@ class VersionesControllers extends Controller
      */
     public function store(Request $request)
     {
-       Versione::create([
-                      'id_modelo' =>$request->input('modelos'),
-                      'version_descripcion' =>$request->input('versiones')
+      Modelo::create([
+                      'id_marca' =>$request->input('marca'),
+                      'modelo_descripcion' =>$request->input('modelo')
                    ]);
         return response()->json(["registro"=>true]);
     }
@@ -72,7 +77,7 @@ class VersionesControllers extends Controller
      */
     public function edit($id)
     {
-        $Versiones = Versione::find($id);
+       $Versiones = Versione::find($id);
         return response()->json($Versiones->toArray());
     }
 
@@ -85,7 +90,7 @@ class VersionesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Versiones = Versione::find($id);
+       $Versiones = Versione::find($id);
         $Versiones->fill($request->all());
         $Versiones->save();
         return response()->json([
@@ -101,7 +106,7 @@ class VersionesControllers extends Controller
      */
     public function destroy($id)
     {
-        $Versiones = Versione::find($id);
+       $Versiones = Versione::find($id);
         $Versiones = $Versiones->delete();
         return response()->json([
             "sms"=>"ok" 

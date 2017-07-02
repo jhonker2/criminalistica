@@ -2,18 +2,18 @@
                       <thead>
                         <tr>
                           <th>id</th>
+                          <th>Marca</th>
                           <th>Modelo</th>
-                          <th>Versiones</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                        
-              @foreach($Versiones as $ver) 
+              @foreach($Modelos as $mo) 
                         <tr>
-                          <td>{{$ver->id}}</td>
-                          <td>{{$ver->modelo_descripcion}}</td>
-                          <td>{{$ver->version_descripcion}}</td>
+                          <td>{{$mo->id}}</td>
+                          <td>{{$mo->id_marca}}</td>
+                          <td>{{$mo->modelo_descripcion}}</td>
                           <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default">Acciones</button>
@@ -22,9 +22,9 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a onclick="cargar_datos({{$ver->id}})" href="javascript:void(0)" data-toggle="modal" data-target="#myModal_ModificarVersiones" >Modificar</a>
+                                        <li><a onclick="cargar_datos({{$mo->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarVersiones" >Modificar</a>
                                         </li>
-                                        <li><a onclick="EliminarVersion({{$ver->id}})" href="javascript:void(0)">Eliminar</a>
+                                        <li><a onclick="EliminarVersion({{$mo->id}})" href="javascript:void(0)">Eliminar</a>
                                     </li>
                                     </ul>
                             </div>  

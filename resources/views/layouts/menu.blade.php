@@ -17,7 +17,7 @@
                   <li><a><i class="fa fa-clone"></i>Configuraciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/programa')">Marcas</a></li>
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')"> Modelos </a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/modelo')"> Modelos </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/versione')"> Versiones </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/usuario')"> Usuarios </a></li>
                       </ul>
