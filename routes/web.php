@@ -54,3 +54,8 @@ Route::get('/lista_versione','VersionesControllers@lista');
 Route::resource('/app/modelo','ModeloController');
 Route::get('/lista_modelo','ModeloController@lista');
 //fin Modelos
+
+// marcas
+Route::resource('/app/marca','ModeloController');
+Route::get('/lista_marca','ModeloController@lista');
+//fin marcas

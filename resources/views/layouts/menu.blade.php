@@ -9,14 +9,14 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Vehiculo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/objetivoPEDIPNBV')">Registrar Vehiculo</a></li>
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/objetivoPEDIPNBV')">Gestion de Vehiculo</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/vehiculo')">Registrar Vehiculo</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/vehiculo')">Gestion de Vehiculo</a></li>
                     </ul>
                   </li>
                                    
                   <li><a><i class="fa fa-clone"></i>Configuraciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                     <li><a href="javascript:void(0)" onclick="cargarContenido('/app/programa')">Marcas</a></li>
+                     <li><a href="javascript:void(0)" onclick="cargarContenido('/app/Marcas')">Marcas</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/modelo')"> Modelos </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/versione')"> Versiones </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/usuario')"> Usuarios </a></li>
@@ -24,7 +24,7 @@
                   </li>
                 </ul>
               </div>
-             <!--  <div class="menu_section">
+             <!--  <div class="menu_section">vehiculo
                <h3>Live On</h3>
                <ul class="nav side-menu">
                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
