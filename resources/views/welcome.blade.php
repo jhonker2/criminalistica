@@ -1,4 +1,4 @@
-d<!doctype html>
+<!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
@@ -50,7 +50,8 @@ d<!doctype html>
     {!!Html::script('template_frontend/js/jquery.parallax.js')!!}
     {!!Html::script('template_frontend/js/mediaelement-and-player.js')!!}
     {!!Html::script('template_frontend/js/jquery.slicknav.js')!!}
-
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -80,8 +81,24 @@ d<!doctype html>
             </div>
             <div class="col-md-5">
                 <ul class="contact-details iniciarSesion">
-                    <li><a href="javascript:void(0)"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
+                    <li><a href="javascript:void(0)" onclick="mostrar_login()"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
                 </ul>
+            </div>
+            <div class="login" style="float: right;margin-right: 30%; display: none;">
+              <div class="div_login">
+                <div>
+                  <h1 class="titulo_login">Criminalistica</h1>
+                  <div class="col-md-offset-2 col-md-8 margin-botton-10px">
+                    <input type="text" class="form-control" placeholder="Usuario">
+                  </div>
+                  <div class="col-md-offset-2 col-md-8 margin-botton-10px">
+                    <input type="password" class="form-control" placeholder="Contraseña">
+                  </div>
+                  <div class="col-md-offset-3 col-md-8 margin-botton-10px">
+                    <button type="butto" class="btn-system btn-large"> Iniciar Sesión</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- .row -->
@@ -93,7 +110,7 @@ d<!doctype html>
 
 
       <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top" role="navigation" data-spy="affix" data-offset-top="50">
+      <div id="navbart" class="navbar navbar-default navbar-top" role="navigation" data-spy="affix" data-offset-top="50">
         <div class="container">
           <div class="navbar-header">
             <!-- Stat Toggle Nav Link For Mobiles -->
@@ -305,16 +322,16 @@ d<!doctype html>
               <!-- Start Video Section Content -->
               <div class="section-video-content text-center">
                 <div class="row">
-                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Marca</option>
                     </select></div>
-                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Modelo</option>
                     </select></div>
-                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
                         <option value="">Seleccione una Versión</option>
                     </select></div>
-                    <div class="col-md-3"><select name="Marcas" class="form-control">
+                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
                         <option value="">Seleccione un Año</option>
                     </select></div>
                     
@@ -343,12 +360,12 @@ d<!doctype html>
                   <div class="col-md-4">
                     <div class="plan-list">
                       <ul>
-                        <li><strong>Ficha Técnica</strong></li>
-                        <li class="text-aling-left"><strong>Cilindraje:</strong> 1.999 cc</li>
-                        <li class="text-aling-left"><strong>Transmisión:</strong> -</li>
-                        <li class="text-aling-left"><strong>Combustible:</strong> Gasolina</li>
-                        <li class="text-aling-left"><strong>Pais origen:</strong> Colombia</li>
-                        <li class="text-aling-left"><strong>Casa ensamblaje:</strong> -</li>
+                        <li><strong class="text_ficha">Ficha Técnica</strong></li>
+                        <li class="text-aling-left text_titulo"><strong>Cilindraje:</strong> 1.999 cc</li>
+                        <li class="text-aling-left text_titulo"><strong>Transmisión:</strong> -</li>
+                        <li class="text-aling-left text_titulo"><strong>Combustible:</strong> Gasolina</li>
+                        <li class="text-aling-left text_titulo"><strong>Pais origen:</strong> Colombia</li>
+                        <li class="text-aling-left text_titulo"><strong>Casa ensamblaje:</strong> -</li>
                       </ul>
                     </div>
                   </div>
@@ -397,101 +414,6 @@ d<!doctype html>
         </div>
       </div>
     </div>
-
-    
-    <!-- Start Testimonials Section -->
-    <div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <!-- Start Recent Posts Carousel -->
-            <div class="latest-posts">
-              <h4 class="classic-title"><span>Latest News</span></h4>
-              <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
-
-                <!-- Posts 1 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-                <!-- Posts 2 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Link Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-                <!-- Posts 3 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Iframe Video Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-                <!-- Posts 4 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Gallery Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-                <!-- Posts 5 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Standard Post without Image</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-                <!-- Posts 6 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Iframe Audio Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- End Recent Posts Carousel -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Testimonials Section -->
-
     <!-- Start Footer Section -->
     <footer>
       <div class="container">
@@ -615,5 +537,30 @@ d<!doctype html>
     </div>
   </div>
     {!!Html::script('template_frontend/js/script.js')!!}
+
+    <script>
+    var clic=0;
+
+      function mostrar_login(){
+        if(clic==0){
+          $(".login").show();
+          clic++;
+        }else{
+          $(".login").hide();
+          clic=0;
+        }
+      }
+
+      $("#home").on('click', function(){
+        $(".login").hide();
+          clic=0;
+      });
+
+      $("#navbart").on('click', function(){
+        $(".login").hide();
+          clic=0;
+      })
+
+    </script>
 </body>
 </html>

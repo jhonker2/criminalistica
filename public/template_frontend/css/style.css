@@ -642,7 +642,8 @@ ul.social-list li:last-child a i {
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #999;
+	color: #040404;
+    font-weight: 500 !important;
 	display: block;
     font-size: 14px;
 	font-weight: 300;
@@ -1695,11 +1696,20 @@ input[type="submit"] {
 }
 
 .pricing-table .plan-name h3 {
-	font-weight: 700;
-	color: #666;
-	text-transform: uppercase;
-	font-family: serif;
-	padding-left: 40px;
+	color: #0a0a0a;
+    text-transform: uppercase;
+    font-family: 'Faster One', cursive;
+    font-size: 40px;
+}
+.text_ficha{
+	font-size: 20px;
+    color: #333;
+    font-family: 'Courgette', cursive;
+}
+.text_titulo{
+	font-size: 15px !important;
+    font-family: serif;
+    color: #333;
 }
 
 .pricing-table .plan-price {
@@ -5797,4 +5807,29 @@ ul.footer-nav li a:hover {
 #galeria_capas{
 	margin-top: 30px;
 	margin-left: 30px;
+}
+.div_login{
+	height: auto;
+    width: 337px;
+    background: #fcfff0;
+    position: absolute;
+    z-index: 1000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #d2caca;
+}
+
+.titulo_login{
+	font-family: 'Courgette', cursive;
+	text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.margin-botton-10px{
+	margin-bottom: 10px;
+}
+
+.btn_login:hover{
+	cursor: pointer;
 }
