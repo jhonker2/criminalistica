@@ -10,13 +10,13 @@
                   <li><a><i class="fa fa-edit"></i> Vehiculo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/vehiculo')">Registrar Vehiculo</a></li>
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/vehiculo')">Gestion de Vehiculo</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/lista_vehiculo')">Gestion de Vehiculo</a></li>
                     </ul>
                   </li>
                                    
                   <li><a><i class="fa fa-clone"></i>Configuraciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                     <li><a href="javascript:void(0)" onclick="cargarContenido('/app/Marcas')">Marcas</a></li>
+                     <li><a href="javascript:void(0)" onclick="cargarContenido('/app/marca')">Marcas</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/modelo')"> Modelos </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/versione')"> Versiones </a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/usuario')"> Usuarios </a></li>

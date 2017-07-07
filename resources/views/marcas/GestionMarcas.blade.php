@@ -1,5 +1,5 @@
     <!-- jQuery -->
-    {!!Html::script('js/admin-js/Modelos.js')!!}
+    {!!Html::script('js/admin-js/Marcas.js')!!}
 		<div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
@@ -23,7 +23,7 @@
                     <p class="text-muted font-13 m-b-30">
                      
                     </p>
-                    @include('modelos.TablaModelos')
+                    @include('Marcas.TableMarcas')
                   </div>
                 </div>
               </div>
@@ -49,17 +49,8 @@
             <input  type="hidden" name="_token" value="{{ csrf_token()}}" id="token">
               <input  type="hidden" name="" value="" id="IdModelo">
               
-                     <div class="form-group">
-                         <label for="disabledTextInput">Marca</label>
-                             <select id="marca_A" name="marca_A" class="form-control text">
-                                <option>Seleccione Marca</option>
-                                   @foreach($Marcas as $mo)
-                                         <option value="{{$mo->id}}"> {{$mo->marca_descripcion}}</option>
-                                   @endforeach
-                              </select>
-                     </div>      
-
-              {!!Form::label('Modelo:')!!}
+                     
+              {!!Form::label('Marca:')!!}
               {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
               <span id="span_modelo_A"></span>
               <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span>
@@ -93,25 +84,27 @@
               <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
               <input  type="hidden" name="" value="" id="IdModelo">
               
-                     <div class="form-group">
-                         <label for="disabledTextInput">Marca</label>
-                             <select id="marca" name="marca" class="form-control text">
-                                <option>Seleccione Marca</option>
-                                   @foreach($Marcas as $mo)
-                                         <option value="{{$mo->id}}"> {{$mo->marca_descripcion}}</option>
-                                   @endforeach
-                              </select>
-                     </div>      
-
-              {!!Form::label('Modelo:')!!}
-              {!!Form::text('modelo',null,['id'=>'modelo', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-              <span id="span_modelo"></span>
-              <span id="span_mensaje_modelo" style="display: block;color: red;"></span>
-
+           <div class="col-md-6 col-xs-12">  
+              {!!Form::label('Marca:')!!}
+              {!!Form::text('Marca',null,['id'=>'Marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+                <span id="span_marca"></span>
+               <span id="span_mensaje_marca" style="display: block;color: red;"></span>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">     
+              <div class="col-md-4 col-xs-6">
+                            <div class="foto"><span type="file"></span>
+                                </div>
+                                <label class="uploader foto" ondragover="return false">
+                                   <i  class="fa fa-user fa-4x" aria-hidden="true"></i>
+                                  <img src="" class="">
+                                    <input type="file" name="archivo" id="archivo" accept="image/*" required>
+                               </label>
+                            </div>
+           </div>                 
       </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" id="btn_IngresarModelos" >Registrar</button>
+              <button type="button" class="btn btn-success" id="btn_IngresarMarca" >Registrar</button>
        {!!Form::close()!!}
 
       </div>

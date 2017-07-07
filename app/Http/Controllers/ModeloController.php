@@ -18,14 +18,14 @@ class ModeloController extends Controller
     public function index()
     {
         $Marcas = Marca::All();
-        $Modelos = Modelo::All();
+        $Modelos = DB::select('SELECT m.id, m.marca_descripcion, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
          return view('modelos.GestionModelos',compact('Modelos','Marcas'));
     }
     
      public function lista()
     {
       $Marcas = Marca::All();
-      $Modelos = Modelo::All();
+      $Modelos = DB::select('SELECT m.id, m.marca_descripcion, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
       return view('modelos.TablaModelos',compact('Modelos','Marcas'));
     }
 
@@ -77,8 +77,8 @@ class ModeloController extends Controller
      */
     public function edit($id)
     {
-       $Versiones = Versione::find($id);
-        return response()->json($Versiones->toArray());
+       $Modelos = Modelo::find($id);
+        return response()->json($Modelos->toArray());
     }
 
     /**
@@ -90,9 +90,9 @@ class ModeloController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $Versiones = Versione::find($id);
-        $Versiones->fill($request->all());
-        $Versiones->save();
+        $Modelos = Modelo::find($id);
+        $Modelos->fill($request->all());
+        $Modelos->save();
         return response()->json([
             "sms"=>"ok" 
             ]);
@@ -106,8 +106,8 @@ class ModeloController extends Controller
      */
     public function destroy($id)
     {
-       $Versiones = Versione::find($id);
-        $Versiones = $Versiones->delete();
+        $Modelos = Modelo::find($id);
+        $Modelos = $Modelos->delete();
         return response()->json([
             "sms"=>"ok" 
             ]);

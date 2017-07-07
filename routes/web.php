@@ -56,6 +56,11 @@ Route::get('/lista_modelo','ModeloController@lista');
 //fin Modelos
 
 // marcas
-Route::resource('/app/marca','ModeloController');
-Route::get('/lista_marca','ModeloController@lista');
+Route::resource('/app/marca','MarcaController');
+Route::get('/lista_marca','MarcaController@lista');
 //fin marcas
+
+// vehiculo
+Route::resource('/app/vehiculo','VehiculoController');
+Route::get('/lista_vehiculo','VehiculoController@lista');
+//fin vehiculo

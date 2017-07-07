@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
-use App\versione;
-use App\Modelo;
 
 use Illuminate\Http\Request;
-
-class VersionesControllers extends Controller
+use App\Versione;
+use App\Chasi;
+use App\Motore;
+use App\Plaqueta;
+use DB;
+use Auth;
+class VehiculoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +18,11 @@ class VersionesControllers extends Controller
      */
     public function index()
     {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
-        $Modelos = Modelo::All();
-         return view('versiones.GestionVersiones',compact('Versiones','Modelos'));
-    }
-
-    public function lista()
-    {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
-        return view('versiones.TablaVersiones',compact('Versiones'));
+       $Chasis = Chasi::All();
+       $Motores = Motore::All();
+       $Plaquetas = Plaqueta::All();
+       $Version = Versione::All();
+       return view('vehiculos.GestionVehiculo',compact('Chasis','Version','Plaquetas','Motores'));
     }
 
     /**
@@ -45,11 +43,7 @@ class VersionesControllers extends Controller
      */
     public function store(Request $request)
     {
-       Versione::create([
-                      'id_modelo' =>$request->input('modelos'),
-                      'version_descripcion' =>$request->input('versiones')
-                   ]);
-        return response()->json(["registro"=>true]);
+        //
     }
 
     /**
@@ -71,8 +65,7 @@ class VersionesControllers extends Controller
      */
     public function edit($id)
     {
-        $Versiones = Versione::find($id);
-        return response()->json($Versiones->toArray());
+        //
     }
 
     /**
@@ -84,12 +77,7 @@ class VersionesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Versiones = Versione::find($id);
-        $Versiones->fill($request->all());
-        $Versiones->save();
-        return response()->json([
-            "sms"=>"ok" 
-            ]);
+        //
     }
 
     /**
@@ -100,10 +88,6 @@ class VersionesControllers extends Controller
      */
     public function destroy($id)
     {
-        $Versiones = Versione::find($id);
-        $Versiones = $Versiones->delete();
-        return response()->json([
-            "sms"=>"ok" 
-            ]);
+        //
     }
 }

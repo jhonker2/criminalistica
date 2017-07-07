@@ -3,17 +3,17 @@
                         <tr>
                           <th>id</th>
                           <th>Marca</th>
-                          <th>Modelo</th>
+                          <th>Logo</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                        
-              @foreach($Modelos as $mo) 
+              @foreach($Marcas as $ma) 
                         <tr>
-                          <td>{{$mo->id}}</td>
-                          <td>{{$mo->marca_descripcion}}</td>
-                          <td>{{$mo->modelo_descripcion}}</td>
+                          <td>{{$ma->id}}</td>
+                          <td>{{$ma->marca_descripcion}}</td>
+                          <td>{{$ma->logo}}</td>
                           <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default">Acciones</button>
@@ -22,9 +22,9 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a onclick="cargar_datos({{$mo->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarModelos" >Modificar</a>
+                                        <li><a onclick="cargar_datos({{$ma->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarModelos" >Modificar</a>
                                         </li>
-                                        <li><a onclick="EliminarModelo({{$mo->id}})" href="javascript:void(0)">Eliminar</a>
+                                        <li><a onclick="EliminarModelo({{$ma->id}})" href="javascript:void(0)">Eliminar</a>
                                     </li>
                                     </ul>
                             </div>  

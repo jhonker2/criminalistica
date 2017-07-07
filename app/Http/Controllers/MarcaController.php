@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
-use App\versione;
-use App\Modelo;
 
 use Illuminate\Http\Request;
+use App\Marca;
+use DB;
+use Auth;
 
-class VersionesControllers extends Controller
+class MarcaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +16,14 @@ class VersionesControllers extends Controller
      */
     public function index()
     {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
-        $Modelos = Modelo::All();
-         return view('versiones.GestionVersiones',compact('Versiones','Modelos'));
+        $Marcas = Marca::All();
+         return view('Marcas.GestionMarcas',compact('Marcas'));
     }
 
-    public function lista()
+     public function lista()
     {
-        $Versiones = DB::select('SELECT v.id, m.modelo_descripcion,v.version_descripcion  FROM versiones v, modelos m where v.id_modelo = m.id') ;
-        return view('versiones.TablaVersiones',compact('Versiones'));
+       $Marcas = Marca::All();
+       return view('Marcas.TableMarcas',compact('Marcas'));
     }
 
     /**
@@ -45,7 +44,7 @@ class VersionesControllers extends Controller
      */
     public function store(Request $request)
     {
-       Versione::create([
+         Modelo::create([
                       'id_modelo' =>$request->input('modelos'),
                       'version_descripcion' =>$request->input('versiones')
                    ]);
@@ -71,8 +70,8 @@ class VersionesControllers extends Controller
      */
     public function edit($id)
     {
-        $Versiones = Versione::find($id);
-        return response()->json($Versiones->toArray());
+        $Modelos = Modelo::find($id);
+        return response()->json($Modelos->toArray());
     }
 
     /**
@@ -84,9 +83,9 @@ class VersionesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Versiones = Versione::find($id);
-        $Versiones->fill($request->all());
-        $Versiones->save();
+        $Modelos = Modelo::find($id);
+        $Modelos->fill($request->all());
+        $Modelos->save();
         return response()->json([
             "sms"=>"ok" 
             ]);
@@ -100,8 +99,8 @@ class VersionesControllers extends Controller
      */
     public function destroy($id)
     {
-        $Versiones = Versione::find($id);
-        $Versiones = $Versiones->delete();
+        $Modelos = Modelo::find($id);
+        $Modelos = $Modelos->delete();
         return response()->json([
             "sms"=>"ok" 
             ]);

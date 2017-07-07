@@ -146,10 +146,10 @@ function registrar_versiones(){
 
  
 
-function EliminarUsuarios(id){
+function EliminarVersion(id){
 
     swal({ 
-		title: "¿Deseas Elimar el Usuario?",
+		title: "¿Deseas Elimar Version",
 		text: "",
 		type: "warning",
 		showCancelButton: true,
@@ -161,7 +161,7 @@ function EliminarUsuarios(id){
 
 		function(isConfirm){ 
 		if (isConfirm){
-			var route  ="/app/usuario/"+id+"";
+			var route  ="/app/versione/"+id+"";
 		    var token  =$("#token").val();
 		    $.ajax({
 			    url: route,
@@ -170,13 +170,13 @@ function EliminarUsuarios(id){
 			    dataType:'json',
 			        success:function(res){
 			         if(res.sms=='ok'){
-						swal("¡Hecho!","Usuario Eliminado Correctamente","success"); 
-			            $("#datatable").load("/lista_usuarios");
+						swal("¡Hecho!","Version Eliminado Correctamente","success"); 
+			            $("#datatable").load("/lista_versione");
 			          }          
 			        }
 		 	     });
         }else { 
-			swal("¡Error !","No se pudo Eliminar el Usuario ","error"); 
+			swal("¡Error !","No se pudo Eliminar Version ","error"); 
 		} 
 	});
    
