@@ -28,6 +28,8 @@
     {!!Html::style('template_backend/plugins/iCheck/skins/flat/green.css')!!}
      <!-- csss de swal -->
     {!!Html::style('css/sweetalert.css')!!}
+    <link rel="stylesheet" href="{{asset('css/fileuploader.css')}}">
+
 
     @yield('css')
   </head>
@@ -234,6 +236,13 @@
     {!!Html::script('js/pnotify.desktop.js')!!}
     
     {!!Html::script('js/sweetalert.min.js')!!}
+
+    {!!Html::script('js/FileUploader.js')!!}
+
+        <script type="text/javascript">
+            new FileUploader('.uploader');
+          
+        </script>
 
     @yield('js')
     

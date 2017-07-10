@@ -90,7 +90,7 @@
                 <span id="span_marca"></span>
                <span id="span_mensaje_marca" style="display: block;color: red;"></span>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">     
+            <div class="col-md-12 col-sm-12 col-xs-12">     
               <div class="col-md-4 col-xs-6">
                             <div class="foto"><span type="file"></span>
                                 </div>
@@ -99,7 +99,7 @@
                                   <img src="" class="">
                                     <input type="file" name="archivo" id="archivo" accept="image/*" required>
                                </label>
-                            </div>
+             </div>
            </div>                 
       </div>
       <div class="modal-footer">
