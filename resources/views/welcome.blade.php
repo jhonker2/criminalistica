@@ -81,7 +81,7 @@
             </div>
             <div class="col-md-5">
                 <ul class="contact-details iniciarSesion">
-                    <li><a href="javascript:void(0)" onclick="mostrar_login()"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
+                    <li><a href="javascript:void(0)" onclick="mostrar_login()" class="loginsize"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
                 </ul>
             </div>
             <div class="login" style="float: right;margin-right: 30%; display: none;">
@@ -136,7 +136,7 @@
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a class="active" href="index.html">Incio</a>
+                <a class="active" href="#" style="background: #ee3733;">Incio</a>
               </li>
               <li>
                 <a href="#search_vehiculo">Identificación Vehiculo</a>

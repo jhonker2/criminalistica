@@ -2027,8 +2027,8 @@ ul.icons-list li i {
 }
 
 .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
-	color: #fff;
-	border-color: #fff;
+	color: #ee3733;
+	border-color: #ee3733;
 	box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
 	-o-box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
 	-moz-box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
@@ -5830,6 +5830,12 @@ ul.footer-nav li a:hover {
 	margin-bottom: 10px;
 }
 
-.btn_login:hover{
-	cursor: pointer;
+.iniciarSesion li a:hover{
+	
+}
+.loginsize{
+	font-size: 15px !important;
+}
+.inicio_sombra{
+	background: #ee3733;
 }
