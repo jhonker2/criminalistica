@@ -9,7 +9,8 @@ class Modelo extends Model
    protected $table = "modelos";
 
     protected $fillable = [
-		'id_marca' , 'modelo_descripcion'
+		'id_marca' , 
+		'modelo_descripcion'
 	];
 
 	public function Marca(){

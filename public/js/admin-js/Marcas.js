@@ -1,16 +1,16 @@
 
         
 
-/*Validaci[on del campo modelo*/
-        $('#modelo').blur(function(){
-            var modelo = $("#modelo").val();
-            if (modelo.indexOf('')== -1){
-              $('#modelo').addClass('error');
-              $('#modelo').addClass('error_span');
-              $('#span_mensaje_versiones').html('Ingrese Modelo');
+/*Validaci[on del campo Marca*/
+        $('#Marca').blur(function(){
+            var Marca = $("#Marca").val();
+            if (Marca.indexOf('')== -1){
+              $('#Marca').addClass('error');
+              $('#Marca').addClass('error_span');
+              $('#span_mensaje_versiones').html('Ingrese Marca');
             }else{
-            $('#modelo').removeClass('error');
-            $('#modelo').removeClass('error_span');
+            $('#Marca').removeClass('error');
+            $('#Marca').removeClass('error_span');
             $('#span_mensaje_modelo').html('');
             }
             
@@ -19,9 +19,9 @@
  
 
 
-//FUNCION validar capos al REGISTRAR modelos 
-$("#btn_IngresarModelos").click(function(){
- if($('#modelo').val()=="" ){
+//FUNCION validar capos al REGISTRAR Marcas
+$("#btn_IngresarMarca").click(function(){
+ if($('#Marca').val()=="" ){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -29,31 +29,31 @@ $("#btn_IngresarModelos").click(function(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
 
-                $('#modelo').addClass('error');
-
-          }else if($('#modelo').val()==""){
-                      $('#modelo').addClass('error');
-                      $('#span_modelo').addClass('error_span');
-                      $('#span_mensaje_modelo').html('Ingrese modelo');
+                $('#Marca').addClass('error');
+Marca
+          }else if($('#Marca').val()==""){
+                      $('#Marca').addClass('error');
+                      $('#span_Marca').addClass('error_span');
+                      $('#span_mensaje_Marca').html('Ingrese Marca');
                       var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
-                      new PNotify({title: 'Alerta',text: 'Por favor! ingrese modelo',
+                      new PNotify({title: 'Alerta',text: 'Por favor! ingrese Marca',
                       type: 'error',delay: 2500,
                       animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
              }else{	
-    registrar_modelos();
+    registrar_marca();
   }
 });
 
 
 
 // funcion para registrar modelos
-function registrar_modelos(){
+function registrar_marca(){
     
 	  var token    = new $('#token').val();
-    var datos  = new FormData($("#frmIngresarModelos")[0]);
+    var datos  = new FormData($("#frmIngresarMarca")[0]);
     $.ajax({
-    url:"/app/modelo",
+    url:"/app/marca",
     headers :{'X-CSRF-TOKEN': token},
     type: 'POST',
     dataType: 'json',
@@ -63,10 +63,10 @@ function registrar_modelos(){
     success:function(res){
       if(res.registro==true){
          //swal("Efood!", "El usuario se ha registro correctamente!", "success");
-        swal("Modelo Registrado Correctamente..!!", "", "success");
+        swal("Marca Registrada Correctamente..!!", "", "success");
         document.getElementById("frmIngresarModelos").reset();  
-        $("#myModal_IngresarModelo").modal("hide");
-        $("#datatable").load("/lista_modelo");
+        $("#myModal_IngresarMarca").modal("hide");
+        $("#datatable").load("/lista_marca");
        }
      }
 	});

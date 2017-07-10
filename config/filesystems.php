@@ -43,9 +43,14 @@ return [
 
     'disks' => [
 
-        'local' => [
+        'Marcas' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => public_path('fotos_marcas'),
+        ],
+
+        'Vehiculo' => [
+            'driver' => 'local',
+            'root' => public_path('fotos_vehiculos'),
         ],
 
         'public' => [

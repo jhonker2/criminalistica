@@ -98,7 +98,16 @@
 
                                 {!!link_to('#', $title='Guardar', $attributes =['id'=>'btn_Usuario', 'class'=>'btn btn-success btn-guardar'], $secure= null)!!}              
                    
-                </div>  
+                </div> 
+                <div class="col-md-6 col-xs-6">
+                            <div class="foto"><span type="file"></span>
+                                </div>
+                                <label class="uploader foto" ondragover="return false">
+                                   <i  class="fa fa-user fa-4x" aria-hidden="true"></i>
+                                  <img src="" class="">
+                                    <input type="file" name="archivo" id="archivo" accept="image/*" required>
+                               </label>
+             </div> 
                
         </div> <!--fin del div registro -->
      </div>

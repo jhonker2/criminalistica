@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Marca;
+use Storage;
 use DB;
 use Auth;
-
+use Hash;
+use Illuminate\Support\Facades\Validator;
 class MarcaController extends Controller
 {
     /**
@@ -44,11 +46,27 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-         Modelo::create([
-                      'id_modelo' =>$request->input('modelos'),
-                      'version_descripcion' =>$request->input('versiones')
-                   ]);
-        return response()->json(["registro"=>true]);
+        $archivo = $request->file('archivo');
+            $input  = array('image' => $archivo) ;
+            $reglas = array('image' => 'required|image|mimes:jpeg,jpg,bmp,png,gif');
+            $validacion = Validator::make($input,  $reglas);
+        if ($validacion->fails()){
+               return response()->json(array('error_imagen'=>'false'));      
+            }else {
+                $nombre_original=$archivo->getClientOriginalName();
+                $extension=$archivo->getClientOriginalExtension();
+                $nuevo_nombre="Marca-".$nombre_original;
+                $r1=Storage::disk('Marcas')->put($nuevo_nombre,  \File::get($archivo) );
+                $rutadelaimagen="fotos_marcas/".$nuevo_nombre;
+            if ($r1){
+             Marca::create([
+                'marca_decripcion'=>$request->input('Marca'),
+                'logo'=>$rutadelaimagen
+            ]);
+            return response()->json(array('registro'=>'true'));
+                    }else
+                    {   return response()->json(array('error_imagen'=>'true')); }
+        }
     }
 
     /**

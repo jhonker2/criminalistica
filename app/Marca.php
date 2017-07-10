@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Marca extends Model
 {
-     protected $table = "marcas";
 
     protected $fillable = [
-		'id_marca' , 'modelo_descripcion'
+		'marca_descripcion', 
+		'logo'
 	];
 
 	public function Modelos(){

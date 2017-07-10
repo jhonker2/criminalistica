@@ -14,7 +14,7 @@
                           </ul>
                       </ul>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarModelo"><i class="fa fa-user-plus"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarMarca"><i class="fa fa-user-plus"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -70,7 +70,7 @@
 
 <!--  Modal para Ingresar marcas-->
 
-<div class="modal fade" id="myModal_IngresarModelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal_IngresarMarca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -79,19 +79,18 @@
       </div>
       <div class="modal-body">
           
-        {!!Form::open(array('url'=>'','id'=>'frmIngresarModelos','method'=>'POST'))!!}
+        {!!Form::open(array('url'=>'','id'=>'frmIngresarMarca','method'=>'POST'))!!}
         
               <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-              <input  type="hidden" name="" value="" id="IdModelo">
+              <input  type="hidden" name="" value="" id="IdMarca">
               
-           <div class="col-md-6 col-xs-12">  
+           <div class="col-md-4  col-xs-12">  
               {!!Form::label('Marca:')!!}
               {!!Form::text('Marca',null,['id'=>'Marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
                 <span id="span_marca"></span>
                <span id="span_mensaje_marca" style="display: block;color: red;"></span>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">     
-              <div class="col-md-4 col-xs-6">
+               <div class="col-md-8  col-xs-8">
                             <div class="foto"><span type="file"></span>
                                 </div>
                                 <label class="uploader foto" ondragover="return false">
@@ -99,8 +98,7 @@
                                   <img src="" class="">
                                     <input type="file" name="archivo" id="archivo" accept="image/*" required>
                                </label>
-             </div>
-           </div>                 
+               </div>
       </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
