@@ -239,12 +239,6 @@
 
     {!!Html::script('js/FileUploader.js')!!}
 
-        <script type="text/javascript">
-            new FileUploader('.uploader');
-          
-        </script>
-
-    @yield('js')
     
   
   

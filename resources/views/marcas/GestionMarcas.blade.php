@@ -113,4 +113,6 @@
 </div>        
 
 <!--  FIN Modal para Ingresar marcas -->
-   
+ <script type="text/javascript">
+            new FileUploader('.uploader');
+ </script>
