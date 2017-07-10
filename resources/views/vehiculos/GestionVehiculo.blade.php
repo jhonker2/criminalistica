@@ -69,12 +69,30 @@
                                     </select>
                                 </div>
 
-                                {!!Form::label('Usuarios:')!!}
-                                {!!Form::text('User',null,['id'=>'User', 'class'=>'form-control','placeholder'=>'Ingrese el nombre de Usuario','required'=>''])!!}
+                                <div class="form-group">
+                                    <label for="disabledTextInput">Serie</label>
+                                    <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
+                                    <option>Seleccione Serie</option>
+                                    @foreach($Series as $se)
+                                        <option value="{{$se->id}}"> {{$se->observacion}}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                                                  
+                               {!!Form::label('Cilindraje:')!!}
+                               {!!Form::text('cilindraje',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+                                  <span id="span_modelo_A"></span>
+                                  <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
 
-                                {!!Form::label('Contraseña:')!!}
-                                {!!Form::text('password',null,['id'=>'password', 'class'=>'form-control','placeholder'=>'Ingrese la contrasena de Usuario','required'=>''])!!}
+                                {!!Form::label('Trasmision:')!!}
+                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+                                <span id="span_modelo_A"></span>
+                                <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
 
+                               {!!Form::label('Combustible:')!!}
+                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+                                <span id="span_modelo_A"></span>
+                                <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
 
                      {!!Form::close()!!}
 

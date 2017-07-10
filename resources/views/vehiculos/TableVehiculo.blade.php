@@ -2,8 +2,10 @@
                       <thead>
                         <tr>
                           <th>id</th>
-                          <th>Marca</th>
-                          <th>Logo</th>
+                          <th>Chasis</th>
+                          <th>Version</th>
+                          <th>Plaqueta</th>
+                          <th>Motor</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>

@@ -16,7 +16,7 @@ class CreateSeriesTable extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_foto')->unsigned();
-            $table->integer('observacion');
+            $table->string('observacion');
             $table->foreign('id_foto')->references('id')->on('fotos');
             
             $table->timestamps();

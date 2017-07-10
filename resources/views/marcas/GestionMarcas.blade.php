@@ -4,7 +4,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Administración de Modelos</h2>
+                    <h2>Administración de Marcas</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
                       </li>
@@ -29,7 +29,7 @@
               </div>
         </div>
 
-<!--  Modal para modificar de versiones-->
+<!--  Modal para modificar de Marcas-->
 
 <div class="modal fade" id="myModal_ModificarModelos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -65,10 +65,10 @@
   </div>
 </div>        
 
-<!--  FIN Modal para Moidifcar de versiones -->
+<!--  FIN Modal para Modidifcar de marcas -->
 
 
-<!--  Modal para Ingresar Modelos -->
+<!--  Modal para Ingresar marcas-->
 
 <div class="modal fade" id="myModal_IngresarModelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -112,5 +112,5 @@
   </div>
 </div>        
 
-<!--  FIN Modal para Ingresar Modelos -->
+<!--  FIN Modal para Ingresar marcas -->
    
