@@ -22,6 +22,9 @@ class CreateMotoresTable extends Migration
             $table->string('simetria');
             $table->string('espacidad');
             $table->string('cantidad_digitos');
+            $table->string('superficie');
+            $table->string('observacion');
+            $table->integer('densidad');
             $table->foreign('id_foto')->references('id')->on('fotos');
             $table->timestamps();
         });

@@ -18,14 +18,14 @@ class ModeloController extends Controller
     public function index()
     {
         $Marcas = Marca::All();
-        $Modelos = DB::select('SELECT m.id, m.marca_descripcion, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
+        $Modelos = DB::select('SELECT m.id, m.marca, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
          return view('modelos.GestionModelos',compact('Modelos','Marcas'));
     }
     
      public function lista()
     {
       $Marcas = Marca::All();
-      $Modelos = DB::select('SELECT m.id, m.marca_descripcion, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
+      $Modelos = DB::select('SELECT m.id, m.marca, mo.modelo_descripcion  FROM marcas m, modelos mo where m.id = mo.id_marca');
       return view('modelos.TablaModelos',compact('Modelos','Marcas'));
     }
 

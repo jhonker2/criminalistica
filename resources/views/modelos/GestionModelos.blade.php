@@ -54,7 +54,7 @@
                              <select id="marca_A" name="marca_A" class="form-control text">
                                 <option>Seleccione Marca</option>
                                    @foreach($Marcas as $mo)
-                                         <option value="{{$mo->id}}"> {{$mo->marca_descripcion}}</option>
+                                         <option value="{{$mo->id}}"> {{$mo->marca}}</option>
                                    @endforeach
                               </select>
                      </div>      
@@ -98,7 +98,7 @@
                              <select id="marca" name="marca" class="form-control text">
                                 <option>Seleccione Marca</option>
                                    @foreach($Marcas as $mo)
-                                         <option value="{{$mo->id}}"> {{$mo->marca_descripcion}}</option>
+                                         <option value="{{$mo->id}}"> {{$mo->marca}}</option>
                                    @endforeach
                               </select>
                      </div>      

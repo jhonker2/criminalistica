@@ -49,27 +49,25 @@ Marca
 
 // funcion para registrar modelos
 function registrar_marca(){
-    
 	  var token    = new $('#token').val();
     var datos  = new FormData($("#frmIngresarMarca")[0]);
     $.ajax({
-    url:"/app/marca",
-    headers :{'X-CSRF-TOKEN': token},
-    type: 'POST',
-    dataType: 'json',
-    contentType: false,
-    processData: false,
-    data: datos,
-    success:function(res){
-      if(res.registro==true){
-         //swal("Efood!", "El usuario se ha registro correctamente!", "success");
-        swal("Marca Registrada Correctamente..!!", "", "success");
-        document.getElementById("frmIngresarModelos").reset();  
-        $("#myModal_IngresarMarca").modal("hide");
-        $("#datatable").load("/lista_marca");
-       }
-     }
-	});
+      url:"/app/marca",
+      headers :{'X-CSRF-TOKEN': token},
+      type: 'POST',
+      dataType: 'json',
+      contentType: false,
+      processData: false,
+      data: datos,
+      success:function(res){
+        if(res.registro==true){
+          swal("Marca Registrada Correctamente..!!", "", "success");
+          document.getElementById("frmIngresarModelos").reset();  
+          $("#myModal_IngresarMarca").modal("hide");
+          $("#datatable").load("/lista_marca");
+        }
+      }
+	 });
 }
 
 

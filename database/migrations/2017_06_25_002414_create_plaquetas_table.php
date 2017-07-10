@@ -16,6 +16,11 @@ class CreatePlaquetasTable extends Migration
         Schema::create('plaquetas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_foto')->unsigned();
+            $table->string('ubicacion');
+            $table->string('material');
+            $table->string('tipo_grabado');
+            $table->string('tipo_remache');
+            $table->string('informacion');
             $table->string('observacion')->nullable();
             $table->foreign('id_foto')->references('id')->on('fotos');
             

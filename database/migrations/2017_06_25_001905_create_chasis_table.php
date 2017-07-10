@@ -16,12 +16,16 @@ class CreateChasisTable extends Migration
         Schema::create('chasis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_foto')->unsigned();
-            $table->string('tipo_chasis');
-            $table->string('numero');
             $table->string('ubicacion');
-            $table->string('observacion')->nullable();
+            $table->string('tipo_grabado');
+            $table->string('alineacion');
+            $table->string('simetria');
+            $table->string('espacidad');
+            $table->string('cantidad_digitos');
+            $table->string('superficie');
+            $table->string('observacion');
+            $table->integer('densidad');
             $table->foreign('id_foto')->references('id')->on('fotos');
-            
             $table->timestamps();
         });
     }

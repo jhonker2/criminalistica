@@ -19,7 +19,7 @@ class MarcaController extends Controller
     public function index()
     {
         $Marcas = Marca::All();
-         return view('Marcas.GestionMarcas',compact('Marcas'));
+        return view('Marcas.GestionMarcas',compact('Marcas'));
     }
 
      public function lista()
@@ -51,7 +51,7 @@ class MarcaController extends Controller
             $reglas = array('image' => 'required|image|mimes:jpeg,jpg,bmp,png,gif');
             $validacion = Validator::make($input,  $reglas);
         if ($validacion->fails()){
-               return response()->json(array('error_imagen'=>'false'));      
+               return response()->json(array('error_imagen'=>false));      
             }else {
                 $nombre_original=$archivo->getClientOriginalName();
                 $extension=$archivo->getClientOriginalExtension();
@@ -60,12 +60,12 @@ class MarcaController extends Controller
                 $rutadelaimagen="fotos_marcas/".$nuevo_nombre;
             if ($r1){
              Marca::create([
-                'marca_decripcion'=>$request->input('Marca'),
+                'marca'=>$request->input('marca'),
                 'logo'=>$rutadelaimagen
             ]);
-            return response()->json(array('registro'=>'true'));
+            return response()->json(array('registro'=>true));
                     }else
-                    {   return response()->json(array('error_imagen'=>'true')); }
+                    {   return response()->json(array('error_imagen'=>true)); }
         }
     }
 

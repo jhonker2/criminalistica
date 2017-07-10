@@ -86,7 +86,7 @@
               
            <div class="col-md-4  col-xs-12">  
               {!!Form::label('Marca:')!!}
-              {!!Form::text('Marca',null,['id'=>'Marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+              {!!Form::text('marca',null,['id'=>'marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
                 <span id="span_marca"></span>
                <span id="span_mensaje_marca" style="display: block;color: red;"></span>
             </div>

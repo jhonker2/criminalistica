@@ -25,6 +25,7 @@ class CreateVehiculosTable extends Migration
             $table->string('combustible');
             $table->string('pais_origen');
             $table->string('fotografia');
+            $table->string('casa_ensambladora');
             $table->foreign('id_chasis')->references('id')->on('chasis');
             $table->foreign('id_version')->references('id')->on('versiones');
             $table->foreign('id_plaqueta')->references('id')->on('plaquetas');

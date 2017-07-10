@@ -12,7 +12,7 @@
               @foreach($Marcas as $ma) 
                         <tr>
                           <td>{{$ma->id}}</td>
-                          <td>{{$ma->marca_descripcion}}</td>
+                          <td>{{$ma->marca}}</td>
                           <td>{{$ma->logo}}</td>
                           <td>
                             <div class="btn-group">

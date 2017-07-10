@@ -12,7 +12,7 @@
               @foreach($Modelos as $mo) 
                         <tr>
                           <td>{{$mo->id}}</td>
-                          <td>{{$mo->marca_descripcion}}</td>
+                          <td>{{$mo->marca}}</td>
                           <td>{{$mo->modelo_descripcion}}</td>
                           <td>
                             <div class="btn-group">
