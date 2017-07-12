@@ -29,6 +29,8 @@
      <!-- csss de swal -->
     {!!Html::style('css/sweetalert.css')!!}
     <link rel="stylesheet" href="{{asset('css/fileuploader.css')}}">
+    {!!Html::style('template_backend/plugins/cropper/dist/cropper.css')!!}
+
 
 
     @yield('css')
@@ -107,7 +109,7 @@
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
+                <!--<li role="presentation" class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-envelope-o"></i>
                     <span class="badge bg-green">6</span>
@@ -169,7 +171,7 @@
                       </div>
                     </li>
                   </ul>
-                </li>
+                </li>-->
               </ul>
             </nav>
           </div>
@@ -237,6 +239,8 @@
     {!!Html::script('js/sweetalert.min.js')!!}
 
     {!!Html::script('js/FileUploader.js')!!}
+    
+
 
     
   

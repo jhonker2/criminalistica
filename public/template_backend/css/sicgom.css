@@ -76,3 +76,12 @@ body.login{
 .no_margin{
   margin-left: 0px !important;
 }
+
+img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
+.imagen_container{
+      min-height: 200px;
+    max-height: 516px;
+    margin-bottom: 20px;
+}

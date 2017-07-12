@@ -8,12 +8,6 @@
  * Date: 2017-07-07T12:56:42.462Z
  */
 
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.Cropper = factory());
-}(this, (function () { 'use strict';
-
 var DEFAULTS = {
   // Define the view mode of the cropper
   viewMode: 0, // 0, 1, 2, 3
@@ -98,8 +92,8 @@ var DEFAULTS = {
   minCanvasHeight: 0,
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
-  minContainerWidth: 500,
-  minContainerHeight: 500,
+  minContainerWidth: 200,
+  minContainerHeight: 100,
 
   // Shortcuts of events
   ready: null,
@@ -944,7 +938,7 @@ var render$1 = {
     removeClass(element, hidden);
 
     self.containerData = containerData = {
-      width: Math.max(container.offsetWidth, Number(options.minContainerWidth) || 500),
+      width: Math.max(container.offsetWidth, Number(options.minContainerWidth) || 200),
       height: Math.max(container.offsetHeight, Number(options.minContainerHeight) || 100)
     };
 
@@ -1627,8 +1621,8 @@ var handlers = {
     var options = self.options;
     var container = self.container;
     var containerData = self.containerData;
-    var minContainerWidth = Number(options.minContainerWidth) || 500;
-    var minContainerHeight = Number(options.minContainerHeight) || 500;
+    var minContainerWidth = Number(options.minContainerWidth) || 200;
+    var minContainerHeight = Number(options.minContainerHeight) || 100;
 
     if (self.disabled || containerData.width === minContainerWidth || containerData.height === minContainerHeight) {
       return;
@@ -3578,6 +3572,4 @@ if (typeof window !== 'undefined') {
   window.Cropper = Cropper;
 }
 
-return Cropper;
-
-})));
+export default Cropper;
