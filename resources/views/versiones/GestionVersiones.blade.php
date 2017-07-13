@@ -8,11 +8,6 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
                       </li>
-                       <ul class="nav navbar-right panel_toolbox">
-                          <ul class="nav navbar-right panel_toolbox">                    
-                          <a href="/app/crear_reporte_politicas/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
-                          </ul>
-                      </ul>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarVersiones"><i class="fa fa-user-plus"></i></a>
                       </li>
@@ -104,7 +99,7 @@
                      </div>      
 
               {!!Form::label('Versiones:')!!}
-              {!!Form::text('versiones',null,['id'=>'versiones', 'class'=>'form-control','placeholder'=>'Ingrese Versiones','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+              {!!Form::text('versiones',null,['id'=>'versiones', 'class'=>'form-control','placeholder'=>'Ingrese Versiones' ])!!}
               <span id="span_versiones"></span>
               <span id="span_mensaje_versiones" style="display: block;color: red;"></span>
 

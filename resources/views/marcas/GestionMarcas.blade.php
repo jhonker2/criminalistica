@@ -8,12 +8,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
                       </li>
-                       <ul class="nav navbar-right panel_toolbox">
-                          <ul class="nav navbar-right panel_toolbox">                    
-                          <a href="/app/crear_reporte_politicas/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
-                          </ul>
-                      </ul>
-                      <li class="dropdown">
+                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarMarca"><i class="fa fa-user-plus"></i></a>
                       </li>
                     </ul>
