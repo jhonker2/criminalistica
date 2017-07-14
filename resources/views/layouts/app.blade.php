@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{asset('css/fileuploader.css')}}">
     {!!Html::style('template_backend/plugins/cropper/dist/cropper.css')!!}
 
+    <link rel="stylesheet" href=" //cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"> 
+
 
 
     @yield('css')
@@ -239,8 +241,10 @@
     {!!Html::script('js/sweetalert.min.js')!!}
 
     {!!Html::script('js/FileUploader.js')!!}
-    
 
+    <!-- datatable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> 
 
     
   

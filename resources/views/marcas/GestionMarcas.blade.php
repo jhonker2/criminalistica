@@ -9,7 +9,7 @@
                       <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
                       </li>
                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarMarca"><i class="fa fa-user-plus"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarMarca"><i class="fa fa-plus-circle fa-3x"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>

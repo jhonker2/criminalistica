@@ -1,4 +1,6 @@
-
+$(document).ready(function(){
+    $('#tabla').DataTable();
+});
 /*Validaci[on del Correo*/
         $('#usuario').blur(function(){
             var correo = $("#usuario").val();

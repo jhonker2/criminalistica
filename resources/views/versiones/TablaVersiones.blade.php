@@ -1,4 +1,4 @@
-<table id="" class="table table-striped table-bordered">
+<table id="tabla" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>id</th>

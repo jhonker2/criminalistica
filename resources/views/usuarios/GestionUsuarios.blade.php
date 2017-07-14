@@ -9,7 +9,7 @@
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarUsuario"><i class="fa fa-user-plus"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarUsuario"><i class="fa fa-user-plus fa-3x"></i></a>
                         
                       </li>
                     </ul>
@@ -45,8 +45,7 @@
             <select id="tipoUsuario_A" name="tipoUsuario_A" class="form-control text">
                                     <option id="tipoUsuario_A" name="tipoUsuario_A">Seleccione Tipo Usuario</option>
                                         <option value="Administrador"> Administrador </option>
-                                        <option value="Secretario"> Secretraria</option>
-                                        <option value="Analista">Analista</option>
+                                        <option value="Secretario"> Invitado</option>
                                     </select>
 
             {!!Form::label('Nombre:')!!}
@@ -91,8 +90,7 @@
               <select id="tipoUsuario" name="tipoUsuario" class="form-control text">
                                       <option>Seleccione Tipo Usuario</option>
                                           <option value="Administrador"> Administrador </option>
-                                          <option value="Secretario"> Secretario </option>
-                                           <option value="Analista">Analista</option>
+                                          <option value="Secretario"> Invitado </option>
                                       </select>
               <span id="span_tipoUsuario"></span>
               <span id="span_mensaje_tipoUsuario" style="display: block;color: red;"></span>                        

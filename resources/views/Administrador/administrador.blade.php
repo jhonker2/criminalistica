@@ -24,6 +24,11 @@
     <!-- PNOTIFY -->
     {!!Html::style('template_backend/plugins/pnotify/dist/pnotify.custom.min.css')!!}
 
+        <!-- csss de swal -->
+    {!!Html::style('css/sweetalert.css')!!}
+
+    
+
 
 
   </head>
@@ -77,6 +82,8 @@
     {!!Html::script('template_backend/plugins/jquery/dist/jquery.min.js')!!}
     {!!Html::script('template_backend/js/login-sicgom.js')!!}
     {!!Html::script('template_backend/plugins/pnotify/dist/pnotify.custom.min.js')!!}
+    {!!Html::script('js/sweetalert.min.js')!!}
+
 
 
 </html>

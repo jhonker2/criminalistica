@@ -1,4 +1,6 @@
-
+$(document).ready(function(){
+    $('#tabla').DataTable();
+});
         
 
 /*Validaci[on del campo Marca*/

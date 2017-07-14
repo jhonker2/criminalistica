@@ -1,4 +1,6 @@
-
+ $(document).ready(function(){
+    $('#tabla').DataTable();
+});
         
 
 /*Validaci[on del campo versiones*/
@@ -180,6 +182,9 @@ function EliminarVersion(id){
 		} 
 	});
    
+   $(document).ready(function(){
+    $('#datatable').DataTable();
+});
 
     
 }

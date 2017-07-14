@@ -21,11 +21,11 @@ $("#btn_login").click(function(){
             //loader_login('off');
                if(response.sms=="login"){
               loader_login('off');
-              alert("Bienvenido");
+              swal("Bienvenido a SYSTEN-CAR","","success"); 
               redirect('/admin/home');
               }else{
               loader_login('off');
-              alert("Usuario Incorrectos");
+              swal("Usuario o contraseña Incorrecta","Ingrese datos correctos","error"); 
              }
           }
       });
@@ -60,7 +60,7 @@ function loader_login(v){
     };
     switch (type) {
     case 'error':
-        opts.title = "Oh No";
+        opts.title = "";
         opts.text = "Nombre de usuario y contraseña se encuentran vacios!";
         opts.type = "error";
         break;
