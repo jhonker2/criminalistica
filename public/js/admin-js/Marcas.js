@@ -64,7 +64,7 @@ function registrar_marca(){
       success:function(res){
         if(res.registro==true){
           swal("Marca Registrada Correctamente..!!", "", "success");
-          document.getElementById("frmIngresarModelos").reset();  
+          document.getElementById("frmIngresarMarca").reset();  
           $("#myModal_IngresarMarca").modal("hide");
           $("#datatable").load("/lista_marca");
         }

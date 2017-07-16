@@ -242,8 +242,7 @@
 
     {!!Html::script('js/FileUploader.js')!!}
 
-    <!-- datatable -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+   
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> 
 
     

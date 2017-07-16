@@ -21,6 +21,10 @@ body.login{
 	background: url('../img/fondo.png');
 }
 
+.boton-style{
+    padding: 12px 25px !important;
+}
+
 .btn-IngresarUsuario{
     border: none;
     background: #3a7999;

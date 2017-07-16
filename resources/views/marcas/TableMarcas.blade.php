@@ -13,7 +13,7 @@
                         <tr>
                           <td>{{$ma->id}}</td>
                           <td>{{$ma->marca}}</td>
-                          <td>{{$ma->logo}}</td>
+                          <td style="text-align: center;"><img src="{{asset($ma->logo)}}" style="width: 64px;" alt=""></td>
                           <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default">Acciones</button>

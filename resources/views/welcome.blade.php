@@ -81,7 +81,15 @@
             </div>
             <div class="col-md-5">
                 <ul class="contact-details iniciarSesion">
-                    <li><a href="javascript:void(0)" onclick="mostrar_login()" class="loginsize"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
+                @if (Auth::guest())
+                  
+                  <li><a href="javascript:void(0)" onclick="mostrar_login()" class="loginsize"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
+                @else
+                    <li>
+                    <a href="">
+                    <i class="fa fa-user-circle-o margin-ringth-5px"> Jhony Guaman</i></a>
+                  </li>
+                @endif
                 </ul>
             </div>
             <div class="login" style="float: right;margin-right: 30%; display: none;">
@@ -96,6 +104,7 @@
                   </div>
                   <div class="col-md-offset-3 col-md-8 margin-botton-10px">
                     <button type="butto" class="btn-system btn-large"> Iniciar Sesión</button>
+                    <a href="">Quiero registrarme</a>
                   </div>
                 </div>
               </div>
@@ -138,9 +147,12 @@
               <li>
                 <a class="active" href="#" style="background: #ee3733;">Incio</a>
               </li>
+              @if (Auth::guest())
+              @else
               <li>
                 <a href="#search_vehiculo">Identificación Vehiculo</a>
               </li>
+              @endif
               <li><a href="">Herramienta</a>
                 <ul>
                     <li><a href="https://vindecoder.eu/">Videcoder.eu</a></li>
@@ -324,6 +336,10 @@
                 <div class="row">
                     <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Marca</option>
+                        @foreach($marca as $MARCA)
+                        <option value="{{$MARCA->id}}">{{$MARCA->marca}}</option>
+                        @endforeach
+
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Modelo</option>
@@ -333,6 +349,9 @@
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
                         <option value="">Seleccione un Año</option>
+                        @for($x=1970 ; $x<=2017 ; $x++)
+                        <option value="{{$x}}">{{$x}}</option>
+                        @endfor
                     </select></div>
                     
                 </div>

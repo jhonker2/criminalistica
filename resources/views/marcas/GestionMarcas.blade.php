@@ -6,8 +6,6 @@
                   <div class="x_title">
                     <h2>Administración de Marcas</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
-                      </li>
                        <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarMarca"><i class="fa fa-plus-circle fa-3x"></i></a>
                       </li>
@@ -96,8 +94,8 @@
                </div>
       </div>
       <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" id="btn_IngresarMarca" >Registrar</button>
+              <button type="button" class="btn btn-default boton-style" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-success boton-style" id="btn_IngresarMarca" >Registrar</button>
        {!!Form::close()!!}
 
       </div>
