@@ -19,6 +19,9 @@ class WelcomeController extends Controller
         return view('welcome',compact("marca"));
     }
 
+    public function get_modelo($id_macar_){
+   
+    }
     /**
      * Show the form for creating a new resource.
      *

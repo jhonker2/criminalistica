@@ -155,7 +155,7 @@
               @endif
               <li><a href="">Herramienta</a>
                 <ul>
-                    <li><a href="https://vindecoder.eu/">Videcoder.eu</a></li>
+                    <li><a href="#tools">Videcoder.eu</a></li>
                     <li><a href="http://www.vindecoder.net">Videcoder.net</a></li>
                 </ul>
               </li>
@@ -301,7 +301,7 @@
             <div class="slider-content">
               <div class="col-md-12 text-center">
                 <h2 class="animated4">
-                  <span><strong>Margo</strong> for the highest</span>
+                  <span><strong>Comando</strong> Portoviejo</span>
                 </h2>
                 <h3 class="animated5">
                   <span>The Key of your Success</span>
@@ -334,17 +334,17 @@
               <!-- Start Video Section Content -->
               <div class="section-video-content text-center">
                 <div class="row">
-                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
+                    <div class="col-md-3 col-xs-6">
+                    <select name="Marcas" id="cb_marcas" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Marca</option>
                         @foreach($marca as $MARCA)
-                        <option value="{{$MARCA->id}}">{{$MARCA->marca}}</option>
+                        <option value="{{$MARCA->id}}">{{strtoupper($MARCA->marca)}}</option>
                         @endforeach
-
                     </select></div>
-                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control" style="margin-bottom: 10px;">
+                    <div class="col-md-3 col-xs-6"><select name="modelos" id="Selectmodelo" class="form-control" style="margin-bottom: 10px;">
                         <option value="">Seleccione una Modelo</option>
                     </select></div>
-                    <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
+                    <div class="col-md-3 col-xs-6"><select name="versiones" id="Selectversiones" class="form-control">
                         <option value="">Seleccione una Versión</option>
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
@@ -359,80 +359,96 @@
                 <!-- End Animations Text -->
 
                 <!-- Start Buttons -->
-                <a rel="nofollow" href="https://rebrand.ly/gg-margo-purchase" class="btn-system btn-large"><i class="fa fa-search"></i> Buscar Vehiculo</a>
+                <a rel="nofollow" href="javascript::void(0)" onclick="buscar_vehiculo()" class="btn-system btn-large"><i class="fa fa-search"></i> Buscar Vehiculo</a>
 
               </div>
               <!-- End Section Content -->
             </div>
-            <div class="row">
-              <div class=" col-md-offset-2 col-md-8">
-                <div class="pricing-table highlight-plan">
-              <div class="plan-name plan-cabecera">
-                <div class="col-md-4 col-xs-4"><img src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca"></div>
-                <div class="col-md-8 col-xs-8"><h3>Chevrolet</h3></div>
-              </div>
-              <div class="plan-price">
-                <div class="row">
-                  <div class="col-md-8">
-                    <img src="{{asset('imagenes/auto.jpg')}}" alt="">
-                  </div>
-                  <div class="col-md-4">
-                    <div class="plan-list">
-                      <ul>
-                        <li><strong class="text_ficha">Ficha Técnica</strong></li>
-                        <li class="text-aling-left text_titulo"><strong>Cilindraje:</strong> 1.999 cc</li>
-                        <li class="text-aling-left text_titulo"><strong>Transmisión:</strong> -</li>
-                        <li class="text-aling-left text_titulo"><strong>Combustible:</strong> Gasolina</li>
-                        <li class="text-aling-left text_titulo"><strong>Pais origen:</strong> Colombia</li>
-                        <li class="text-aling-left text_titulo"><strong>Casa ensamblaje:</strong> -</li>
-                      </ul>
+            <div class="loading">
+              <img src="{{asset('imagenes/gif-load.gif')}}" alt="" style="width: 100px;">
+            </div>
+            <div class="resultados">
+              <div class="row">
+                <div class=" col-md-offset-2 col-md-8">
+                  <div class="pricing-table highlight-plan">
+                    <div class="plan-name plan-cabecera">
+                      <div class="col-md-4 col-xs-4"><img src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca">
+                      </div>
+                      <div class="col-md-8 col-xs-8"><h3>Chevrolet</h3></div>
                     </div>
+                  <div class="plan-price">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <img src="{{asset('imagenes/auto.jpg')}}" alt="">
+                      </div>
+                    <div class="col-md-4">
+                      <div class="plan-list">
+                        <ul>
+                          <li><strong class="text_ficha">Ficha Técnica</strong></li>
+                          <li class="text-aling-left text_titulo"><strong>Cilindraje:</strong> 1.999 cc</li>
+                          <li class="text-aling-left text_titulo"><strong>Transmisión:</strong> -</li>
+                          <li class="text-aling-left text_titulo"><strong>Combustible:</strong> Gasolina</li>
+                          <li class="text-aling-left text_titulo"><strong>Pais origen:</strong> Colombia</li>
+                          <li class="text-aling-left text_titulo"><strong>Casa ensamblaje:</strong> -</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="plan-signup">
+                    <a href="#galeria_capas" class="btn-system btn-small border-btn">Ver Especificaciones</a>
                   </div>
                 </div>
               </div>
-              
-              <div class="plan-signup">
-                <a href="#" class="btn-system btn-small border-btn">Ver Especificaciones</a>
-              </div>
             </div>
-              </div>
-              
-            </div>
-
             <div class="row" id="galeria_capas">
               <!--Start Clients Carousel-->
-          <div class="our-clients">
-            <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
-
-              <!-- Client 1 -->
-              <div class="client-item item">
-                <a href="#"><img src="{{asset('imagenes/1.jpg')}}" alt="" /></a>
+              <div class="our-clients">
+                <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+                  <!-- Client 1 -->
+                  <div class="client-item item">
+                    <a href="javascript::void(0);" data-toggle="modal" data-target=".foto_motor"><img src="{{asset('imagenes/1.jpg')}}" alt="" /></a>
+                  </div>
+                  <!-- Client 2 -->
+                  <div class="client-item item">
+                    <a href="#"><img src="{{asset('imagenes/2.jpg')}}" alt="" /></a>
+                  </div>
+                  <!-- Client 3 -->
+                  <div class="client-item item">
+                    <a href="#"><img src="{{asset('imagenes/3.jpg')}}" alt="" /></a>
+                  </div>
+                  <!-- Client 4 -->
+                  <div class="client-item item">
+                    <a href="#"><img src="{{asset('imagenes/4.jpg')}}" alt="" /></a>
+                  </div>
+                </div>
               </div>
-
-              <!-- Client 2 -->
-              <div class="client-item item">
-                <a href="#"><img src="{{asset('imagenes/2.jpg')}}" alt="" /></a>
-              </div>
-
-              <!-- Client 3 -->
-              <div class="client-item item">
-                <a href="#"><img src="{{asset('imagenes/3.jpg')}}" alt="" /></a>
-              </div>
-
-              <!-- Client 4 -->
-              <div class="client-item item">
-                <a href="#"><img src="{{asset('imagenes/4.jpg')}}" alt="" /></a>
-              </div>
-
+              <!-- End Clients Carousel -->
             </div>
-          </div>
-          <!-- End Clients Carousel -->
             </div>
-
           </div>
         </div>
       </div>
     </div>
+    <div class="modal fade foto_motor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 64px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>x</span>
+        </button>
+        <h4 class="modal-title" >Foto del Motor</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{{asset('imagenes/1.jpg')}}" style="width: 75%;" alt="" class="">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section id="tools" style="height: 100vh;">
+      <!--<iframe src="https://vindecoder.eu/" style="width: 100%; height: 100vh;"></iframe>-->
+    </section>
     <!-- Start Footer Section -->
     <footer>
       <div class="container">
@@ -579,7 +595,39 @@
         $(".login").hide();
           clic=0;
       })
+      
+      $("#cb_marcas").change(function(){
+        var id_marca=$("#cb_marcas").val();
+        if(id_marca==""){
 
+        }else{
+            $.get('/GET_modelos?marca_id='+id_marca, function(data){
+              $('#Selectmodelo').empty();
+                  $('#Selectmodelo').append('<option value="0">Seleccione un Modelo</option>');
+                $.each(data, function(index, modelos) {
+                  $('#Selectmodelo').append('<option value="'+modelos.id+'">'+modelos.modelo_descripcion+'</option>');
+                });
+            }); 
+        }
+      });
+      $("#Selectmodelo").change(function(){
+        var id_modelo=$("#Selectmodelo").val();
+        if(id_modelo=="0"){
+
+        }else{
+            $.get('/GET_versiones?modelo_id='+id_modelo, function(data){
+              $('#Selectversiones').empty();
+                  $('#Selectversiones').append('<option value="0">Seleccione una Versión</option>');
+                $.each(data, function(index, versiones) {
+                  $('#Selectversiones').append('<option value="'+versiones.id+'">'+versiones.version_descripcion+'</option>');
+                });
+            }); 
+        }
+      });
+
+      function buscar_vehiculo(){
+        $(".resultados").show();
+      }
     </script>
 </body>
 </html>

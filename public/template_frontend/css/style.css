@@ -5839,3 +5839,10 @@ ul.footer-nav li a:hover {
 .inicio_sombra{
 	background: #ee3733;
 }
+.resultados{
+	display: none;
+}
+
+.loading{
+	display: none;
+}

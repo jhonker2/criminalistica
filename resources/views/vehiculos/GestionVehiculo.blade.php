@@ -6,14 +6,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Administración de Modelos</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="tipoFinanciamientosfa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarModelo"><i class="fa fa-user-plus"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Registro de Vehiculos</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content" id="datatable">
@@ -84,12 +77,14 @@
                                         <option value="{{$mot->id}}"> {{$mot->tipo_grabado}}</option>
                                     @endforeach
                                     </select>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="imagen_container">
-                                    <img id="image" src="{{asset('imagenes/4.jpg')}}" alt="Picture">
                                   </div>
-                                </div>
+                                  <div class="form-group">
+                                    Foto Motor
+                                    <input type="file" id="files" name="files[]" />
+                                    
+
+                                  </div>
+                               
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                           <p>Formulario Plaqueta</p>
@@ -135,25 +130,7 @@
                      {!!Form::open(array('url'=>'','class'=>'frmUser','method'=>'POST'))!!}
                     
                             <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
-                                 
-                                
-
-                              
-
-                                 
-
-
-                               
-                                                  
-                              
-                                 
-
-                                
-
                      {!!Form::close()!!}
-
-                                      
-                   
                 </div> 
                 <div class="col-md-6 col-xs-6">
                           
@@ -204,8 +181,26 @@
 </div>        
 
 <!--  FIN Modal para Moidifcar de versiones -->
+<div class="modal fade" id="recorteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Recorte de imagen</h4>
+      </div>
+      <div class="modal-body" style="height: 430px;">
+        <div class="col-md-6">
+          <output id="list"></output>
+        </div>
+      </div>
+      <div class="modal-footer">
+              <button type="button" class="btn btn-success">Realizar Corte</button>
+      </div>
+      </div>
+  </div>
+</div> 
 
-
+  
 <!--  Modal para Ingresar Modelos -->
 
 <div class="modal fade" id="myModal_IngresarModelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -250,12 +245,38 @@
   </div>
 </div>        
 <script>
-  var image = document.getElementById('image');
-var cropper = new Cropper(image, {
-  crop: function(e) {
-   
-  }
-});
+  
+
+function archivo(evt) {
+      var files = evt.target.files; // FileList object
+       
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+       
+           var reader = new FileReader();
+           
+           reader.onload = (function(theFile) {
+               return function(e) {
+               // Creamos la imagen.
+                      document.getElementById("list").innerHTML = ['<img class="thumb"  id="image" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                      $("#recorteModal").modal("show");
+                      var image = document.getElementById('image');
+                      var cropper = new Cropper(image, {
+                          crop: function(e) {
+                        }
+                      });
+               };
+           })(f);
+ 
+           reader.readAsDataURL(f);
+       }
+}
+             
+      document.getElementById('files').addEventListener('change', archivo, false);
 </script>
 
 <!--  FIN Modal para Ingresar Modelos -->

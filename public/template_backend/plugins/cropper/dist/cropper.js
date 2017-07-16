@@ -99,7 +99,7 @@ var DEFAULTS = {
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
   minContainerWidth: 500,
-  minContainerHeight: 500,
+  minContainerHeight: 400,
 
   // Shortcuts of events
   ready: null,
@@ -1628,7 +1628,7 @@ var handlers = {
     var container = self.container;
     var containerData = self.containerData;
     var minContainerWidth = Number(options.minContainerWidth) || 500;
-    var minContainerHeight = Number(options.minContainerHeight) || 500;
+    var minContainerHeight = Number(options.minContainerHeight) || 400;
 
     if (self.disabled || containerData.width === minContainerWidth || containerData.height === minContainerHeight) {
       return;

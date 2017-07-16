@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::get('/admin/home', 'HomeController@index');
 
+//Route::post('/GET_modelos','WelcomeController@get_modelo');
+
 
 //usuarios
 Route::resource('/app/usuario','UsuarioControllers');
@@ -62,3 +65,16 @@ Route::get('/lista_marca','MarcaController@lista');
 Route::resource('/app/vehiculo','VehiculoController');
 Route::get('/lista_vehiculo','VehiculoController@lista');
 //fin vehiculo
+
+
+/////////////////////////////////////
+Route::get('GET_modelos', function(){
+	 $id_marca= Input::get('marca_id');
+    $modelos = \App\Modelo::where('id_marca','=',$id_marca)->get();
+    return Response::json($modelos);
+});
+Route::get('GET_versiones', function(){
+	 $id_modelo= Input::get('modelo_id');
+    $versiones = \App\Versione::where('id_modelo','=',$id_modelo)->get();
+    return Response::json($versiones);
+});
