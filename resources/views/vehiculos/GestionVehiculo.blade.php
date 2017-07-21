@@ -29,35 +29,59 @@
                       </ul>
                       <div id="myTabContent" class="tab-content">
                       <div role="tabpanel" class="tab-pane fade active in" id="tab_content" aria-labelledby="profile-tab">
-                          <p>Formulario Vehiculo</p>
                           <div class="col-md-6">
+                            <div class="col-md-6">
+                              {!!Form::label('Marcas:')!!}
+                            <select name="marcas" class="form-control" id="marcas">
+                              <option value="0">Seleccione una Marca</option>
+                              @foreach($Marca as $marca)
+                               <option value="{{$marca->id}}">{{$marca->marca}}</option>
+                              @endforeach
+                            </select>
+                            </div>
+                            <div class="col-md-6">
+                              {!!Form::label('Modelo:')!!}
+                           <select name="modelos" class="form-control" id="modelos">
+                              <option value="0">Seleccione un Modelo</option>
+                          </select>
+                            </div>
+                            
+                            
+                            {!!Form::label('Version:')!!}
+                          <select name="version" class="form-control" id="version">
+                              <option value="0">Seleccione una Version</option>
+                            </select>
                             {!!Form::label('Cilindraje:')!!}
-                            {!!Form::text('cilindraje',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese el cilindraje','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                              <span id="span_modelo_A"></span>
-                              <span id="span_mensaje_modelo_A" style="display: block;color: red;">
+                            {!!Form::text('cilindraje',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese el cilindraje','required'=>'' ])!!}
+                              <span id="span_cilindraje_A"></span>
+                              <span id="span_mensaje_cilindraje_A" style="display: block;color: red;">
                               </span><br>
                             {!!Form::label('Transmision:')!!}
-                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                                <span id="span_modelo_A"></span>
-                                <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
+                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
+                                <span id="span_transmision_A"></span>
+                                <span id="span_mensaje_transmision_A" style="display: block;color: red;"></span><br>
 
                                {!!Form::label('Combustible:')!!}
-                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de combustible','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                                <span id="span_modelo_A"></span>
-                                <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
+                                {!!Form::text('
+                                modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de combustible','required'=>'' ])!!}
+                                <span id="span_combustible_A"></span>
+                                <span id="span_mensaje_combustible_A" style="display: block;color: red;"></span><br>
                                 {!!Form::label('Pais Origen:')!!}
-                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                                <span id="span_modelo_A"></span>
-                                <span id="span_mensaje_modelo_A" style="display: block;color: red;"></span><br>
+                                {!!Form::text('modelo_A',null,['id'=>'modelo_A', 'class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>''])!!}
+                                <span id="span_pais_A"></span>
+                                <span id="span_mensaje_pais_A" style="display: block;color: red;"></span><br>
+                                 {!!Form::label('Año de Fabricación:')!!}
+                                {!!Form::text('anio',null,['id'=>'anio', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
+                                <span id="span_anio_A"></span>
+                                <span id="span_mensaje_anio_A" style="display: block;color: red;"></span><br>
 
                           </div>
                           <div class="col-md-6">
-                              <div class="foto"><span type="file"></span></div>
-                                <label class="uploader foto" ondragover="return false">
-                                  <i  class="fa fa-car fa-5x" aria-hidden="true"></i>
-                                    <img src="" class="">
-                                    <input type="file" name="archivo" id="archivo" accept="image/*" required>
-                               </label>
+                              
+                              <span class="btn btn-success btn-file">
+                                <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_vehiculo" id="foto_vehiculo">
+                              </span>
+                              <output id="vehiculo"></output>
                           </div>
                             <br>
                             <div class="row text-right" style="margin-top: 18em;">
@@ -72,10 +96,6 @@
                                  <div class="form-group">
                                     <label for="disabledTextInput">Motor</label>
                                     <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
-                                    <option>Seleccione Motor</option>
-                                    @foreach($Motores as $mot)
-                                        <option value="{{$mot->id}}"> {{$mot->tipo_grabado}}</option>
-                                    @endforeach
                                     </select>
                                   </div>
                                   <div class="form-group">
@@ -90,36 +110,20 @@
                           <p>Formulario Plaqueta</p>
                           <div class="form-group">
                                     <label for="disabledTextInput">Plaqueta</label>
-                                    <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
-                                    <option>Seleccione Plaqueta</option>
-                                    @foreach($Plaquetas as $pla)
-                                        <option value="{{$pla->id}}"> {{$pla->observacion}}</option>
-                                    @endforeach
-                                    </select>
                                 </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
                           <p>Formulario Chasis</p>
                            <div class="form-group">
                                     <label for="disabledTextInput">Tipo de Chasis</label>
-                                    <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
-                                    <option>Seleccione chasis</option>
-                                    @foreach($Chasis as $cha)
-                                        <option value="{{$cha->id}}"> {{$cha->tipo_chasis}}</option>
-                                    @endforeach
-                                    </select>
+                                    
                                 </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
                           <p>Formulario Serie Secreta</p>
                            <div class="form-group">
                                     <label for="disabledTextInput">Serie</label>
-                                    <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
-                                    <option>Seleccione Serie</option>
-                                    @foreach($Series as $se)
-                                        <option value="{{$se->id}}"> {{$se->observacion}}</option>
-                                    @endforeach
-                                    </select>
+                                    
                                 </div>
                         </div>
                       </div>
@@ -200,83 +204,57 @@
   </div>
 </div> 
 
-  
-<!--  Modal para Ingresar Modelos -->
-
-<div class="modal fade" id="myModal_IngresarModelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Ingresar Versiones</h4>
-      </div>
-      <div class="modal-body">
-          
-        {!!Form::open(array('url'=>'','id'=>'frmIngresarModelos','method'=>'POST'))!!}
-        
-              <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-              <input  type="hidden" name="" value="" id="IdModelo">
-              
-           <div class="col-md-6 col-xs-12">  
-              {!!Form::label('Marca:')!!}
-              {!!Form::text('Marca',null,['id'=>'Marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                <span id="span_marca"></span>
-               <span id="span_mensaje_marca" style="display: block;color: red;"></span>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">     
-              <div class="col-md-4 col-xs-6">
-                            <div class="foto"><span type="file"></span>
-                                </div>
-                                <label class="uploader foto" ondragover="return false">
-                                   <i  class="fa fa-user fa-4x" aria-hidden="true"></i>
-                                  <img src="" class="">
-                                    <input type="file" name="archivo" id="archivo" accept="image/*" required>
-                               </label>
-                            </div>
-           </div>                 
-      </div>
-      <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" id="btn_IngresarMarca" >Registrar</button>
-       {!!Form::close()!!}
-
-      </div>
-    </div>
-  </div>
-</div>        
+       
 <script>
   
 
 function archivo(evt) {
       var files = evt.target.files; // FileList object
-       
         //Obtenemos la imagen del campo "file". 
       for (var i = 0, f; f = files[i]; i++) {         
            //Solo admitimos imágenes.
            if (!f.type.match('image.*')) {
                 continue;
            }
-       
            var reader = new FileReader();
-           
            reader.onload = (function(theFile) {
-               return function(e) {
+              return function(e) {
                // Creamos la imagen.
-                      document.getElementById("list").innerHTML = ['<img class="thumb"  id="image" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-                      $("#recorteModal").modal("show");
-                      var image = document.getElementById('image');
-                      var cropper = new Cropper(image, {
-                          crop: function(e) {
-                        }
-                      });
-               };
+                document.getElementById("list").innerHTML = ['<img class="thumb"  id="image" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                  $("#recorteModal").modal("show");
+                  var image = document.getElementById('image');
+                  var cropper = new Cropper(image, {
+                    crop: function(e) {
+                  }
+                });
+              };
            })(f);
- 
            reader.readAsDataURL(f);
        }
 }
+
+function fotoVehiculo(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+                document.getElementById("vehiculo").innerHTML = ['<img class="thumb"  id="image2" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}
              
-      document.getElementById('files').addEventListener('change', archivo, false);
+document.getElementById('files').addEventListener('change', archivo, false);
+document.getElementById('foto_vehiculo').addEventListener('change', fotoVehiculo, false);
+
 </script>
 
 <!--  FIN Modal para Ingresar Modelos -->

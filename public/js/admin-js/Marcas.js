@@ -154,8 +154,35 @@ function EliminarModelo(id){
         }else { 
       swal("¡Error !","No se pudo Eliminar modelo ","error"); 
     } 
-  });
-   
-
-    
+  });    
 }
+
+$("#marcas").change(function(){
+        var id_marca=$("#marcas").val();
+        if(id_marca==""){
+
+        }else{
+            $.get('/GET_modelos?marca_id='+id_marca, function(data){
+              $('#modelos').empty();
+                  $('#modelos').append('<option value="0">Seleccione un Modelo</option>');
+                $.each(data, function(index, modelos) {
+                  $('#modelos').append('<option value="'+modelos.id+'">'+modelos.modelo_descripcion+'</option>');
+                });
+            }); 
+        }
+      });
+ $("#modelos").change(function(){
+        var id_modelo=$("#modelos").val();
+        if(id_modelo=="0"){
+
+        }else{
+            $.get('/GET_versiones?modelo_id='+id_modelo, function(data){
+              $('#version').empty();
+                  $('#version').append('<option value="0">Seleccione una Versión</option>');
+                $.each(data, function(index, versiones) {
+                  $('#version').append('<option value="'+versiones.id+'">'+versiones.version_descripcion+'</option>');
+                });
+            }); 
+        }
+      });
+

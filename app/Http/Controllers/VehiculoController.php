@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Versione;
-use App\Chasi;
-use App\Motore;
-use App\Plaqueta;
-use App\Serie;
+use App\Marca;
 use DB;
 use Auth;
 class VehiculoController extends Controller
@@ -19,12 +15,8 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-       $Chasis = Chasi::All();
-       $Series = Serie::All();
-       $Motores = Motore::All();
-       $Plaquetas = Plaqueta::All();
-       $Version = Versione::All();
-       return view('vehiculos.GestionVehiculo',compact('Chasis','Version','Plaquetas','Motores','Series'));
+       $Marca = Marca::All();
+       return view('vehiculos.GestionVehiculo',compact('Marca'));
     }
 
     /**
