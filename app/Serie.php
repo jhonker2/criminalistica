@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Serie extends Model
 {
-    protected $table = "series";
+     protected $table = "series";
 
     protected $fillable = [
-		'id_foto', 'observacion'
+		'id_foto',
+		'ubicacion',
+		'tipo_grabado',
+		'cantidad_digitos',
+		'observacion'
 	];
 
 	public function Foto(){
