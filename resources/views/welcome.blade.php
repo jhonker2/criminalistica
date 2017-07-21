@@ -85,10 +85,15 @@
                   
                   <li><a href="javascript:void(0)" onclick="mostrar_login()" class="loginsize"><i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i>Iniciar Sesión</a></li>
                 @else
-                    <li>
-                    <a href="">
-                    <i class="fa fa-user-circle-o margin-ringth-5px"> Jhony Guaman</i></a>
-                  </li>
+                    
+                  <div class="dropdown">
+                    <a class="dropdown-toggle user-data" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  >
+                    <i class="fa fa-user-circle-o margin-rigth-5px" aria-hidden="true"></i> {{Auth::user()->nombre}}
+                    </a>
+                    <ul class="dropdown-menu menu_usuario" aria-labelledby="dropdownMenu1">
+                        <li><a href="/logout_invitados">Salir</a></li>
+                      </ul>
+                  </div>
                 @endif
                 </ul>
             </div>
@@ -96,14 +101,15 @@
               <div class="div_login">
                 <div>
                   <h1 class="titulo_login">Criminalistica</h1>
+                  <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
                   <div class="col-md-offset-2 col-md-8 margin-botton-10px">
-                    <input type="text" class="form-control" placeholder="Usuario">
+                    <input type="text" class="form-control" placeholder="Usuario" id="usuario">
                   </div>
                   <div class="col-md-offset-2 col-md-8 margin-botton-10px">
-                    <input type="password" class="form-control" placeholder="Contraseña">
+                    <input type="password" id="clave" class="form-control" placeholder="Contraseña">
                   </div>
                   <div class="col-md-offset-3 col-md-8 margin-botton-10px">
-                    <button type="butto" class="btn-system btn-large"> Iniciar Sesión</button>
+                    <button type="button" id="btn_login_w" class="btn-system btn-large"> Iniciar Sesión</button>
                     <a href="">Quiero registrarme</a>
                   </div>
                 </div>
@@ -127,7 +133,7 @@
               <i class="fa fa-bars"></i>
             </button>
             <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="">
               <img alt="" src="{{asset('images/margo.png')}}">
             </a>
           </div>
@@ -170,86 +176,6 @@
             <a class="active" href="index.html">Home</a>
             <ul class="dropdown">
               <li><a class="active" href="index-01.html">Home Version 1</a>
-              </li>
-              <li><a href="index-02.html">Home Version 2</a>
-              </li>
-              <li><a href="index-03.html">Home Version 3</a>
-              </li>
-              <li><a href="index-04.html">Home Version 4</a>
-              </li>
-              <li><a href="index-05.html">Home Version 5</a>
-              </li>
-              <li><a href="index-06.html">Home Version 6</a>
-              </li>
-              <li><a href="index-07.html">Home Version 7</a>
-              </li>
-              <li><a href="index-08.html">HSome Version 8</a>
-              </li>
-              <li><a href="index-09.html">Home Version 9</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="about.html">Pages</a>
-            <ul class="dropdown">
-              <li><a href="about.html">About</a>
-              </li>
-              <li><a href="services.html">Services</a>
-              </li>
-              <li><a href="right-sidebar.html">Right Sidebar</a>
-              </li>
-              <li><a href="left-sidebar.html">Left Sidebar</a>
-              </li>
-              <li><a href="404.html">404 Page</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Shortcodes</a>
-            <ul class="dropdown">
-              <li><a href="tabs.html">Tabs</a>
-              </li>
-              <li><a href="buttons.html">Buttons</a>
-              </li>
-              <li><a href="forms.html">Forms</a>
-              </li>
-              <li><a href="action-box.html">Action Box</a>
-              </li>
-              <li><a href="testimonials.html">Testimonials</a>
-              </li>
-              <li><a href="latest-posts.html">Latest Posts</a>
-              </li>
-              <li><a href="latest-projects.html">Latest Projects</a>
-              </li>
-              <li><a href="pricing.html">Pricing Tables</a>
-              </li>
-              <li><a href="animated-graphs.html">Animated Graphs</a>
-              </li>
-              <li><a href="accordion-toggles.html">Accordion & Toggles</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="portfolio-3.html">Portfolio</a>
-            <ul class="dropdown">
-              <li><a href="portfolio-2.html">2 Columns</a>
-              </li>
-              <li><a href="portfolio-3.html">3 Columns</a>
-              </li>
-              <li><a href="portfolio-4.html">4 Columns</a>
-              </li>
-              <li><a href="single-project.html">Single Project</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="blog.html">Blog</a>
-            <ul class="dropdown">
-              <li><a href="blog.html">Blog - right Sidebar</a>
-              </li>
-              <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a>
-              </li>
-              <li><a href="single-post.html">Blog Single Post</a>
               </li>
             </ul>
           </li>
@@ -544,6 +470,37 @@
 
       function buscar_vehiculo(){
         $(".resultados").show();
+      }
+
+      $("#btn_login_w").click(function(){
+        var usuario, clave, token;
+
+        usuario =$("#usuario").val();
+        clave   =$("#clave").val();
+        token   =$("#token").val();
+        $.ajax({
+          url:'login_invitados',
+          type:'POST',
+          dataType: 'json',
+          headers :{'X-CSRF-TOKEN': token},
+          data:{usuario:usuario,clave:clave},
+          success:function(data){
+            if(data.sms=="errorUsuario"){
+              alert("Estimado usuario usted no se encuentra registrado");
+            }else if(data.sms=="error"){
+
+            }else if(data.sms=="login"){
+              alert("Bienvenido usuario");
+                redirect('/');
+
+            }
+          }
+        });
+
+
+      });
+      function redirect(url){
+        window.location=url;
       }
     </script>
 </body>

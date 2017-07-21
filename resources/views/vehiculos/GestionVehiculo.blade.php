@@ -78,7 +78,7 @@
                     <span class="btn btn-success btn-file">
                       <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_vehiculo" id="foto_vehiculo">
                     </span>
-                    <output id="vehiculo"></output>
+                    <output id="vehiculo" class="thumber_vehiculo"></output>
                   </div>
                   <br>
                   <div class="row text-right" style="margin-top: 18em;">

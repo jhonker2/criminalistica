@@ -517,8 +517,9 @@ header{
 
 .top-bar .contact-details li a {
 	font-size: 12px;
-	display: block;
-	line-height: 32px;
+	/*display: block;*/
+	/*line-height: 32px;*/
+	width: 160px;
 }
 
 ul.social-list {
@@ -5845,4 +5846,10 @@ ul.footer-nav li a:hover {
 
 .loading{
 	display: none;
+}
+.menu_usuario{
+	left: 65% !important;
+}
+.user-data{
+	cursor: pointer;
 }

@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/','WelcomeController@index');
 
+
+
+Route::post('login_invitados','LoginController@loginInvitados');
+Route::get('logout_invitados','LoginController@logout_invitados');
 //Route::get('/admin/app','AdminController@index');
 
 Route::group(['middleware' => ['web']], function () {
@@ -41,7 +45,9 @@ Route::get('/admin/home', 'HomeController@index');
 //usuarios
 Route::resource('/app/usuario','UsuarioControllers');
 Route::get('/lista_usuarios','UsuarioControllers@lista');
-Route::post('/usuario_contrasena/{id}','UsuarioControllers@actualizarContrsenaUsuarios');
+
+Route::post('/usuario_contrasena','UsuarioControllers@actualizarContrsenaUsuarios');
+
 Route::get('/app/usuarios', function(){
 	return view('usuarios.GestionUsuarios');
 });

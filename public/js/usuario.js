@@ -147,8 +147,8 @@ function registrar_usuario(){
     $.get(route,function(res){
     //	alert(res.tipoUsuario);
       $("#IdUsuario").val(res.id)
-      $("#tipoUsuario_A").val(res.tipoUsuario);     
-      $("#nombre_A").val(res.name);     
+      $("#tipoUsuario_A").val(res.tipo_usuario);     
+      $("#nombre_A").val(res.nombre);     
       $("#user_A").val(res.email);
       $("#password_A").val(res.password);
 
@@ -159,12 +159,8 @@ function registrar_usuario(){
     var route="/app/usuario/" +id+"/edit";  
     $.get(route,function(res){
     //  alert(res.tipoUsuario);
-      $("#IdUsuario").val(res.id)
-      $("#tipoUsuario_C").val(res.tipousuario);     
-      $("#nombre_C").val(res.name);     
+      $("#id_user_pass").val(res.id)
       $("#user_C").val(res.email);
-      $("#password_C").val(res.password);
-
       });
     }
 
@@ -207,21 +203,16 @@ function registrar_usuario(){
 // funcion para cambiar la contrase na de usuarios
 
 function actualizarContrseñaUsuarios(){
-  
-  var id =$("#IdUsuario").val();
-  var tipoUsuario =$("#tipoUsuario_C").val();
-  var nombre =$("#nombre_C").val();
-  var Usuario =$("#user_C").val();
-  var password =$("#password_C").val();
+  var id =$("#id_user_pass").val();
   var nuevaContrasena=$("#password_ConfirmarNueva").val(); 
-  var route  ="/usuario_contrasena/"+id+"";
+  var route  ="/usuario_contrasena";
   var token  =$("#token").val();
   $.ajax({
     url: route,
     headers :{'X-CSRF-TOKEN': token},
     type: 'POST',
     dataType:'json',
-        data    :{nombre:nombre,user:Usuario,password:nuevaContrasena,tipoUsuario:tipoUsuario},
+        data    :{password:nuevaContrasena,id_usuario:id},
         success:function(res){
           if(res.sms=='ok'){
             $('#myModal_ModificarContraseñaUsuarios').modal('hide');
@@ -269,7 +260,16 @@ function EliminarUsuarios(id){
 			swal("¡Error !","No se pudo Eliminar el Usuario ","error"); 
 		} 
 	});
-   
-
-    
 }
+$("#btn_CambiarContraseñaUsuarios").click(function(){
+  var clave_nueva,clave_confir;
+
+  clave_nueva=$("#password_ConfirmarNueva").val();
+  clave_confir=$("#password_Nueva").val();
+
+  if(clave_nueva==clave_confir){
+    alert("ok");
+  }else{
+    alert("las contraseñas no se parecen");
+  }
+});

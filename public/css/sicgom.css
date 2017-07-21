@@ -97,3 +97,7 @@ input[type=text]:focus {
     cursor: inherit;
     display: block;
 }
+
+.thumber_vehiculo{
+    width: 350px !important;
+}

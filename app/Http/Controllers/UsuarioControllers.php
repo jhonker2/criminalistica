@@ -54,10 +54,10 @@ class UsuarioControllers extends Controller
     }
 
 
-    public function actualizarContrsenaUsuarios(Request $request,$id){
+    public function actualizarContrsenaUsuarios(Request $request){
 
-            $cambiarContrasena=DB::update("update users set name=?,email=?,password=?,tipousuario=? where id=?",
-            [$request->input('nombre'),$request->input('user'),bcrypt($request->input('password')),$request->input('tipoUsuario'),$id]);
+            $cambiarContrasena=DB::update("update users set password=? where id=?",
+            [bcrypt($request->input('password')),$request->id_usuario]);
 
         if($cambiarContrasena==1){
                 return response()->json(["sms"=>"ok" ]);

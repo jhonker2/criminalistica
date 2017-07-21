@@ -4,7 +4,6 @@ $("#btn_login").click(function(){
 	var usuario = $("#usuario").val();
 	var clave	= $("#clave").val();
 	var token	= $("#token").val();
-	debugger
 	if(usuario=="" && clave==""){
     //alert("usuario y contraseña esta vacio");
         show_stack_bottomright('error');
@@ -19,14 +18,17 @@ $("#btn_login").click(function(){
         data:{usuario:usuario,clave:clave},
         success:function(response){   
             //loader_login('off');
-               if(response.sms=="login"){
-              loader_login('off');
-              swal("Bienvenido a SYSTEN-CAR","","success"); 
-              redirect('/admin/home');
-              }else{
-              loader_login('off');
-              swal("Usuario o contraseña Incorrecta","Ingrese datos correctos","error"); 
-             }
+              if(response.sms=="login"){
+                loader_login('off');
+                swal("Bienvenido a SYSTEN-CAR","","success"); 
+                redirect('/admin/home');
+              }else if(response.sms=="error"){
+                loader_login('off');
+                swal("Usuario o contraseña Incorrecta","Ingrese datos correctos","error"); 
+              }else if(response.sms=="privilegio"){
+                loader_login('off');
+                swal("Alerta","Usuario no cuenta con privilegios para ingresar","error"); 
+              }
           }
       });
   }
