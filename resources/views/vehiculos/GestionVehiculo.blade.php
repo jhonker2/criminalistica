@@ -68,6 +68,10 @@
                       {!!Form::text('anio',null,['id'=>'anio', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
                               <span id="span_anio_A"></span>
                               <span id="span_mensaje_anio_A" style="display: block;color: red;"></span><br>
+                      {!!Form::label('Casa ensambladora:')!!}
+                      {!!Form::text('anio',null,['id'=>'anio', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
+                              <span id="span_anio_A"></span>
+                              <span id="span_mensaje_anio_A" style="display: block;color: red;"></span><br>
                   </div>
                   <div class="col-md-6">
                    Foto Vehiculo: <br>

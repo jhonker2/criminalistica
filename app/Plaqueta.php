@@ -9,7 +9,7 @@ class Plaqueta extends Model
     protected $table = "plaquetas";
 
     protected $fillable = [
-		'id_foto' , 'observacion'
+		'ubicacion' , 'mateiral','tipo_grabado','tipo_remache','informacion','observacion'
 	];
 
 	public function Foto(){
