@@ -65,6 +65,7 @@ Route::get('/lista_modelo','ModeloController@lista');
 // marcas
 Route::resource('/app/marca','MarcaController');
 Route::get('/lista_marca','MarcaController@lista');
+Route::post('/app/marca_act','MarcaController@updateMarca');
 //fin marcas
 
 // vehiculo

@@ -32,28 +32,24 @@
         <h4 class="modal-title" id="myModalLabel">Actualizar Marca </h4>
       </div>
       <div class="modal-body">
-          
-            {!!Form::open(array('url'=>'','class'=>'frmActualizarVersiones'))!!}
-        
-           
-            <input  type="hidden" name="_token" value="{{ csrf_token()}}" id="token">
-              <input  type="hidden" name="" value="" id="IdMarca">
-              
-                     
-              {!!Form::label('Marca:')!!}
-              {!!Form::text('marca_A',null,['id'=>'marca_A', 'class'=>'form-control','placeholder'=>'Ingrese una Marca','required'=>'' ])!!}
-              <span id="span_marca_A"></span>
-              <span id="span_mensaje_marca_A" style="display: block;color: red;"></span>
-              Foto Marca: <br>
-                    <span class="btn btn-success btn-file">
-                      <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia para la marca <input type="file" name="foto_marca" id="foto_marca">
-                    </span>
-                    <output id="marca" class="thumber_marca"></output>
-
+        {!!Form::open(array('url'=>'','id'=>'frmActualizarMarcas'))!!}
+          <input  type="hidden" name="_token" value="{{ csrf_token()}}" id="token">
+          <input  type="hidden" name="IdMarca_a" value="" id="IdMarca_a">
+          {!!Form::label('Marca:')!!}
+          {!!Form::text('marca_A',null,['id'=>'marca_A', 'class'=>'form-control','placeholder'=>'Ingrese una Marca','required'=>'' ])!!}
+          <span id="span_marca_A"></span>
+          <span id="span_mensaje_marca_A" style="display: block;color: red;"></span>
+          Foto Marca: <br>
+          <span class="btn btn-success btn-file">
+          <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia para la marca <input type="file" name="foto_marca" id="foto_marca">
+          </span>
+          <img id="foto_marca_A" class="thumber_vehiculo">
+          <output id="marca_output" class="thumber_marca">
+          </output>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        {!!link_to('#', $title='Actualizar', $attributes =['id'=>'btn_ActualizarModelos', 'class'=>'btn btn-success btn-guardar'],  $secure= null)!!}
+        {!!link_to('#', $title='Actualizar', $attributes =['id'=>'btn_ActualizarMarca', 'class'=>'btn btn-success btn-guardar'],  $secure= null)!!}
          {!!Form::close()!!}
       </div>
     </div>
