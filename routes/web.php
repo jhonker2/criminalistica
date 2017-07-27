@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::get('/admin/home', 'HomeController@index');
+Route::get('/app/dashboard', 'HomeController@dashboard');
 
 //Route::post('/GET_modelos','WelcomeController@get_modelo');
 
