@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="{{asset('css/fileuploader.css')}}">
     {!!Html::style('template_backend/plugins/cropper/dist/cropper.css')!!}
 
-    <link rel="stylesheet" href=" //cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"> 
+    <link rel="stylesheet" href=" //cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
 
 
 
@@ -196,9 +197,10 @@
         <!-- /footer content -->
       </div>
     </div>
-
+    
     <!-- jQuery -->
     {!!Html::script('template_backend/plugins/jquery/dist/jquery.min.js')!!}
+    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap -->
     {!!Html::script('template_backend/plugins/bootstrap/dist/js/bootstrap.min.js')!!}
     <!-- FastClick -->
@@ -243,10 +245,7 @@
     {!!Html::script('js/FileUploader.js')!!}
 
    
-    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> 
+     
 
-    
-  
-  
   </body>
 </html>

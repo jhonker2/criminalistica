@@ -53,6 +53,28 @@ return [
             'root' => public_path('fotos_vehiculos'),
         ],
 
+        'Motor' => [
+            'driver' => 'local',
+            'root' => public_path('fotos_motores'),
+        ],
+
+        'Chasis' => [
+            'driver' => 'local',
+            'root' => public_path('fotos_chasis'),
+        ],
+
+         'Plaqueta' => [
+            'driver' => 'local',
+            'root' => public_path('fotos_plaquetas'),
+        ],
+
+         'Serie' => [
+            'driver' => 'local',
+            'root' => public_path('fotos_series'),
+        ],
+
+
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

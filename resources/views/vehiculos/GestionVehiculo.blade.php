@@ -28,7 +28,7 @@
               <div id="myTabContent" class="tab-content">
                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content" aria-labelledby="profile-tab">
 
-                {!!Form::open(array('url'=>'','class'=>'frmIngresarVehiculos'))!!}
+                {!!Form::open(array('url'=>'','id'=>'frmIngresarVehiculos'))!!}
                   <div class="col-md-6">
                     <div class="col-md-6">
                       {!!Form::label('Marcas:')!!}
@@ -49,32 +49,39 @@
                         <select name="version" class="form-control" id="version">
                           <option value="0">Seleccione una Version</option>
                         </select>
+                     
                       {!!Form::label('Cilindraje:')!!}
                       {!!Form::text('cilindraje',null,['id'=>'cilindraje', 'class'=>'form-control','placeholder'=>'Ingrese el cilindraje','required'=>'' ])!!}
                               <span id="span_cilindraje"></span>
                               <span id="span_mensaje_cilindraje" style="display: block;color: red;">
                               </span><br>
+                      
                       {!!Form::label('Transmision:')!!}
                       {!!Form::text('transmision',null,['id'=>'transmision', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
                               <span id="span_transmision_A"></span>
                               <span id="span_mensaje_transmision_A" style="display: block;color: red;"></span><br>
+                      
                       {!!Form::label('Combustible:')!!}
                       {!!Form::text('combustible',null,['id'=>'combustible', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de combustible','required'=>'' ])!!}
                               <span id="span_combustible_A"></span>
                               <span id="span_mensaje_combustible_A" style="display: block;color: red;"></span><br>
+                      
                       {!!Form::label('Pais Origen:')!!}
                       {!!Form::text('pais_origen',null,['id'=>'pais_origen', 'class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>''])!!}
                               <span id="span_pais_A"></span>
                               <span id="span_mensaje_pais_A" style="display: block;color: red;"></span><br>
+                      
                       {!!Form::label('Año de Fabricación:')!!}
                       {!!Form::text('anio',null,['id'=>'anio', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
                               <span id="span_anio_A"></span>
                               <span id="span_mensaje_anio_A" style="display: block;color: red;"></span><br>
+                      
                       {!!Form::label('Casa ensambladora:')!!}
                       {!!Form::text('casa_ensambladora',null,['id'=>'casa_ensambladora', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
                               <span id="span_anio_A"></span>
                               <span id="span_mensaje_anio_A" style="display: block;color: red;"></span><br>
                   </div>
+                  
                   <div class="col-md-6">
                    Foto Vehiculo: <br>
                     <span class="btn btn-success btn-file">
@@ -155,9 +162,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         Foto Motor <br>
-                        <span class="btn btn-success btn-file">
+                        <!--<span class="btn btn-success btn-file">
                           <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" id="files" name="files[]" />
+                        </span>-->
+                        <span class="btn btn-success btn-file">
+                          <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_motor" id="foto_motor">
                         </span>
+                        <output id="motor" class="thumber_motor"></output>
                       </div>
                     </div>
                     <div class="row text-right" style="margin-top: 18em;">
@@ -176,31 +187,31 @@
                         </div>
                         <div class="form-group">
                           {!!Form::label('Material:')!!}
-                          {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                          {!!Form::text('material_plaqueta',null,['id'=>'material_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
                               <span id="span_tipograbado_A"></span>
                               <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
-                          {!!Form::label('tipo_gravado:')!!}
-                          {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                          {!!Form::label('tipo_grabado:')!!}
+                          {!!Form::text('tipoGrabado_plaqueta',null,['id'=>'tipoGrabado_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
                               <span id="span_tipograbado_A"></span>
                               <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Tipo de Remache:')!!}
-                          {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                          {!!Form::text('tipoRemache_plaqueta',null,['id'=>'tipoRemache_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
                               <span id="span_tipograbado_A"></span>
                               <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Informacion:')!!}
-                          {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                          {!!Form::text('informacion_plaqueta',null,['id'=>'informacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
                               <span id="span_tipograbado_A"></span>
                               <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Observacion:')!!}
-                          {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                          {!!Form::text('observacion_plaqueta',null,['id'=>'observacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
                               <span id="span_tipograbado_A"></span>
                               <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
                         </div>
@@ -208,9 +219,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           Foto de la plaqueta <br>
-                            <span class="btn btn-success btn-file">
+                            <!--<span class="btn btn-success btn-file">
                               <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" id="files" name="files[]" />
-                            </span>
+                            </span>-->
+                             <span class="btn btn-success btn-file">
+                                <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_plaqueta" id="foto_plaqueta">
+                             </span>
+                            <output id="plaqueta" class="thumber_plaqueta"></output>
                         </div>
                       </div>
                     </div> <!--FIN DEL TAB TRES-->
@@ -238,13 +253,13 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               {!!Form::label('Simetria:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('simetria',null,['id'=>'simetria', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                             </div>
                             <div class="form-group">
                               {!!Form::label('Cantidad digitos:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('cantidad_digitos',null,['id'=>'cantidad_digitos', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                             </div>
@@ -252,26 +267,26 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               {!!Form::label('Espacidad:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('espacidad',null,['id'=>'espacidad', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                             </div>
                             <div class="form-group">
                               {!!Form::label('Densidad:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('densidad',null,['id'=>'densidad', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                             </div>
                           </div>
                             <div class="form-group">
                               {!!Form::label('Superficie:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('superficie',null,['id'=>'superficie', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                             </div>
                             <div class="form-group">
                               {!!Form::label('Observacion:')!!}
-                              {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('observacion',null,['id'=>'observacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                                 </div>
@@ -280,8 +295,9 @@
                              <div class="form-group">
                                 Foto del Chasis <br>
                                   <span class="btn btn-success btn-file">
-                                    <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" id="foto_chasis" name="files[]" />
-                                  </span>
+                                <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_chasis" id="foto_chasis">
+                             </span>
+                            <output id="chasis" class="thumber_chasis"></output>
                               </div>
                            </div>
                         </div> <!--FIN DEL TAB 3-->
@@ -291,25 +307,25 @@
                            <div class="col-md-6">
                              <div class="form-group">
                                 {!!Form::label('Ubicación:')!!}
-                                {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                                {!!Form::text('ubicacion_serie',null,['id'=>'ubicacion_serie', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                               </div>
                               <div class="form-group">
                                 {!!Form::label('Tipo Grabado:')!!}
-                                {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                                {!!Form::text('tipoGrabado_serie',null,['id'=>'tipoGrabado_serie', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                               </div>
                               <div class="form-group">
                                 {!!Form::label('cantidad de digitos:')!!}
-                                {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                                {!!Form::text('cantidadDigitos_Serie',null,['id'=>'cantidadDigitos_Serie', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                               </div>
                               <div class="form-group">
                                 {!!Form::label('Observación:')!!}
-                                {!!Form::text('alineacion',null,['id'=>'alineacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                                {!!Form::text('observacion_serie',null,['id'=>'observacion_serie', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                                 </div>
@@ -317,9 +333,10 @@
                            <div class="col-md-6">
                              <div class="form-group">
                                     Foto de la serie Secreta: <br>
-                                    <span class="btn btn-success btn-file">
-                                    <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" id="foto_chasis" name="files[]" />
-                                    </span>
+                                      <span class="btn btn-success btn-file">
+                                <i class="fa fa-camera" aria-hidden="true"></i> Seleccionar fotografia <input type="file" name="foto_serieS" id="foto_serieS">
+                             </span>
+                            <output id="serieS" class="thumber_serieS"></output>
                               </div>
 
                                <div class="row text-right" style="margin-top: 18em;">
@@ -440,9 +457,91 @@ function fotoVehiculo(evt){
            reader.readAsDataURL(f);
        } 
 }
-             
-document.getElementById('files').addEventListener('change', archivo, false);
+   
+function fotoMotor(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+                document.getElementById("motor").innerHTML = ['<img class="thumb"  id="image3" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}  
+
+function fotoPlaqueta(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+                document.getElementById("plaqueta").innerHTML = ['<img class="thumb"  id="image4" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}   
+
+
+function fotoChasis(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+                document.getElementById("chasis").innerHTML = ['<img class="thumb"  id="image5" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}   
+
+function fotoSerie(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+                document.getElementById("serieS").innerHTML = ['<img class="thumb"  id="image6" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}   
+
+
+//document.getElementById('files').addEventListener('change', archivo, false);
 document.getElementById('foto_vehiculo').addEventListener('change', fotoVehiculo, false);
+document.getElementById('foto_motor').addEventListener('change', fotoMotor, false);
+document.getElementById('foto_plaqueta').addEventListener('change', fotoPlaqueta, false);
+document.getElementById('foto_chasis').addEventListener('change', fotoChasis, false);
+document.getElementById('foto_serieS').addEventListener('change', fotoSerie, false);
 
 </script>
 

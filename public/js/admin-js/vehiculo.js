@@ -1,10 +1,39 @@
-$(document).ready(function(){
-    $('#tablaa').DataTable();
-});
-        
 
-$("#btn_sig2").click(function(){
-            if($('#ubicacion_motor').val()=="" && $('#tipo_grabado_M').val()=="" && $('#alineacion_m').val()=="" && $("#simetria_m").val()=="" && $('#cantidad_digitos_m').val()==0 && $("#espacidad_m").val()=="" && $("#densidad_m").val()=="" && $("#superficie_m").val()=="" && $("#superficie_m").val()=="" && $("#observacion_m").val()==""){
+   // $('#tablaa').DataTable();
+
+
+ $("#marca").change(function(){
+        var id_marca=$("#marca").val();
+        if(id_marca=="0"){
+
+        }else{
+            $.get('/GET_modelos?marca_id='+id_marca, function(data){
+              $('#modelo').empty();
+                  $('#modelo').append('<option value="0">Seleccione un Modelo</option>');
+                $.each(data, function(index, modelos) {
+                  $('#modelo').append('<option value="'+modelos.id+'">'+modelos.modelo_descripcion+'</option>');
+                });
+            }); 
+        }
+      });
+
+      $("#modelo").change(function(){
+        var id_modelo=$("#modelo").val();
+        if(id_modelo=="0"){
+
+        }else{
+            $.get('/GET_versiones?modelo_id='+id_modelo, function(data){
+              $('#version').empty();
+                  $('#version').append('<option value="0">Seleccione una Versión</option>');
+                $.each(data, function(index, versiones) {
+                  $('#version').append('<option value="'+versiones.id+'">'+versiones.version_descripcion+'</option>');
+                });
+            }); 
+        }
+      });        
+
+$("#btn_IngresarVehiculos").click(function(){
+            /*if($('#ubicacion_motor').val()=="" && $('#tipo_grabado_M').val()=="" && $('#alineacion_m').val()=="" && $("#simetria_m").val()=="" && $('#cantidad_digitos_m').val()==0 && $("#espacidad_m").val()=="" && $("#densidad_m").val()=="" && $("#superficie_m").val()=="" && $("#superficie_m").val()=="" && $("#observacion_m").val()==""){
                 var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -78,10 +107,11 @@ $("#btn_sig2").click(function(){
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
-            }
-            else{
-                $('#Tab_empleado a[href="#tab-2"]').tab('show');
-            }
+            }*/
+            //    registrar_vehiculo();
+           // else{
+                registrar_vehiculo();
+            //}
 
         });
 

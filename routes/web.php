@@ -77,10 +77,11 @@ Route::get('/lista_vehiculo','VehiculoController@lista');
 
 /////////////////////////////////////
 Route::get('GET_modelos', function(){
-	 $id_marca= Input::get('marca_id');
+	$id_marca= Input::get('marca_id');
     $modelos = \App\Modelo::where('id_marca','=',$id_marca)->get();
     return Response::json($modelos);
 });
+
 Route::get('GET_versiones', function(){
 	 $id_modelo= Input::get('modelo_id');
     $versiones = \App\Versione::where('id_modelo','=',$id_modelo)->get();
