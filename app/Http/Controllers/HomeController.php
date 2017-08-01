@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Administrador/home');
+        $totalUsuarios = DB::select("select count(id) as total from users");
+        $totalVehiculos = DB::select("select count(id) as total from vehiculos");
+        $totalMarcas = DB::select("select count(id) as total from marcas");
+        return view('Administrador/home',compact('totalMarcas','totalVehiculos','totalUsuarios'));
+    }
+
+    public function dashboard(){
+        $totalUsuarios = DB::select("select count(id) as total from users");
+        $totalVehiculos = DB::select("select count(id) as total from vehiculos");
+        $totalMarcas = DB::select("select count(id) as total from marcas");
+        return view('dashboard/dashboard',compact('totalMarcas','totalVehiculos','totalUsuarios'));
     }
 
     /**

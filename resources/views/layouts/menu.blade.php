@@ -5,7 +5,7 @@
                 <ul class="nav side-menu">
              
               
-                  <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="javascript:void(0)" onclick="cargarContenido('/app/dashboard')"><i class="fa fa-home"></i> Inicio </a>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Vehiculo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

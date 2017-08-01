@@ -22,7 +22,7 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a onclick="cargar_datos({{$ma->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarModelos" >Modificar</a>
+                                        <li><a onclick="cargar_datos({{$ma->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarMarcas" >Modificar</a>
                                         </li>
                                         <li><a onclick="EliminarModelo({{$ma->id}})" href="javascript:void(0)">Eliminar</a>
                                     </li>

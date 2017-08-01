@@ -227,7 +227,7 @@
             <div class="slider-content">
               <div class="col-md-12 text-center">
                 <h2 class="animated4">
-                  <span><strong>Comando</strong> Portoviejo</span>
+                  <span><strong>Crimininalistica</strong> Portoviejo</span>
                 </h2>
                 <h3 class="animated5">
                   <span>The Key of your Success</span>
@@ -251,8 +251,9 @@
       <!-- /carousel -->
     </section>
     <!-- End Home Page Slider -->
-
-   <div id="search_vehiculo">
+    @if (Auth::guest())
+    @else
+  <div id="search_vehiculo">
       <div class="parallax-text-container-1">
         <div class="parallax-text-item">
           <div class="container">
@@ -355,7 +356,8 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
+  @endif
     <div class="modal fade foto_motor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document" style="margin-top: 64px;">
     <div class="modal-content">
@@ -372,9 +374,9 @@
   </div>
 </div>
 
-    <section id="tools" style="height: 100vh;">
-      <!--<iframe src="https://vindecoder.eu/" style="width: 100%; height: 100vh;"></iframe>-->
-    </section>
+    <!--<section id="tools" style="height: 100vh;">
+      <iframe src="https://vindecoder.eu/" style="width: 100%; height: 100vh;"></iframe>
+    </section>-->
     <!-- Start Footer Section -->
     <footer>
       <div class="container">

@@ -74,49 +74,46 @@ function registrar_marca(){
 
 
 // modificar modelos
-
- 
-            $("#btn_ActualizarModelos").click(function() {
-            Actualizar_modelo();
-            });
+$("#btn_ActualizarMarca").click(function() {
+  Actualizar_marcas();
+});
            
 
 
     function cargar_datos(id){
-    var route="/app/modelo/" +id+"/edit";	
+      $("#foto_marca_A").attr("src","");
+      $("#image2").attr("src","");
+    var route="/app/marca/" +id+"/edit";	
     $.get(route,function(res){
-    //	alert(res.tipoUsuario);
-      $("#IdModelo").val(res.id)
-      $("#marca_A").val(res.id_marca);     
-      $("#modelo_A").val(res.modelo_descripcion);     
+      $("#IdMarca_a").val(res.id)
+      $("#marca_A").val(res.marca);     
+      $("#foto_marca_A").attr("src","../"+res.logo);     
       });
     }
 
        
-  function Actualizar_modelo(){
-
-  var id =$("#IdModelo").val();
-  var id_marca =$("#marca_A").val();
-  var modelo_descripcion =$("#modelo_A").val();
-  var token  =$("#token").val();
-  var route="/app/modelo/" +id; 
+  function Actualizar_marcas(){
+  var token =$("#token").val();
+  var route ="/app/marca_act";
+  var datos  = new FormData($("#frmActualizarMarcas")[0]);
   $.ajax({
     url: route,
     headers :{'X-CSRF-TOKEN': token},
-    type: 'PUT',
-    dataType:'json',
-        data    :{id_marca:id_marca,modelo_descripcion:modelo_descripcion},
-        success:function(res){
+      type: 'POST',
+      dataType: 'json',
+      contentType: false,
+      processData: false,
+      data    :datos,
+    success:function(res){
           if(res.sms=='ok'){
-            $('#myModal_ModificarModelos').modal('hide');
-           swal("Modelo Modificado Correctamente..!!", "", "success");
-           $("#datatable").load('/lista_modelo');
-            
+            $("#foto_marca").val("");
+            $('#myModal_ModificarMarcas').modal('hide');
+            swal("Marca se modifico correctamente..!!", "", "success");
+            $("#datatable").load('/lista_marca');
           }else{
-           swal("Error al modificar Modelo..!!", "", "error");
+            swal("Error al modificar Marca..!!", "", "error");
                }
-          
-        }
+    }
   });
 }
 
@@ -185,4 +182,27 @@ $("#marcas").change(function(){
             }); 
         }
       });
+
+
+function fotoMarca(evt){
+  var files = evt.target.files; // FileList object
+        //Obtenemos la imagen del campo "file". 
+      for (var i = 0, f; f = files[i]; i++) {         
+           //Solo admitimos imágenes.
+           if (!f.type.match('image.*')) {
+                continue;
+           }
+           var reader = new FileReader();
+           reader.onload = (function(theFile) {
+              return function(e) {
+               // Creamos la imagen.
+               $("#foto_marca_A").attr("src","");
+                document.getElementById("marca_output").innerHTML = ['<img class="thumb"  id="image2" src="', e.target.result,'"/>'].join('');
+              };
+           })(f);
+           reader.readAsDataURL(f);
+       } 
+}
+
+document.getElementById('foto_marca').addEventListener('change', fotoMarca, false);
 
