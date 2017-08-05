@@ -101,3 +101,8 @@ input[type=text]:focus {
 .thumber_vehiculo{
     width: 350px !important;
 }
+
+.obligatorio{
+    color: red;
+    font-size: 14px
+}
