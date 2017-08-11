@@ -6,8 +6,16 @@ use Illuminate\Http\Request;
 use App\Marca;
 use App\Motore;
 use App\Chasi;
+use App\Plaqueta;
+use App\Vehiculo;
+use App\Serie;
 use DB;
+use Storage;
 use Auth;
+use Hash;
+use App\Foto;
+use Illuminate\Support\Facades\Validator;
+
 class VehiculoController extends Controller
 {
     /**
@@ -55,12 +63,11 @@ class VehiculoController extends Controller
               $rutadelmotor="fotos_motores/".$nuevo_nombre;
             if ($r1){
               Foto::create(['foto' =>$rutadelmotor]);
-              $id_foto= DB::select("select max(id) from fotos"); 
-                foreach ($id_foto as $key) {
+              $id_foto= DB::select("select max(id) as id from fotos");foreach ($id_foto as $key) {
                   $id_foto_motor= $key->id;
                 }
             }else{
-                return response()->json(array('error_imagen'=>true));
+                return response()->json(array('error_imagen_motor'=>true));
             }
           }
             //SUBIR FOTO CHASIS
@@ -69,7 +76,7 @@ class VehiculoController extends Controller
                     $reglas = array('image' => 'required|image|mimes:jpeg,jpg,bmp,png,gif');
                     $validacion = Validator::make($input,  $reglas);
                     if ($validacion->fails()){
-                         return response()->json(array('error_imagen'=>false));      
+                         return response()->json(array('error_imagen_fail'=>false));      
                         }else {
                         $nombre_original=$archivo->getClientOriginalName();
                         $extension=$archivo->getClientOriginalExtension();
@@ -78,12 +85,12 @@ class VehiculoController extends Controller
                         $rutadelmotor="fotos_chasis/".$nuevo_nombre;
                           if ($r1){
                             Foto::create(['foto' =>$rutadelmotor]);
-                            $id_foto_ch= DB::select("select max(id) from fotos"); 
+                            $id_foto_ch= DB::select("select max(id) as id from fotos"); 
                               foreach ($id_foto_ch as $key) {
                                 $id_foto_chasis= $key->id;
                               }
                           }else{
-                          return response()->json(array('error_imagen'=>true));
+                          return response()->json(array('error_imagen_'=>true));
                           }
                     }
 
@@ -101,7 +108,7 @@ class VehiculoController extends Controller
                       $r1=Storage::disk('Plaqueta')->put($nuevo_nombre,  \File::get($archivo) );
                       $rutadelmotor="fotos_plaquetas/".$nuevo_nombre;
                       if ($r1){
-                        $id_foto_pla= DB::select("select max(id) from fotos"); 
+                        $id_foto_pla= DB::select("select max(id) as id from fotos"); 
                               foreach ($id_foto_pla as $key) {
                                 $id_foto_plaqueta= $key->id;
                               }
@@ -123,7 +130,7 @@ class VehiculoController extends Controller
                         $r1=Storage::disk('Serie')->put($nuevo_nombre,  \File::get($archivo) );
                         $rutadelmotor="fotos_series/".$nuevo_nombre;
                         if ($r1){
-                          $id_foto_s= DB::select("select max(id) from fotos"); 
+                          $id_foto_s= DB::select("select max(id) as id from fotos"); 
                               foreach ($id_foto_s as $key) {
                                 $id_foto_serie= $key->id;
                               }
@@ -143,7 +150,7 @@ class VehiculoController extends Controller
                       'densidad' =>$request->input('densidad_m'),
                       'observacion' =>$request->input('observacion_m')
                    ]);
-        $id_m= DB::select("select max(id) from motores"); 
+        $id_m= DB::select("select max(id) as id from motores"); 
                  foreach ($id_m as $key) {
                    $id_motor= $key->id;
                  }
@@ -158,10 +165,10 @@ class VehiculoController extends Controller
                       'cantidad_digitos' =>$request->input('cantidad_digitos'),
                       'superficie' =>$request->input('superficie'),
                       'densidad' =>$request->input('densidad'),
-                      'modelo_descripcion' =>$request->input('observacion')
+                      'observacion' =>$request->input('observacion_chasis')
                    ]);
 
-        $id_c= DB::select("select max(id) from chasis"); 
+        $id_c= DB::select("select max(id) as id from chasis"); 
                  foreach ($id_c as $key) {
                    $id_chasis= $key->id;
                  }
@@ -175,7 +182,7 @@ class VehiculoController extends Controller
                       'observacion' =>$request->input('observacion_plaqueta')
                    ]);
 
-        $id_p= DB::select("select max(id) from plaquetas"); 
+        $id_p= DB::select("select max(id) as id from plaquetas"); 
                  foreach ($id_p as $key) {
                    $id_plaqueta= $key->id;
                  }
@@ -188,7 +195,7 @@ class VehiculoController extends Controller
                       'observacion' =>$request->input('observacion_serie')
                    ]);
 
-        $id_s= DB::select("select max(id) from series"); 
+        $id_s= DB::select("select max(id) as id from series"); 
                  foreach ($id_s as $key) {
                    $id_serie= $key->id;
                  }
@@ -213,7 +220,7 @@ class VehiculoController extends Controller
                           'id_motor' =>$id_motor,
                           'id_serie' =>$id_serie,
                           'cilindraje' =>$request->input('cilindraje'),
-                          'transmision' =>$request->input('transmision'),
+                          'transmision' =>$request->input('trasmision'),
                           'combustible' =>$request->input('combustible'),
                           'pais_origen' =>$request->input('pais_origen'),
                           'fotografia' => $rutadelvehiculo,

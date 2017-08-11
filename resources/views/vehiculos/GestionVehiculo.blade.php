@@ -8,6 +8,8 @@
         <h2>Registro de Vehiculos</h2>
         <div class="clearfix"></div>
       </div>
+      {!!Form::open(array('url'=>'','id'=>'frmIngresarVehiculos'))!!}
+      <input  type="hidden" name="_token" value="{{ csrf_token()}}" id="token_vehiculo">
       <div class="x_content" id="datatable">
         <div class="panel-body">
           <div class="col-md-12 registro">
@@ -28,7 +30,7 @@
               <div id="myTabContent" class="tab-content">
                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content" aria-labelledby="profile-tab">
 
-                {!!Form::open(array('url'=>'','id'=>'frmIngresarVehiculos'))!!}
+                
                   <div class="col-md-6">
                     <div class="col-md-6">
                       {!!Form::label('Marcas:')!!}<span class="obligatorio">*</span>
@@ -57,7 +59,7 @@
                               </span><br>
                       
                       {!!Form::label('Transmision:')!!}<span class="obligatorio">*</span>
-                      {!!Form::text('transmision',null,['id'=>'transmision', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
+                      {!!Form::text('trasmision',null,['id'=>'trasmision', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
                               <span id="span_transmision_A"></span>
                               <span id="span_mensaje_transmision_A" style="display: block;color: red;"></span><br>
                       
@@ -127,7 +129,7 @@
                         </div>
                         <div class="form-group">
                         {!!Form::label('Cantidad digitos:')!!}<span class="obligatorio">*</span>
-                        {!!Form::text('cantidad_digitos_m ',null,['id'=>'cantidad_digitos_m ', 'class'=>'form-control','placeholder'=>'Ingrese una cantidad ','required'=>'' ])!!}
+                        {!!Form::text('cantidad_digitos_m',null,['id'=>'cantidad_digitos_m ', 'class'=>'form-control','placeholder'=>'Ingrese una cantidad ','required'=>'' ])!!}
                             <span id="span_cantidadDigitos_m"></span>
                             <span id="span_mensaje_cantidad_m" style="display: block;color: red;"></span>
                         </div>
@@ -286,7 +288,7 @@
                             </div>
                             <div class="form-group">
                               {!!Form::label('Observacion:')!!}<span class="obligatorio">*</span>
-                              {!!Form::text('observacion',null,['id'=>'observacion', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
+                              {!!Form::text('observacion_chasis',null,['id'=>'observacion_chasis', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
                                   <span id="span_alineacion_A"></span>
                                   <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
                                 </div>
@@ -353,7 +355,7 @@
     </div>
   </div>
 </div>
-
+{!!Form::close()!!}
 <!--  Modal para modificar de versiones-->
 
 <div class="modal fade" id="myModal_ModificarModelos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

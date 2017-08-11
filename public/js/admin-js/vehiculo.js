@@ -119,7 +119,7 @@ $("#btn_IngresarVehiculos").click(function(){
           // funcion para registrar modelos
               function registrar_vehiculo(){
                   
-              	  var token    = new $('#token').val();
+              	  var token    = new $('#token_vehiculo').val();
                   var datos  = new FormData($("#frmIngresarVehiculos")[0]);
                   $.ajax({
                   url:"/app/vehiculo",
