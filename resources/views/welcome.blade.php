@@ -286,7 +286,7 @@
                 <!-- End Animations Text -->
 
                 <!-- Start Buttons -->
-                <a rel="nofollow" href="javascript::void(0)" onclick="buscar_vehiculo()" class="btn-system btn-large"><i class="fa fa-search"></i> Buscar Vehiculo</a>
+                <button onclick="buscar_vehiculo()" class="btn-system btn-large"><i class="fa fa-search"></i> Buscar Vehiculo</button>
 
               </div>
               <!-- End Section Content -->
@@ -299,9 +299,9 @@
                 <div class=" col-md-offset-2 col-md-8">
                   <div class="pricing-table highlight-plan">
                     <div class="plan-name plan-cabecera">
-                      <div class="col-md-4 col-xs-4"><img src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca">
+                      <div class="col-md-4 col-xs-4"><img id='logo_marca' src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca">
                       </div>
-                      <div class="col-md-8 col-xs-8"><h3>Chevrolet</h3></div>
+                      <div class="col-md-8 col-xs-8"><h3 id="marca_get">Chevrolet</h3></div>
                     </div>
                   <div class="plan-price">
                     <div class="row">
@@ -417,93 +417,6 @@
     </div>
   </div>
     {!!Html::script('template_frontend/js/script.js')!!}
-
-    <script>
-    var clic=0;
-
-      function mostrar_login(){
-        if(clic==0){
-          $(".login").show();
-          clic++;
-        }else{
-          $(".login").hide();
-          clic=0;
-        }
-      }
-
-      $("#home").on('click', function(){
-        $(".login").hide();
-          clic=0;
-      });
-
-      $("#navbart").on('click', function(){
-        $(".login").hide();
-          clic=0;
-      })
-      
-      $("#cb_marcas").change(function(){
-        var id_marca=$("#cb_marcas").val();
-        if(id_marca==""){
-
-        }else{
-            $.get('/GET_modelos?marca_id='+id_marca, function(data){
-              $('#Selectmodelo').empty();
-                  $('#Selectmodelo').append('<option value="0">Seleccione un Modelo</option>');
-                $.each(data, function(index, modelos) {
-                  $('#Selectmodelo').append('<option value="'+modelos.id+'">'+modelos.modelo_descripcion+'</option>');
-                });
-            }); 
-        }
-      });
-      $("#Selectmodelo").change(function(){
-        var id_modelo=$("#Selectmodelo").val();
-        if(id_modelo=="0"){
-
-        }else{
-            $.get('/GET_versiones?modelo_id='+id_modelo, function(data){
-              $('#Selectversiones').empty();
-                  $('#Selectversiones').append('<option value="0">Seleccione una Versión</option>');
-                $.each(data, function(index, versiones) {
-                  $('#Selectversiones').append('<option value="'+versiones.id+'">'+versiones.version_descripcion+'</option>');
-                });
-            }); 
-        }
-      });
-
-      function buscar_vehiculo(){
-        $(".resultados").show();
-      }
-
-      $("#btn_login_w").click(function(){
-        var usuario, clave, token;
-
-        usuario =$("#usuario").val();
-        clave   =$("#clave").val();
-        token   =$("#token").val();
-        $.ajax({
-          url:'login_invitados',
-          type:'POST',
-          dataType: 'json',
-          headers :{'X-CSRF-TOKEN': token},
-          data:{usuario:usuario,clave:clave},
-          success:function(data){
-            if(data.sms=="errorUsuario"){
-              alert("Estimado usuario usted no se encuentra registrado");
-            }else if(data.sms=="error"){
-
-            }else if(data.sms=="login"){
-              alert("Bienvenido usuario");
-                redirect('/');
-
-            }
-          }
-        });
-
-
-      });
-      function redirect(url){
-        window.location=url;
-      }
-    </script>
+    {!!Html::script('template_frontend/js/welcome.js')!!}
 </body>
 </html>

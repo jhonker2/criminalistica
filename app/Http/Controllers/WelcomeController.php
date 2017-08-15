@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Marca;
 
+use DB;
 class WelcomeController extends Controller
 {
     /**
@@ -19,9 +20,15 @@ class WelcomeController extends Controller
         return view('welcome',compact("marca"));
     }
 
-    public function get_modelo($id_macar_){
-   
+    public function buscar_vehiculo(Request $request){
+        $vehiculo = DB::table("vehiculos")->where('id_version',$request->input("id_version"))->get();
+            return $vehiculo;
     }
+    public function buscar_marca($id){
+      $marca = DB::table("marcas")->where('id',$id)->get();
+            return $marca;   
+    }
+   
     /**
      * Show the form for creating a new resource.
      *

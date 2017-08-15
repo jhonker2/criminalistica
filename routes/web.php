@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Input;
 */
 
 Route::get('/','WelcomeController@index');
-
+Route::post('/GET_vehiculo','WelcomeController@buscar_vehiculo');
+Route::get('/GET_marca/{id}','WelcomeController@buscar_marca');
 
 
 Route::post('login_invitados','LoginController@loginInvitados');
