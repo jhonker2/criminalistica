@@ -242,7 +242,7 @@
     
     {!!Html::script('js/sweetalert.min.js')!!}
 
-    {!!Html::script('js/FileUploader.js')!!}
+    {!!Html::script('js/FileUploader.js')!!} 
 
    
      
