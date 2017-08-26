@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Input;
 Route::get('/','WelcomeController@index');
 Route::post('/GET_vehiculo','WelcomeController@buscar_vehiculo');
 Route::get('/GET_marca/{id}','WelcomeController@buscar_marca');
+Route::get('/GET_foto_m/{id}','WelcomeController@buscar_f_motor');
+Route::post('/GET_galeria','WelcomeController@buscar_galeria');
+
+
+
+/////////////////////////////////////////////
 
 
 Route::post('login_invitados','LoginController@loginInvitados');

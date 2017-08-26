@@ -106,8 +106,10 @@ class VehiculoController extends Controller
                       $extension=$archivo->getClientOriginalExtension();
                       $nuevo_nombre="plaqueta-".$nombre_original;
                       $r1=Storage::disk('Plaqueta')->put($nuevo_nombre,  \File::get($archivo) );
-                      $rutadelmotor="fotos_plaquetas/".$nuevo_nombre;
+                      $rutaplaqueta="fotos_plaquetas/".$nuevo_nombre;
                       if ($r1){
+                        Foto::create(['foto' =>$rutaplaqueta]);
+                            
                         $id_foto_pla= DB::select("select max(id) as id from fotos"); 
                               foreach ($id_foto_pla as $key) {
                                 $id_foto_plaqueta= $key->id;
@@ -128,8 +130,10 @@ class VehiculoController extends Controller
                         $extension=$archivo->getClientOriginalExtension();
                         $nuevo_nombre="serie-".$nombre_original;
                         $r1=Storage::disk('Serie')->put($nuevo_nombre,  \File::get($archivo) );
-                        $rutadelmotor="fotos_series/".$nuevo_nombre;
+                        $rutaserie="fotos_series/".$nuevo_nombre;
                         if ($r1){
+                        Foto::create(['foto' =>$rutaserie]);
+
                           $id_foto_s= DB::select("select max(id) as id from fotos"); 
                               foreach ($id_foto_s as $key) {
                                 $id_foto_serie= $key->id;

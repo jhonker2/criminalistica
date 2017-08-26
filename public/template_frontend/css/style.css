@@ -5847,6 +5847,16 @@ ul.footer-nav li a:hover {
 .loading{
 	display: none;
 }
+
+.loading2{
+	margin-top: 65px;
+    display: none;
+}
+
+.galeria{
+	display: none;
+}
+
 .menu_usuario{
 	left: 65% !important;
 }

@@ -50,14 +50,16 @@ var clic=0;
       });
 
       function buscar_vehiculo(){
-        $(".resultados").show();
-        var id_marca= $("#cb_marcas").val();
+        var id_marca   = $("#cb_marcas").val();
+        var id_version = $("#Selectversiones").val();
         GET_marca(id_marca);
+        GET_vehiculos(id_version);
+        $(".resultados").show();
 
-         
       }
 
-      function GET_vehiculos(){
+      function GET_vehiculos(id_version){
+        var token = $("#token").val();
         $.ajax({
           url:'/GET_vehiculo',
           type:'POST',
@@ -65,9 +67,28 @@ var clic=0;
           headers :{'X-CSRF-TOKEN': token},
           data:{id_version:id_version},
           success:function(data){
-            
+             $(data).each(function(key, value){ 
+              $("#foto_logo").attr('src',value.fotografia);
+              $("#span_cilindraje").html(value.cilindraje);
+              $("#span_transmision").html(value.transmision);
+              $("#span_combustible").html(value.combustible);
+              $("#span_pais").html(value.pais_origen);
+              $("#span_casa").html(value.casa_ensambladora);
+            });
           }
         });
+      }
+      function GET_foto_motor(id_motor){
+        $.ajax({
+          url:'/GET_foto_m/'+id_motor,
+          type:'GET',
+          dataType:'json',
+          success:function(data){
+            $(data).each(function(key, value){ 
+              
+            });
+          }
+        })
       }
       function GET_marca(id_marca){
         $.ajax({
@@ -100,7 +121,7 @@ var clic=0;
             if(data.sms=="errorUsuario"){
               alert("Estimado usuario usted no se encuentra registrado");
             }else if(data.sms=="error"){
-
+              alert("No se ha podido iniciar session");
             }else if(data.sms=="login"){
               alert("Bienvenido usuario");
                 redirect('/');

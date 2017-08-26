@@ -269,10 +269,10 @@
                         @endforeach
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="modelos" id="Selectmodelo" class="form-control" style="margin-bottom: 10px;">
-                        <option value="">Seleccione una Modelo</option>
+                        <option value="">Esperando..</option>
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="versiones" id="Selectversiones" class="form-control">
-                        <option value="">Seleccione una Versión</option>
+                        <option value="">Esperando..</option>
                     </select></div>
                     <div class="col-md-3 col-xs-6"><select name="Marcas" class="form-control">
                         <option value="">Seleccione un Año</option>
@@ -299,36 +299,38 @@
                 <div class=" col-md-offset-2 col-md-8">
                   <div class="pricing-table highlight-plan">
                     <div class="plan-name plan-cabecera">
-                      <div class="col-md-4 col-xs-4"><img id='logo_marca' src="{{asset('imagenes/logo-chevrolet.jpg')}}" alt="" class="imagen-marca">
+                      <div class="col-md-4 col-xs-4"><img id='logo_marca' src="" alt="" class="imagen-marca">
                       </div>
                       <div class="col-md-8 col-xs-8"><h3 id="marca_get">Chevrolet</h3></div>
                     </div>
                   <div class="plan-price">
                     <div class="row">
                       <div class="col-md-8">
-                        <img src="{{asset('imagenes/auto.jpg')}}" alt="">
+                        <img id="foto_logo" src="" alt="">
                       </div>
                     <div class="col-md-4">
                       <div class="plan-list">
                         <ul>
                           <li><strong class="text_ficha">Ficha Técnica</strong></li>
-                          <li class="text-aling-left text_titulo"><strong>Cilindraje:</strong> 1.999 cc</li>
-                          <li class="text-aling-left text_titulo"><strong>Transmisión:</strong> -</li>
-                          <li class="text-aling-left text_titulo"><strong>Combustible:</strong> Gasolina</li>
-                          <li class="text-aling-left text_titulo"><strong>Pais origen:</strong> Colombia</li>
-                          <li class="text-aling-left text_titulo"><strong>Casa ensamblaje:</strong> -</li>
+                          <li class="text-aling-left text_titulo"><strong>Cilindraje:</strong><span id="span_cilindraje"></span> </li>
+                          <li class="text-aling-left text_titulo"><strong>Transmisión:</strong><span id="span_transmision"></span></li>
+                          <li class="text-aling-left text_titulo"><strong>Combustible:</strong><span id="span_combustible"></span></li>
+                          <li class="text-aling-left text_titulo"><strong>Pais origen:</strong><span id="span_pais"></span></li>
+                          <li class="text-aling-left text_titulo"><strong>Casa ensamblaje:</strong><span id="span_casa"></span></li>
                         </ul>
                       </div>
                     </div>
                     </div>
                   </div>
                   <div class="plan-signup">
-                    <a href="#galeria_capas" class="btn-system btn-small border-btn">Ver Especificaciones</a>
+                    <button type="button" class="btn-system btn-small border-btn" id="btn_ver" >Ver Especificaciones</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row" id="galeria_capas">
+           
+            </div>
+             <div class="row" id="galeria_capas">
               <!--Start Clients Carousel-->
               <div class="our-clients">
                 <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
@@ -351,8 +353,7 @@
                 </div>
               </div>
               <!-- End Clients Carousel -->
-            </div>
-            </div>
+            </div> // fin del div de galeria de capas
           </div>
         </div>
       </div>
