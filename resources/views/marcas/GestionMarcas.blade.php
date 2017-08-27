@@ -77,16 +77,16 @@
               
            <div class="col-md-4  col-xs-12">  
               {!!Form::label('Marca:')!!}
-              {!!Form::text('marca',null,['id'=>'marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
-                <span id="span_marca"></span>
-               <span id="span_mensaje_marca" style="display: block;color: red;"></span>
+              {!!Form::text('marca',null,['id'=>'marca', 'class'=>'form-control','placeholder'=>'Ingrese Marca' ])!!}
+              <span id="span_marca"></span>
+              <span id="span_mensaje_marca" style="display: block;color: red;"></span>
             </div>
                <div class="col-md-8  col-xs-8">
                             <div class="foto"><span type="file"></span>
                                 </div>
                                 <label class="uploader foto" ondragover="return false">
                                    <i  class="fa fa-user fa-4x" aria-hidden="true"></i>
-                                  <img src="" class="">
+                                  <img id="foto" src="" class="">
                                     <input type="file" name="archivo" id="archivo" accept="image/*" required>
                                </label>
                </div>

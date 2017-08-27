@@ -4,7 +4,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Administración de Vehiculos</h2>
+                    <h2>Administración de Version</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarVersiones"><i class="fa fa-plus-circle fa-3x"></i></a>
@@ -53,7 +53,7 @@
                      </div>      
 
               {!!Form::label('Versiones:')!!}
-              {!!Form::text('versiones_A',null,['id'=>'versiones_A', 'class'=>'form-control','placeholder'=>'Ingrese Versiones','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+              {!!Form::text('versiones_A',null,['id'=>'versiones_A', 'class'=>'form-control','placeholder'=>'Ingrese Versiones' ])!!}
               <span id="span_versiones_A"></span>
               <span id="span_mensaje_versiones_A" style="display: block;color: red;"></span>
 
@@ -94,6 +94,8 @@
                                          <option value="{{$mo->id}}"> {{$mo->modelo_descripcion}}</option>
                                    @endforeach
                               </select>
+                        <span id="span_modelos"></span>
+                        <span id="span_mensaje_modelos" style="display: block;color: red;"></span>
                      </div>      
 
               {!!Form::label('Versiones:')!!}

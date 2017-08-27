@@ -18,15 +18,15 @@
             
         }); // fin
 
- /*Validaci[on del campo password*/
-        $('#password').blur(function(){
-            var password = $("#password").val();
-            if (password.indexOf('')== -1){
-              $('#password').addClass('error');
-              $('#span_mensaje_password').html('Ingrese el password ');
+ /*Validaci[on del campo modelos*/
+        $('#modelos').blur(function(){
+            var modelos = $("#modelos").val();
+            if (modelos.indexOf('')== -1){
+              $('#modelos').addClass('error');
+              $('#span_mensaje_modelos').html('Ingrese el modelos ');
             }else{
-            $('#password').removeClass('error');
-            $('#span_mensaje_password').html('');
+            $('#modelos').removeClass('error');
+            $('#span_mensaje_modelos').html('');
             }
             
         }); // fin
@@ -47,7 +47,7 @@
 
 //FUNCION REGISTRAR USUARIOS
 $("#btn_IngresarVersiones").click(function(){
- if($('#versiones').val()=="" ){
+ if($('#versiones').val()=="" && $("#modelos option:selected").val() == 0){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -56,6 +56,7 @@ $("#btn_IngresarVersiones").click(function(){
                 });
 
                 $('#versiones').addClass('error');
+                $('#modelos').addClass('error');
 
           }else if($('#versiones').val()==""){
                       $('#versiones').addClass('error');
@@ -63,6 +64,15 @@ $("#btn_IngresarVersiones").click(function(){
                       $('#span_mensaje_versiones').html('Ingrese version');
                       var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
                       new PNotify({title: 'Alerta',text: 'Por favor! ingrese version',
+                      type: 'error',delay: 2500,
+                      animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+             }else if($("#modelos option:selected").val() == 0){
+                      $('#modelos').addClass('error');
+                      $('#span_modelos').addClass('error_span');
+                      $('#span_mensaje_modelos').html('Ingrese Modelos');
+                      var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                      new PNotify({title: 'Alerta',text: 'Por favor! ingrese Modelos',
                       type: 'error',delay: 2500,
                       animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });

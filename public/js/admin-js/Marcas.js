@@ -4,16 +4,16 @@ $(document).ready(function(){
         
 
 /*Validaci[on del campo Marca*/
-        $('#Marca').blur(function(){
-            var Marca = $("#Marca").val();
-            if (Marca.indexOf('')== -1){
-              $('#Marca').addClass('error');
-              $('#Marca').addClass('error_span');
-              $('#span_mensaje_versiones').html('Ingrese Marca');
+        $('#marca').blur(function(){
+            var marca = $("#marca").val();
+            if (marca.indexOf('')== -1){
+              $('#marca').addClass('error');
+              $('#marca').addClass('error_span');
+              $('#span_mensaje_versiones').html('Ingrese marca');
             }else{
-            $('#Marca').removeClass('error');
-            $('#Marca').removeClass('error_span');
-            $('#span_mensaje_modelo').html('');
+            $('#marca').removeClass('error');
+            $('#marca').removeClass('error_span');
+            $('#span_mensaje_marca').html('');
             }
             
         }); // fin
@@ -23,7 +23,8 @@ $(document).ready(function(){
 
 //FUNCION validar capos al REGISTRAR Marcas
 $("#btn_IngresarMarca").click(function(){
- if($('#Marca').val()=="" ){
+$('#foto').attr("src","");
+ if($('#marca').val()=="" ){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -31,8 +32,8 @@ $("#btn_IngresarMarca").click(function(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
 
-                $('#Marca').addClass('error');
-Marca
+                $('#marca').addClass('error');
+
           }else if($('#Marca').val()==""){
                       $('#Marca').addClass('error');
                       $('#span_Marca').addClass('error_span');
@@ -62,11 +63,18 @@ function registrar_marca(){
       processData: false,
       data: datos,
       success:function(res){
-        if(res.registro==true){
-          swal("Marca Registrada Correctamente..!!", "", "success");
-          document.getElementById("frmIngresarMarca").reset();  
-          $("#myModal_IngresarMarca").modal("hide");
-          $("#datatable").load("/lista_marca");
+          if(res.registro==true){
+            swal("Marca Registrada Correctamente..!!", "", "success");
+            document.getElementById("frmIngresarMarca").reset();
+
+            $("#myModal_IngresarMarca").modal("hide");
+            $("#datatable").load("/lista_marca");
+          }else{
+            var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+            new PNotify({title: 'Alerta',text: 'Por favor! Debe Seleccionar una Imagen',
+            type: 'error',delay: 2500,
+            animate: {animate: true,in_class: animate_in,out_class: animate_out}
+          });
         }
       }
 	 });

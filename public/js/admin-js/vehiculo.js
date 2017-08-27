@@ -1,6 +1,22 @@
 
    // $('#tablaa').DataTable();
 
+  /*Validaci[on del campo cilindraje*/
+        $('#cilindraje').blur(function(){
+            var cilindraje = $("#cilindraje").val();
+            if (cilindraje.indexOf('')== -1){
+              $('#cilindraje').addClass('error');
+              $('#cilindraje').addClass('error_span');
+              $('#span_mensaje_versiones').html('Ingrese cilindraje');
+            }else{
+            $('#cilindraje').removeClass('error');
+            $('#cilindraje').removeClass('error_span');
+            $('#span_mensaje_cilindraje').html('');
+            }
+            
+        }); // fin
+ 
+
 
  $("#marca").change(function(){
         var id_marca=$("#marca").val();
@@ -30,29 +46,69 @@
                 });
             }); 
         }
-      });        
+      });  
+
+ 
+
+           
 
 $("#btn_IngresarVehiculos").click(function(){
-            /*if($('#ubicacion_motor').val()=="" && $('#tipo_grabado_M').val()=="" && $('#alineacion_m').val()=="" && $("#simetria_m").val()=="" && $('#cantidad_digitos_m').val()==0 && $("#espacidad_m").val()=="" && $("#densidad_m").val()=="" && $("#superficie_m").val()=="" && $("#superficie_m").val()=="" && $("#observacion_m").val()==""){
+
+      if($('#cilindraje').val()==""){
+               
+                if($('#cilindraje').val()=="" && $('#trasmision').val()=="" && $('#combustible').val()=="" && $("#pais_origen").val()=="" && $('#anio').val()==0 && $("#casa_ensambladora").val()=="" && $("#densidad_m").val()=="" && $("#superficie_m").val()=="" && $("#superficie_m").val()=="" && $("#observacion_m").val()==""){
                 var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
+
+                $('#cilindraje').addClass('error');
+                $('#trasmision').addClass('error');
+                $("#combustible").addClass('error');
+                $("#pais_origen").addClass('error');
+                $("#anio").addClass('error');
+                $("#casa_ensambladora").addClass('error');
+                
                 $('#ubicacion_motor').addClass('error');
                 $('#tipo_grabado_M').addClass('error');
                 $('#alineacion_m').addClass('error');
                 $('#simetria_m').addClass('error');
-                $('#cantidad_digitos_m').addClass('error');
-                $('#direccion_E').addClass('error');
-                $('#correo_E').addClass('error');
-                $('#telefono_E').addClass('error');
+                $('#cantidad_digito_mo').addClass('error');
+                $('#espacidad_m').addClass('error');
+                $('#densidad_m').addClass('error');
+                $('#superficie_m').addClass('error');
+                $('#observacion_m').addClass('error');
+                //$('#cantidad_digitos_m').addClass('error');
+                
+                $('#ubicacion_plaqueta').addClass('error');
+                $('#material_plaqueta').addClass('error');
+                $('#tipoGrabado_plaqueta').addClass('error');
+                $('#tipoRemache_plaqueta').addClass('error');
+                $('#informacion_plaqueta').addClass('error');
+                $('#observacion_plaqueta').addClass('error');
+               
+                $('#ubicacion_ch').addClass('error');
+                $('#tipo_grabado_ch').addClass('error');
+                $('#alineacion_ch').addClass('error');
+                $('#simetria_ch').addClass('error');
+                $('#cantidad_digitos_ch').addClass('error');
+                $('#densidad_ch').addClass('error');
+                $('#superficie_ch').addClass('error');
+                $('#espacidad_ch').addClass('error');
+                $('#observacion_chasis').addClass('error');
+                
+                $('#ubicacion_serie').addClass('error');
+                $('#tipoGrabado_serie').addClass('error');
+                $('#cantidad_digitos_Serie').addClass('error');
+                $('#observacion_serie').addClass('error');
 
-            }else if($('#cedula').val()==""){
-                $('#cedula').addClass('error');
-                $('#span_cedula').addClass('error_span');
-                $('#span_mensaje').html('Ingrese un número de cédula');
+
+            }else if($('#cilindraje').val()==""){
+                $('#cilindraje').addClass('error');
+                $('#span_cilindraje').addClass('error_span');
+                $('#span_mensaje').html('Ingrese cilindraje');
                 var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta',text: 'Por favor! ingrese un numero de cédula',
                              type: 'error',delay: 2500,
@@ -107,11 +163,60 @@ $("#btn_IngresarVehiculos").click(function(){
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
-            }*/
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }else if( $('#telefono_E').val()==""){
+                $('#telefono_E').addClass('error');
+                var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese el numero de telefono',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
+            }
             //    registrar_vehiculo();
            // else{
                 registrar_vehiculo();
-            //}
+            }
 
         });
 
