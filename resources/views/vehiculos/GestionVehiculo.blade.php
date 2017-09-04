@@ -63,14 +63,14 @@
                               </span><br>
                       
                       {!!Form::label('Transmision:')!!}<span class="obligatorio">*</span>
-                      {!!Form::text('trasmision',null,['id'=>'trasmision', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
-                              <span id="span_transmision_A"></span>
-                              <span id="span_mensaje_transmision_A" style="display: block;color: red;"></span><br>
+                      {!!Form::text('transmision_A',null,['id'=>'transmision_A', 'class'=>'form-control','placeholder'=>'Ingrese la transmision','required'=>'' ])!!}
+                              <span id="span_transmision"></span>
+                              <span id="span_mensaje_transmision" style="display: block;color: red;"></span><br>
                       
                       {!!Form::label('Combustible:')!!}<span class="obligatorio">*</span>
                       {!!Form::text('combustible',null,['id'=>'combustible', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de combustible','required'=>'' ])!!}
-                              <span id="span_combustible_A"></span>
-                              <span id="span_mensaje_combustible_A" style="display: block;color: red;"></span><br>
+                              <span id="span_combustible"></span>
+                              <span id="span_mensaje_combustible" style="display: block;color: red;"></span><br>
                       
                       {!!Form::label('Pais Origen:')!!}<span class="obligatorio">*</span>
                       {!!Form::text('pais_origen',null,['id'=>'pais_origen', 'class'=>'form-control','placeholder'=>'Ingrese país de origen','required'=>''])!!}
@@ -83,9 +83,9 @@
                               <span id="span_mensaje_anio" style="display: block;color: red;"></span><br>
                       
                       {!!Form::label('Casa ensambladora:')!!}<span class="obligatorio">*</span>
-                      {!!Form::text('casa_ensambladora',null,['id'=>'casa_ensambladora', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
-                              <span id="span_anio"></span>
-                              <span id="span_mensaje_anio" style="display: block;color: red;"></span><br>
+                      {!!Form::text('casa_ensambladora_A',null,['id'=>'casa_ensambladora_A', 'class'=>'form-control','placeholder'=>'Ingrese años de Fabricación','required'=>''])!!}
+                              <span id="span_casa_ensambladora_A"></span>
+                              <span id="span_mensaje_casa_ensambladora_A" style="display: block;color: red;"></span><br>
                   </div>
                   
                   <div class="col-md-6">
@@ -112,15 +112,15 @@
                       </div>
                       <div class="form-group">
                         {!!Form::label('Tipo de Grabado:')!!}<span class="obligatorio">*</span>
-                        {!!Form::text('tipo_grabado_M',null,['id'=>'tipo_grabado_M', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de grabado','required'=>'' ])!!}
-                            <span id="span_tipograbado_M"></span>
-                            <span id="span_mensaje_tipograbado_M" style="display: block;color: red;"></span>
+                        {!!Form::text('tipo_grabado_m',null,['id'=>'tipo_grabado_m', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de grabado','required'=>'' ])!!}
+                            <span id="span_tipo_grabado_m"></span>
+                            <span id="span_mensaje_tipo_grabado_m" style="display: block;color: red;"></span>
                       </div>
                       <div class="form-group">
                         {!!Form::label('Alineacion:')!!}<span class="obligatorio">*</span>
                         {!!Form::text('alineacion_m',null,['id'=>'alineacion_m', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
-                            <span id="span_alineacion"></span>
-                            <span id="span_mensaje_alineacion" style="display: block;color: red;"></span>
+                            <span id="span_alineacion_m"></span>
+                            <span id="span_mensaje_alineacion_m" style="display: block;color: red;"></span>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
@@ -131,9 +131,9 @@
                         </div>
                         <div class="form-group">
                         {!!Form::label('Cantidad digitos:')!!}<span class="obligatorio">*</span>
-                        {!!Form::text('cantidad_digito_mo',null,['id'=>'cantidad_digito_mo ', 'class'=>'form-control','placeholder'=>'Ingrese una cantidad ','required'=>'' ])!!}
-                            <span id="span_cantidad_digito_m"></span>
-                            <span id="span_mensaje_cantidad_digito_m" style="display: block;color: red;"></span>
+                        {!!Form::text('cantidad_digito_mo',null,['id'=>'cantidad_digito_mo', 'class'=>'form-control','placeholder'=>'Ingrese una cantidad ','required'=>'' ])!!}
+                            <span id="span_cantidad_digito_mo"></span>
+                            <span id="span_mensaje_cantidad_digito_mo" style="display: block;color: red;"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -159,8 +159,8 @@
                       <div class="form-group">
                           {!!Form::label('Observacion:')!!}<span class="obligatorio">*</span>
                           {!!Form::text('observacion_m',null,['id'=>'observacion_m', 'class'=>'form-control','placeholder'=>'Ingrese una observacion','required'=>'' ])!!}
-                            <span id="span_observacion_m"></span>
-                            <span id="span_mensaje_observacion_m" style="display: block;color: red;"></span>
+                            <span id="span_observaion_m"></span>
+                            <span id="span_mensaje_observaion_m" style="display: block;color: red;"></span>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -186,8 +186,8 @@
                         <div class="form-group">
                           {!!Form::label('Ubicacion:')!!}<span class="obligatorio">*</span>
                           {!!Form::text('ubicacion_plaqueta',null,['id'=>'ubicacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
-                              <span id="span_tipograbado_A"></span>
-                              <span id="span_mensaje_tipograbado_A" style="display: block;color: red;"></span>
+                              <span id="span_ubicacion_plaqueta"></span>
+                              <span id="span_mensaje_ubicacion_plaqueta" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Material:')!!}<span class="obligatorio">*</span>
@@ -197,15 +197,15 @@
                         </div>
                         <div class="form-group">
                           {!!Form::label('tipo_grabado:')!!}<span class="obligatorio">*</span>
-                          {!!Form::text('tipoGrabado_plaqueta',null,['id'=>'tipoGrabado_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
-                              <span id="span_tipograbado_plaqueta"></span>
-                              <span id="span_mensaje_tipograbado_plaqueta" style="display: block;color: red;"></span>
+                          {!!Form::text('tipo_grabado_plaqueta',null,['id'=>'tipo_grabado_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
+                              <span id="span_tipo_grabado_plaqueta"></span>
+                              <span id="span_mensaje_tipo_grabado_plaqueta" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Tipo de Remache:')!!}<span class="obligatorio">*</span>
                           {!!Form::text('tipoRemache_plaqueta',null,['id'=>'tipoRemache_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
-                              <span id="span_tipo_remache_Plaqueta"></span>
-                              <span id="span_mensaje_remache_plaqueta" style="display: block;color: red;"></span>
+                              <span id="span_tipoRemache_plaqueta"></span>
+                              <span id="span_mensaje_tipoRemache_plaqueta" style="display: block;color: red;"></span>
                         </div>
                         <div class="form-group">
                           {!!Form::label('Informacion:')!!}<span class="obligatorio">*</span>
@@ -216,8 +216,8 @@
                         <div class="form-group">
                           {!!Form::label('Observacion:')!!}<span class="obligatorio">*</span>
                           {!!Form::text('observacion_plaqueta',null,['id'=>'observacion_plaqueta', 'class'=>'form-control','placeholder'=>'Ingrese la ubicacion','required'=>'' ])!!}
-                              <span id="span_observaccion_plaqueta"></span>
-                              <span id="span_mensaje_observaccion_plaqqueta" style="display: block;color: red;"></span>
+                              <span id="span_observacion_plaqueta"></span>
+                              <span id="span_mensaje_observacion_plaqqueta" style="display: block;color: red;"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -247,7 +247,7 @@
                               {!!Form::label('Tipo de Grabado:')!!}<span class="obligatorio">*</span>
                               {!!Form::text('tipo_grabado_ch',null,['id'=>'tipo_grabado_ch', 'class'=>'form-control','placeholder'=>'Ingrese el tipo de grabado','required'=>'' ])!!}
                                   <span id="span_tipograbado_ch"></span>
-                                  <span id="span_mensaje_tipograbado_ch" style="display: block;color: red;"></span>
+                                  <span id="span_mensaje_tipo_grabado_ch" style="display: block;color: red;"></span>
                             </div>
                             <div class="form-group">
                               {!!Form::label('Alineacion:')!!}<span class="obligatorio">*</span>
@@ -265,8 +265,8 @@
                             <div class="form-group">
                               {!!Form::label('Cantidad digitos:')!!}<span class="obligatorio">*</span>
                               {!!Form::text('cantidad_digitos_ch',null,['id'=>'cantidad_digitos_ch', 'class'=>'form-control','placeholder'=>'Ingrese Cantidad Digitos','required'=>'' ])!!}
-                                  <span id="span_cantidad_digito_ch"></span>
-                                  <span id="span_mensaje_cantidad_digito_ch" style="display: block;color: red;"></span>
+                                  <span id="span_cantidad_digitos_ch"></span>
+                                  <span id="span_mensaje_cantidad_digitos_ch" style="display: block;color: red;"></span>
                             </div>
                           </div>
                           <div class="col-md-6">
@@ -292,8 +292,8 @@
                             <div class="form-group">
                               {!!Form::label('Observacion:')!!}<span class="obligatorio">*</span>
                               {!!Form::text('observacion_chasis',null,['id'=>'observacion_chasis', 'class'=>'form-control','placeholder'=>'Ingrese una alineacion','required'=>'' ])!!}
-                                  <span id="span_alineacion_A"></span>
-                                  <span id="span_mensaje_alineacion_A" style="display: block;color: red;"></span>
+                                  <span id="span_observacion_chasis"></span>
+                                  <span id="span_mensaje_observacion_chasis" style="display: block;color: red;"></span>
                                 </div>
                            </div>
                            <div class="col-md-6">
@@ -325,8 +325,8 @@
                               <div class="form-group">
                                 {!!Form::label('cantidad de digitos:')!!}<span class="obligatorio">*</span>
                                 {!!Form::text('cantidad_digitos_Serie',null,['id'=>'cantidad_digitos_Serie', 'class'=>'form-control','placeholder'=>'Ingrese la cantidad de digitos','required'=>'' ])!!}
-                                  <span id="span_cantidad_digitos_serie"></span>
-                                  <span id="span_mensaje_cantidad_digitos_serie" style="display: block;color: red;"></span>
+                                  <span id="span_cantidad_digitos_Serie"></span>
+                                  <span id="span_mensaje_cantidad_digitos_Serie" style="display: block;color: red;"></span>
                               </div>
                               <div class="form-group">
                                 {!!Form::label('Observación:')!!}<span class="obligatorio">*</span>

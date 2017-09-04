@@ -145,11 +145,11 @@ class VehiculoController extends Controller
          Motore::create([
                       'id_foto'   => $id_foto_motor,
                       'ubicacion' =>$request->input('ubicacion_motor'),
-                      'tipo_grabado' =>$request->input('tipo_grabado_M'),
+                      'tipo_grabado' =>$request->input('tipo_grabado_m'),
                       'alineacion' =>$request->input('alineacion_m'),
                       'simetria' =>$request->input('simetria_m'),
                       'espacidad' =>$request->input('espacidad_m'),
-                      'cantidad_digitos' =>$request->input('cantidad_digitos_m'),
+                      'cantidad_digitos' =>$request->input('cantidad_digito_mo'),
                       'superficie' =>$request->input('superficie_m'),
                       'densidad' =>$request->input('densidad_m'),
                       'observacion' =>$request->input('observacion_m')
@@ -161,14 +161,14 @@ class VehiculoController extends Controller
         
         Chasi::create([
                       'id_foto'   => $id_foto_chasis,
-                      'ubicacion' =>$request->input('ubicacion'),
-                      'tipo_grabado' =>$request->input('tipo_grabado'),
-                      'alineacion' =>$request->input('alineacion'),
-                      'simetria' =>$request->input('simetria'),
-                      'espacidad' =>$request->input('espacidad'),
-                      'cantidad_digitos' =>$request->input('cantidad_digitos'),
-                      'superficie' =>$request->input('superficie'),
-                      'densidad' =>$request->input('densidad'),
+                      'ubicacion' =>$request->input('ubicacion_ch'),
+                      'tipo_grabado' =>$request->input('tipo_grabado_ch'),
+                      'alineacion' =>$request->input('alineacion_ch'),
+                      'simetria' =>$request->input('simetria_ch'),
+                      'espacidad' =>$request->input('espacidad_ch'),
+                      'cantidad_digitos' =>$request->input('cantidad_digitos_ch'),
+                      'superficie' =>$request->input('superficie_ch'),
+                      'densidad' =>$request->input('densidad_ch'),
                       'observacion' =>$request->input('observacion_chasis')
                    ]);
 
@@ -180,7 +180,7 @@ class VehiculoController extends Controller
                       'id_foto' =>$id_foto_plaqueta,
                       'ubicacion' =>$request->input('ubicacion_plaqueta'),
                       'material' =>$request->input('material_plaqueta'),
-                      'tipo_grabado' =>$request->input('tipoGrabado_plaqueta'),
+                      'tipo_grabado' =>$request->input('tipo_grabado_plaqueta'),
                       'tipo_remache' =>$request->input('tipoRemache_plaqueta'),
                       'informacion' =>$request->input('informacion_plaqueta'),
                       'observacion' =>$request->input('observacion_plaqueta')
@@ -195,7 +195,7 @@ class VehiculoController extends Controller
                       'id_foto' =>$id_foto_serie,
                       'ubicacion' =>$request->input('ubicacion_serie'),
                       'tipo_grabado' =>$request->input('tipoGrabado_serie'),
-                      'cantidad_digitos' =>$request->input('cantidadDigitos_Serie'),
+                      'cantidad_digitos' =>$request->input('cantidad_digitos_Serie'),
                       'observacion' =>$request->input('observacion_serie')
                    ]);
 
@@ -224,12 +224,12 @@ class VehiculoController extends Controller
                           'id_motor' =>$id_motor,
                           'id_serie' =>$id_serie,
                           'cilindraje' =>$request->input('cilindraje'),
-                          'transmision' =>$request->input('trasmision'),
+                          'transmision' =>$request->input('transmision_A'),
                           'combustible' =>$request->input('combustible'),
                           'pais_origen' =>$request->input('pais_origen'),
                           'fotografia' => $rutadelvehiculo,
                           'anio' =>$request->input('anio'),
-                          'casa_ensambladora' =>$request->input('casa_ensambladora')
+                          'casa_ensambladora' =>$request->input('casa_ensambladora_A')
                         ]);
                         
                       }else{
