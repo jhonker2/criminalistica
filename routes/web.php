@@ -17,6 +17,9 @@ Route::post('/GET_vehiculo','WelcomeController@buscar_vehiculo');
 Route::get('/GET_marca/{id}','WelcomeController@buscar_marca');
 Route::get('/GET_foto_m/{id}','WelcomeController@buscar_f_motor');
 Route::get('/GET_info_motor/{id}','WelcomeController@buscar_info_motor');
+Route::get('/GET_info_chasi/{id}','WelcomeController@buscar_info_chasi');
+Route::get('/GET_info_plaqueta/{id}','WelcomeController@buscar_info_plaqueta');
+Route::get('/GET_info_serie/{id}','WelcomeController@buscar_info_serie');
 Route::post('/GET_galeria','WelcomeController@buscar_galeria');
 
 

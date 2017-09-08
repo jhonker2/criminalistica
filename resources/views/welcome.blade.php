@@ -451,7 +451,56 @@
             <img id="modal_g_chasis" src="" style="width: 100vh;" alt="" class="">
           </div>
           <div class="col-md-4">
-            
+            <div class="row ubicacion_st">
+              <span><b class="titulos">Ubicación:</b></span> 
+              <br>
+              <span class="contenido" id="ubicacion_ch">asasdasd</span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <span><b class="titulos">Tipo de Grabado</b></span> 
+                <br>
+                <span class="contenido" id="tipograbado_ch">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Simetria</b></span> 
+                <br>
+                <span class="contenido" id="simetria_ch">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Candidad Digitos</b></span> 
+                <br>
+                <span class="contenido" id="digitos_ch">10</span>
+
+              </div>
+              <div class="col-md-6">
+                <span><b class="titulos">Alineación</b></span> 
+                <br>
+                <span class="contenido" id="alineacion_ch">asasdasd</span>
+
+                <br>
+                <span><b class="titulos">Espacidad</b></span> 
+                <br>
+                <span class="contenido" id="espacidad_ch">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Densidad</b></span> 
+                <br>
+                <span class="contenido" id="densidad_ch">asasdasd</span>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-md-12">
+                <span><b class="titulos">Observacion</b></span> 
+                <br>
+                <span class="contenido" id="observacion_ch">asasdasd</span>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
