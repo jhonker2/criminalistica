@@ -555,9 +555,6 @@
  
  
  
-  /*
-
-
  $("#marca").change(function(){
         var id_marca=$("#marca").val();
         if(id_marca=="0"){
@@ -588,7 +585,7 @@
         }
       });  
 
- */
+ 
 
 $("#btn_IngresarVehiculos").click(function(){
         

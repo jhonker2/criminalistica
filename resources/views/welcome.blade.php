@@ -324,56 +324,180 @@
                   </div>
                   <div class="plan-signup">
                     <button type="button" class="btn-system btn-small border-btn" id="btn_ver" >Ver Especificaciones</button>
-                  </div>
+
+                    <input type="hidden" id="id_motor">                  
+                    <input type="hidden" id="id_serie">               
+                    <input type="hidden" id="id_chasis">      
+                    <input type="hidden" id="id_plaqueta">      
+                 </div>
                 </div>
               </div>
             </div>
            
             </div>
-             <div class="row" id="galeria_capas">
+            <div class="loading2">
+              <img src="{{asset('imagenes/gif-load.gif')}}" alt="" style="width: 100px;">
+            </div>
+             <div class="row galeria" id="galeria_capas">
               <!--Start Clients Carousel-->
               <div class="our-clients">
                 <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
                   <!-- Client 1 -->
                   <div class="client-item item">
-                    <a href="javascript::void(0);" data-toggle="modal" data-target=".foto_motor"><img src="{{asset('imagenes/1.jpg')}}" alt="" /></a>
+                    <a href="javascript:void(0)" id="g_motor"><img id="fot_motor" alt="" /></a>
                   </div>
                   <!-- Client 2 -->
                   <div class="client-item item">
-                    <a href="#"><img src="{{asset('imagenes/2.jpg')}}" alt="" /></a>
+                    <a href="javascript:void(0)" id="g_chasis"><img id="fot_chasis" alt="" /></a>
                   </div>
                   <!-- Client 3 -->
                   <div class="client-item item">
-                    <a href="#"><img src="{{asset('imagenes/3.jpg')}}" alt="" /></a>
+                    <a href="javascript:void(0)" id="g_serie"><img id="fot_serie"alt="" /></a>
                   </div>
                   <!-- Client 4 -->
                   <div class="client-item item">
-                    <a href="#"><img src="{{asset('imagenes/4.jpg')}}" alt="" /></a>
+                    <a href="javascript:void(0)" id="g_plaqueta"><img id="fot_plaqueta" alt="" /></a>
                   </div>
                 </div>
               </div>
               <!-- End Clients Carousel -->
-            </div> // fin del div de galeria de capas
+            </div> <!-- fin del div de galeria de capas-->
           </div>
         </div>
       </div>
   </div>
   @endif
-    <div class="modal fade foto_motor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" role="document" style="margin-top: 64px;">
+  <!-- MODAL MOTOR -->
+    <div class="modal fade foto_motor" id="M_motor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="width: 80%">
     <div class="modal-content">
-      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span>x</span>
         </button>
-        <h4 class="modal-title" >Foto del Motor</h4>
-      </div>
       <div class="modal-body">
-        <img src="{{asset('imagenes/1.jpg')}}" style="width: 75%;" alt="" class="">
+        <div class="row">
+          <div class="col-md-8">
+            <img id="modal_g_motor" src="" style="width: 100vh;" alt="" class="">
+          </div>
+          <div class="col-md-4">
+            <div class="row ubicacion_st">
+              <span><b class="titulos">Ubicación:</b></span> 
+              <br>
+              <span class="contenido" id="ubicacion_m">asasdasd</span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <span><b class="titulos">Tipo de Grabado</b></span> 
+                <br>
+                <span class="contenido" id="tipograbado_m">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Simetria</b></span> 
+                <br>
+                <span class="contenido" id="simetria_m">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Candidad Digitos</b></span> 
+                <br>
+                <span class="contenido" id="digitos_m">10</span>
+
+              </div>
+              <div class="col-md-6">
+                <span><b class="titulos">Alineación</b></span> 
+                <br>
+                <span class="contenido" id="alineacion_m">asasdasd</span>
+
+                <br>
+                <span><b class="titulos">Espacidad</b></span> 
+                <br>
+                <span class="contenido" id="espacidad_m">asasdasd</span>
+
+                <br>
+
+                <span><b class="titulos">Densidad</b></span> 
+                <br>
+                <span class="contenido" id="densidad_m">asasdasd</span>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-md-12">
+                <span><b class="titulos">Observacion</b></span> 
+                <br>
+                <span class="contenido" id="observacion_m">asasdasd</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- MODAL CHASIS -->
+  <div class="modal fade" id="M_chasis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="width: 80%">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>x</span>
+        </button>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8">
+            <img id="modal_g_chasis" src="" style="width: 100vh;" alt="" class="">
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
+  <!-- MODAL SERIE -->
+  <div class="modal fade" id="M_serie" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="width: 80%">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>x</span>
+        </button>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8">
+            <img id="modal_g_serie" src="" style="width: 100vh;" alt="" class="">
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- MODAL PLAQUETA -->
+  <div class="modal fade" id="M_plaqueta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="width: 80%">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>x</span>
+        </button>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8">
+            <img id="modal_g_plaqueta" src="" style="width: 100vh;" alt="" class="">
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
     <!--<section id="tools" style="height: 100vh;">
       <iframe src="https://vindecoder.eu/" style="width: 100%; height: 100vh;"></iframe>

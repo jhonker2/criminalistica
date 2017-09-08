@@ -49,12 +49,93 @@ var clic=0;
         }
       });
 
+      $("#btn_ver").click(function(){
+          GET_galeria();
+      });
+
+      $("#g_motor").click(function(){
+          var id_motor = $("#id_motor").val();
+          $.ajax({
+            url:'GET_info_motor/'+id_motor,
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+             $(data).each(function(key, value){ 
+              $("#ubicacion_m").html(value.ubicacion);
+              $("#tipograbado_m").html(value.tipo_grabado);
+              $("#simetria_m").html(value.simetria);
+              $("#digitos_m").html(value.cantidad_digitos);
+              $("#alineacion_m").html(value.alineacion);
+              $("#espacidad_m").html(value.espacidad);
+              $("#densidad_m").html(value.densidad);
+              $("#observacion_m").html(value.observacion);
+
+             });
+
+            }
+          });
+          $("#M_motor").modal("show");
+          $("#modal_g_motor").attr("src",getCookie("foto_motor"));
+
+      });
+
+      $("#g_chasis").click(function(){
+        $("#M_chasis").modal("show");
+        $("#modal_g_chasis").attr("src",getCookie("foto_chasis"));
+      });
+
+      $("#g_serie").click(function(){
+        $("#M_serie").modal("show");
+        $("#modal_g_serie").attr("src",getCookie("foto_serie"));
+      });
+
+
+      $("#g_plaqueta").click(function(){
+        $("#M_plaqueta").modal("show");
+        $("#modal_g_plaqueta").attr("src",getCookie("foto_plaqueta"));
+      });
+      function GET_galeria(){
+        $(".loading2").show();
+        var token = $("#token").val();
+        var id_motor = $("#id_motor").val();
+        var id_plaqueta = $("#id_plaqueta").val();
+        var id_serie = $("#id_serie").val();
+        var id_chasis = $("#id_chasis").val();
+        $.ajax({
+          url:'/GET_galeria',
+          type:'POST',
+          dataType: 'json',
+          headers :{'X-CSRF-TOKEN': token},
+          data:{id_motor:id_motor,id_serie:id_serie, id_chasis:id_chasis, id_plaqueta:id_plaqueta},
+            success:function(data){
+              $(".loading2").hide();
+             $(data).each(function(key, value){ 
+               document.cookie = "foto_motor=;";
+               document.cookie = "foto_chasis=;";
+               document.cookie = "foto_serie=;";
+               document.cookie = "foto_plaqueta=;";
+               document.cookie = "foto_motor="+value.fotoMotor;
+               document.cookie = "foto_chasis="+value.fotoChasis;
+               document.cookie = "foto_serie="+value.fotoSerie;
+               document.cookie = "foto_plaqueta="+value.fotoPlaqueta;
+
+                $("#fot_motor").attr('src',value.fotoMotor);
+                $("#fot_chasis").attr('src',value.fotoChasis);
+                $("#fot_serie").attr('src',value.fotoSerie);
+                $("#fot_plaqueta").attr('src',value.fotoPlaqueta);
+              });
+             $("#galeria_capas").show();
+            }
+        });
+      }
+
       function buscar_vehiculo(){
+        $(".loading").show();
         var id_marca   = $("#cb_marcas").val();
         var id_version = $("#Selectversiones").val();
         GET_marca(id_marca);
         GET_vehiculos(id_version);
-        $(".resultados").show();
+        
 
       }
 
@@ -67,6 +148,7 @@ var clic=0;
           headers :{'X-CSRF-TOKEN': token},
           data:{id_version:id_version},
           success:function(data){
+            $(".loading").hide();
              $(data).each(function(key, value){ 
               $("#foto_logo").attr('src',value.fotografia);
               $("#span_cilindraje").html(value.cilindraje);
@@ -74,22 +156,16 @@ var clic=0;
               $("#span_combustible").html(value.combustible);
               $("#span_pais").html(value.pais_origen);
               $("#span_casa").html(value.casa_ensambladora);
+              $("#id_motor").val(value.id_motor);
+              $("#id_serie").val(value.id_serie);
+              $("#id_plaqueta").val(value.id_plaqueta);
+              $("#id_chasis").val(value.id_chasis);
             });
+             $(".resultados").show();
           }
         });
       }
-      function GET_foto_motor(id_motor){
-        $.ajax({
-          url:'/GET_foto_m/'+id_motor,
-          type:'GET',
-          dataType:'json',
-          success:function(data){
-            $(data).each(function(key, value){ 
-              
-            });
-          }
-        })
-      }
+     
       function GET_marca(id_marca){
         $.ajax({
           url:'/GET_marca/'+id_marca,
@@ -135,3 +211,19 @@ var clic=0;
       function redirect(url){
         window.location=url;
       }
+
+      function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}

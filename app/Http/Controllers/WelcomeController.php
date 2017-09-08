@@ -28,11 +28,12 @@ class WelcomeController extends Controller
       $marca = DB::table("marcas")->where('id',$id)->get();
             return $marca;   
     }
+    
+    public function buscar_info_motor($id){
+        $infoM = DB::table("motores")->where('id',$id)->get();
 
-    public function buscar_f_motor($id){
-        
+        return $infoM;
     }
-
     public function buscar_galeria(Request $request){
         $fotoM="";
         $fotoC="";

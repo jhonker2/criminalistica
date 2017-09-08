@@ -5860,6 +5860,32 @@ ul.footer-nav li a:hover {
 .menu_usuario{
 	left: 65% !important;
 }
+
+.titulos{
+	font-size: 18px;
+    color: #000;
+}
+.contenido{
+	font-size: 15px;
+    margin-bottom: 10px !important;
+    display: table;
+}
+
+.ubicacion_st{
+	text-align: center;
+	margin-bottom: 40px;
+}
 .user-data{
 	cursor: pointer;
+}
+
+button.close{
+	position: absolute !important;
+    left: 112% !important;
+    top: -4px !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+.navbar-top.affix{
+	z-index: 40 !important;
 }
