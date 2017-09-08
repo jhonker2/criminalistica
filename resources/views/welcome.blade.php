@@ -520,7 +520,32 @@
             <img id="modal_g_serie" src="" style="width: 100vh;" alt="" class="">
           </div>
           <div class="col-md-4">
-            
+            <div class="row ubicacion_st">
+              <span><b class="titulos">Ubicación:</b></span> 
+              <br>
+              <span class="contenido" id="ubicacion_se">asasdasd</span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <span><b class="titulos">Tipo de Grabado</b></span> 
+                <br>
+                <span class="contenido" id="tipograbado_se">asasdasd</span>
+              </div>
+              <div class="col-md-6">
+                <span><b class="titulos">Candidad Digitos</b></span> 
+                <br>
+                <span class="contenido" id="digitos_se">10</span>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-md-12">
+                <span><b class="titulos">Observacion</b></span> 
+                <br>
+                <span class="contenido" id="observacion_se">asasdasd</span>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
@@ -540,7 +565,45 @@
             <img id="modal_g_plaqueta" src="" style="width: 100vh;" alt="" class="">
           </div>
           <div class="col-md-4">
-            
+            <div class="row ubicacion_st">
+              <span><b class="titulos">Ubicación:</b></span> 
+              <br>
+              <span class="contenido" id="ubicacion_p">asasdasd</span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <span><b class="titulos">Tipo de Grabado</b></span> 
+                <br>
+                <span class="contenido" id="tipograbado_p">asasdasd</span>
+                
+                <br>
+
+                <span><b class="titulos">Materia</b></span> 
+                <br>
+                <span class="contenido" id="materia_p"></span>
+
+              </div>
+              <div class="col-md-6">
+                <span><b class="titulos">Tipo remache</b></span> 
+                <br>
+                <span class="contenido" id="tipoRemache_p">10</span>
+
+                <br>
+                <span><b class="titulos">Información</b></span> 
+                <br>
+                <span class="contenido" id="informacion_p">10</span>
+
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-md-12">
+                <span><b class="titulos">Observacion</b></span> 
+                <br>
+                <span class="contenido" id="observacion_p">asasdasd</span>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>

@@ -80,17 +80,69 @@ var clic=0;
       });
 
       $("#g_chasis").click(function(){
+        var id_chasis = $("#id_chasis").val();
+          $.ajax({
+            url:'GET_info_chasi/'+id_chasis,
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+             $(data).each(function(key, value){ 
+              $("#ubicacion_ch").html(value.ubicacion);
+              $("#tipograbado_ch").html(value.tipo_grabado);
+              $("#simetria_ch").html(value.simetria);
+              $("#digitos_ch").html(value.cantidad_digitos);
+              $("#alineacion_ch").html(value.alineacion);
+              $("#espacidad_ch").html(value.espacidad);
+              $("#densidad_ch").html(value.densidad);
+              $("#observacion_ch").html(value.observacion);
+
+             });
+
+            }
+          });
         $("#M_chasis").modal("show");
         $("#modal_g_chasis").attr("src",getCookie("foto_chasis"));
       });
 
       $("#g_serie").click(function(){
+        var id_serie = $("#id_serie").val();
+          $.ajax({
+            url:'GET_info_serie/'+id_serie,
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+             $(data).each(function(key, value){ 
+              $("#ubicacion_se").html(value.ubicacion);
+              $("#tipograbado_se").html(value.tipo_grabado);
+              $("#digitos_se").html(value.cantidad_digitos);
+              $("#observacion_se").html(value.observacion);
+             });
+
+            }
+          });
         $("#M_serie").modal("show");
         $("#modal_g_serie").attr("src",getCookie("foto_serie"));
       });
 
 
       $("#g_plaqueta").click(function(){
+         var id_plaqueta = $("#id_plaqueta").val();
+          $.ajax({
+            url:'GET_info_plaqueta/'+id_plaqueta,
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+             $(data).each(function(key, value){ 
+              $("#ubicacion_p").html(value.ubicacion);
+              $("#tipograbado_p").html(value.tipo_grabado);
+              $("#materia_p").html(value.material);
+              $("#tipoRemache_p").html(value.tipo_remache);
+              $("#informacion_p").html(value.informacion);
+              $("#observacion_p").html(value.observacion);
+             });
+
+            }
+          });
         $("#M_plaqueta").modal("show");
         $("#modal_g_plaqueta").attr("src",getCookie("foto_plaqueta"));
       });

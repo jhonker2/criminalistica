@@ -34,6 +34,21 @@ class WelcomeController extends Controller
 
         return $infoM;
     }
+
+    public function buscar_info_chasi($id){
+        $infoC = DB::table("chasis")->where('id',$id)->get();
+        return $infoC;
+    }
+
+    public function buscar_info_serie($id){
+        $infoS = DB::table("series")->where('id',$id)->get();
+        return $infoS;
+    }
+
+    public function buscar_info_plaqueta($id){
+        $infoP = DB::table("plaquetas")->where('id',$id)->get();
+        return $infoP;
+    }
     public function buscar_galeria(Request $request){
         $fotoM="";
         $fotoC="";
