@@ -97,7 +97,7 @@
                      </div>      
 
               {!!Form::label('Modelo:')!!}
-              {!!Form::text('modelo',null,['id'=>'modelo', 'class'=>'form-control','placeholder'=>'Ingrese Modelo','required'=>'','onkeypress'=>'return validaLetrasYEspacio(event)' ])!!}
+              {!!Form::text('modelo',null,['id'=>'modelo', 'class'=>'form-control','placeholder'=>'Ingrese Modelo' ])!!}
               <span id="span_modelo"></span>
               <span id="span_mensaje_modelo" style="display: block;color: red;"></span>
 

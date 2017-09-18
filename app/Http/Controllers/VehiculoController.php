@@ -29,6 +29,13 @@ class VehiculoController extends Controller
        return view('vehiculos.GestionVehiculo',compact('Marca'));
     }
 
+    public function lista()
+    {
+      
+      $Vehiculo = Vehiculo::All();
+      return view('vehiculos.TableVehiculo',compact('Vehiculo'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

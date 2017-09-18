@@ -51,8 +51,8 @@ body.login{
 }
 
 .error{
-  color: #131212;
-  background-color: rgba(214, 32, 32, 0.82) !important;
+  color: #FBEFEF;
+  background-color: #F5A9A9 !important;
 }
 
 .text_black{

@@ -45,20 +45,20 @@ input[type=text]:focus {
 }
 
 	.error{
-        border-color: #e83e3e;
-        background-color: #f9e1de;
+        border-color: #F5A9A9;
+        background-color: #F5A9A9;
     }
     .error:active{
-        border-color: #e83e3e;
+        border-color: #F5A9A9;
     }
     .error_span:after{
         content: 'x';
-        color: #fff;
+        color: #F5A9A9;
         position: absolute;
         top: 55px;
         left: 300px;
         font-size: 20px;
-        background: red;
+        background: #FBEFEF;
         border-radius: 50%;
         width: 30px;
         text-align: center;

@@ -1,5 +1,5 @@
 
-   // $('#tablaa').DataTable();
+   $('#tablee').DataTable();
 
 
 //Validaci[on del campo cilindraje
